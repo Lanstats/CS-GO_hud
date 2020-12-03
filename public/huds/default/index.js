@@ -24,7 +24,6 @@ var start_money = {};
 var round_now = 0;
 var last_round = 0;
 var freezetime = false;
-let napominalka_count=5;
 
 function updatePage(data) {
   var matchup = data.getMatchType();
@@ -189,26 +188,11 @@ function updateRoundNow(round, map) {
   }
 }
 
-function show_napominalka(text){
-  if(text == "freezee"){
-    napominalka_count++
-  }
-  if(napominalka_count >= 5){
-    $("#players_right #box_top").slideUp(500);
-  }
-}
-
-function hide_napominalka(){
-  if(napominalka_count >= 5){
-    napominalka_count=0;
-  }
-  $("#players_right #box_top").slideDown(500);  
-}
-
 function updateRoundState(phase, round, map, previously, bomb, players) {
   // console.log(phase.phase); // * freezetime/live/over/bomb/defuse/paused/timeout_t/timeout_ct
   // console.log(round.bomb); // * exploded/defused/planted NULL
   // console.log(round.win_team); // * CT/T
+  
 
   switch (phase.phase) {
     case "warmup":
@@ -262,8 +246,6 @@ function updateStateFreezetime(phase, previously) {
     $("#players_left #box_monetary").slideDown(500);
     $("#players_right #box_monetary").slideDown(500);
     $("#players_left #box_top").slideUp(500);
-    //$("#players_right #box_top").slideDown(500);
-    hide_napominalka();
     $("#round_timer_text").css("color", COLOR_GRAY);
     if (previously.hasOwnProperty("round")) {
       if (previously.round.hasOwnProperty("win_team")) {
@@ -411,7 +393,6 @@ function updateStatePlanted(phase, round, previously) {
         $("#players_right #box_utility").slideDown(500);
         $("#players_left #box_top").slideUp(500);
         //$("#players_right #box_top").slideDown(500);
-        hide_napominalka();
       }
       if (checkPrev(previously, "defuse")) {
         // Fake Defuse or killed
@@ -423,7 +404,6 @@ function updateStatePlanted(phase, round, previously) {
         $("#players_right #box_utility").slideUp(500);
         $("#players_left #box_top").slideDown(500);
         //$("#players_right #box_top").slideUp(500);
-        show_napominalka("freezee")
       }
       if (checkPrev(previously, "live")) {
         let side = teams.left.side == "t" ? "#left_team" : "#right_team";
@@ -517,14 +497,11 @@ function updateStateLive(phase, bomb, players, previously) {
       $("#players_right #box_monetary").slideUp(500);
       $("#players_left #box_top").slideDown(500);
       //$("#players_right #box_top").slideUp(500);
-      show_napominalka("freezee")
     }
     if (phase.phase_ends_in <= 109.9) {
       $("#players_left #box_utility").slideUp(500);
       $("#players_right #box_utility").slideUp(500);
       $("#players_left #box_top").slideDown(500);
-      //$("#players_right #box_top").slideUp(500);
-      show_napominalka("freezee")
     }
     if (phase.phase_ends_in <= 5) {
       $("#round_timer_text")
@@ -564,8 +541,6 @@ function updateStatePaused(phase, type, previously) {
   $("#players_left #box_utility").slideDown(500);
   $("#players_right #box_utility").slideDown(500);
   $("#players_left #box_top").slideUp(500);
-  //$("#players_right #box_top").slideDown(500);
-  hide_napominalka()
   $("#alert_middle").removeClass();
   if (type == "paused") {
     if (checkPrev(previously, "freezetime") || checkPrev(previously, "live") || checkPrev(previously, "defuse") || checkPrev(previously, "bomb"))
