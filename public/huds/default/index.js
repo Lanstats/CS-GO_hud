@@ -423,7 +423,7 @@ function updateStatePlanted(phase, round, previously) {
         $("#players_right #box_utility").slideUp(500);
         $("#players_left #box_top").slideDown(500);
         //$("#players_right #box_top").slideUp(500);
-        show_napominalka()
+        show_napominalka("freezee")
       }
       if (checkPrev(previously, "live")) {
         let side = teams.left.side == "t" ? "#left_team" : "#right_team";
