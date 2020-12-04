@@ -305,7 +305,7 @@ body {
   top: 2px;
   width: 355px;
   height: 40px;
-  background-color: rgb(0,0,0,0.4);
+  background-color: rgba(0,0,0,0.4);
 }
 
 #left_team > #alert {
@@ -384,7 +384,7 @@ body {
   position: relative;
   width: 30px;
   height: 30px;
-  background-color: #f4f9ff;
+  background-color: rgb(0,0,0,0.4);
   opacity: 0;
 }
 
@@ -472,7 +472,7 @@ body {
   position: relative;
   width: 310px;
   height: 40px;
-  background-color: rgb(0,0,0,0.4);;
+  background-color: rgba(0,0,0,0.4);;
   opacity: 0;
 
   animation-duration: 0.5s;
