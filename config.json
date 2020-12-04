@@ -12,9 +12,6 @@
   "LeftImage": "/files/league/league.png",
   "LeftPrimary": "Первый Киберспортивный Кубок",
   "LeftSecondary": "Московской Железной Дороги по CS:GO",
-  "FirstTeamUpcoming":"Biba",
-  "FirstTeamUpcomingImage":"/files/teams/team1.png",
-  "SecondTeamUpcoming":"Boba",
-  "SecondTeamUpcomingImage":"/files/teams/team2.png",
+  "GameType": "Bo3",
   "GSIToken": "120987"
 }

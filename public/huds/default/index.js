@@ -1,12 +1,20 @@
-const COLOR_CT = "rgba(87, 136, 168, 1.0)";
-const COLOR_T = "rgba(193, 149, 17, 1.0)";
-const COLOR_NEW_CT = "rgba(90, 184, 244, 1.0)";
-const COLOR_NEW_T = "rgba(240, 201, 65, 1.0)";
+//const COLOR_CT = "rgba(87, 136, 168, 1.0)";
+const COLOR_CT = "rgb(90, 184, 244)";
+//const COLOR_T = "rgba(193, 149, 17, 1.0)";
+const COLOR_T = "rgb(245,172,41)";
+//#df2451
+//F4F9FF
+const COLOR_WARM_WHITE = "F4F9FF";
+//const COLOR_NEW_CT = "rgba(90, 184, 244, 1.0)";
+const COLOR_NEW_CT = "rgb(90, 184, 244)";
+//const COLOR_NEW_T = "rgba(240, 201, 65, 1.0)";
+const COLOR_NEW_T = "rgb(245,172,41)";
 const COLOR_RED = "rgba(242, 34, 34, 1.0)";
 const COLOR_MAIN_PANEL = "rgba(12, 15, 18, 0.75)";
 const COLOR_SUB_PANEL = "rgba(12, 15, 18, 0.6)";
 const COLOR_GRAY = "rgba(191, 191, 191, 1.0)";
 const COLOR_WHITE = "rgba(250, 250, 250, 1.0)";
+const COLOR_BLACK = "rgba(0, 0, 0, 1.0)";
 const COLOR_WHITE_HALF = "rgba(250, 250, 250, 0.5)";
 const COLOR_WHITE_DULL = "rgba(250, 250, 250, 0.25)";
 const PLAYER_ORANGE = "rgba(237, 163, 56, 1.0)";
@@ -135,8 +143,8 @@ function updateTopPanel() {
   //#endregion
 
   //#region Poles
-  $("#left_team .bar").css("background-color", teams.left.side == "ct" ? COLOR_NEW_CT : COLOR_NEW_T);
-  $("#right_team .bar").css("background-color", teams.right.side == "ct" ? COLOR_NEW_CT : COLOR_NEW_T);
+  //$("#left_team .bar").css("background-color", teams.left.side == "ct" ? COLOR_NEW_CT : COLOR_NEW_T);
+  //$("#right_team .bar").css("background-color", teams.right.side == "ct" ? COLOR_NEW_CT : COLOR_NEW_T);
   $("#left_team #alert #alert_pole_right").css("background-color", teams.left.side == "ct" ? COLOR_NEW_CT : COLOR_NEW_T);
   $("#right_team #alert #alert_pole_left").css("background-color", teams.right.side == "ct" ? COLOR_NEW_CT : COLOR_NEW_T);
   $("#match_pole_1").css("background-color", teams.left.side == "ct" ? COLOR_NEW_CT : COLOR_NEW_T);
@@ -172,12 +180,10 @@ function updateLeague() {
   //$("#players_left #box_image").attr("src", _left_image);
   $("#players_left #main_primary").text(_left_primary);
   $("#players_left #main_secondary").text(_left_secondary);
+  $("#game_type_mur4sh").text(_game_type);
   //$("#players_right #box_image").attr("src", _right_image);
   //$("#players_right #main_primary").text(_right_primary);
   //$("#players_right #main_secondary").text(_right_secondary);
-
-  $("#main_left_title_mur4sh").text(_first_team_upc);
-  $("#main_right_title_mur4sh").text(_second_team_upc);
 }
 
 function updateRoundNow(round, map) {
@@ -615,6 +621,7 @@ function fillObserved(obs) {
 
   $("#obs_alias_text").text(obs.name);
   $("#obs_alias_text").css("color", team_color);
+  $("#obs_lane_under").css("background-color", team_color);
   if (obs.real_name && obs.real_name != obs.name) {
     $("#obs_realname_text").text(obs.real_name);
   } else {
@@ -678,10 +685,11 @@ function fillObserved(obs) {
     $("#obs_health_text").css("color", COLOR_RED);
   } else if (stats.health > 20) {
     $("#obs_health_img").addClass("health_full_" + obs.team);
-    $("#obs_health_text").css("color", COLOR_WHITE);
+    $("#obs_health_text").css("color", team_color);
   }
 
   $("#obs_armor_text").text(stats.armor);
+  $("#obs_armor_text").css("color", team_color);
   $("#obs_armor_img").removeClass();
   if (stats.helmet) {
     if (stats.armor == 0) {
@@ -703,10 +711,17 @@ function fillObserved(obs) {
 
   $("#obs_kills_k").css("color", team_color);
   $("#obs_kills_text").text(stats.kills);
+  $("#obs_kills_text").css("color", team_color);
+
   $("#obs_assists_a").css("color", team_color);
   $("#obs_assists_text").text(stats.assists);
+  $("#obs_assists_text").css("color", team_color);
+
   $("#obs_deaths_d").css("color", team_color);
   $("#obs_deaths_text").text(stats.deaths);
+  $("#obs_deaths_text").css("color", team_color);
+
+  $("#obs_round_kills_text").css("color", team_color);
 
   $("#obs_reserve").css("color", team_color);
 

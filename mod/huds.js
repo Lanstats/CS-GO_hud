@@ -24,6 +24,7 @@ module.exports = {
       config.DisplayPlayerFlags = false;
       config.LeftImage = "";
       config.LeftPrimary = "";
+      config.GameType = "";
       config.LeftSecondary = "";
       config.RightImage = "";
       config.RightPrimary = "";
@@ -162,10 +163,7 @@ module.exports = {
         right_image: config.RightImage,
         right_primary: config.RightPrimary,
         right_secondary: config.RightSecondary,
-        first_team_upc: config.FirstTeamUpcoming,
-        second_team_upc: config.SecondTeamUpcoming,
-        ft_upc_img: config.FirstTeamUpcomingImage,
-        st_upc_img: config.SecondTeamUpcomingImage,
+        game_type: config.GameType,
         hud: hud_dir,
         css: css_dir,
         anim: anim_dir,

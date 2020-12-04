@@ -21,7 +21,7 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url("/fonts/proxima_nova_regular.woff") format('woff');
+  src: url("fonts/proxima_nova_regular.woff") format('woff');/*url("fonts/proxima_nova_regular.ttf") format('ttf');*/
 }
 
 html,
@@ -35,12 +35,12 @@ body {
 
 #top_panel {
   width: 1100px;
-  height: 70px;
+  height: 97px; 
   position: fixed;
-  top: 10px;
+  top: 0px;
   left: 50%;
   transform: translateX(-50%);
-  background-color: var(--main-panel-color);
+  background: url("fonts/top.png");
 }
 
 #left_team {
@@ -64,13 +64,13 @@ body {
   font-family: "Manjari", sans-serif;
   text-align: center;
   vertical-align: text-bottom;
-  line-height: 80px;
-  font-size: 30px;
+  line-height: 72px;
+  font-size: 23px;
   font-weight: bold;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
-  color: var(--dev-purple);
+  color: white
 }
 
 #left_team #main {
@@ -160,19 +160,19 @@ body {
   font-family: "Manjari", sans-serif;
   text-align: center;
   vertical-align: text-bottom;
-  line-height: 80px;
+  line-height: 70px;
   font-size: 30px;
   font-weight: bold;
 }
 
 #left_team #score {
   float: left;
-  color: var(--dev-purple);
+  color: white
 }
 
 #right_team #score {
   float: right;
-  color: var(--dev-purple);
+  color: white
 }
 
 .bar {
@@ -180,7 +180,8 @@ body {
   width: 5px;
   height: 50px;
   top: 10px;
-  background-color: var(--dev-purple);
+  background-color: white
+  display: none;
 }
 
 .block1,
@@ -242,6 +243,7 @@ body {
 #round_timer {
   position: absolute;
   float: left;
+  top:-5px;
   left: 50%;
   transform: translateX(-50%);
   width: 120px;
@@ -258,7 +260,7 @@ body {
   line-height: 70px;
   font-size: 30px;
   font-weight: bold;
-  color: var(--dev-purple);
+  color: white;
 
   animation-duration: 0.25s;
   animation-iteration-count: 1;
@@ -268,7 +270,7 @@ body {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  top: 50px;
+  top: 45px;
   float: left;
   width: 120px;
   height: 20px;
@@ -280,18 +282,36 @@ body {
   font-weight: normal;
 }
 
+#game_type_mur4sh{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 73px;
+  float: left;
+  width: 120px;
+  height: 20px;
+  font-family: "Manjari", sans-serif;
+  text-align: center;
+  vertical-align: text-bottom;
+  line-height: 24px;
+  font-size: 14px;
+  font-weight: normal;
+  color:white;
+}
+
 #alert {
+  right: 22px;
   position: relative;
-  top: 0px;
+  top: 2px;
   width: 355px;
   height: 40px;
-  background-color: var(--sub-panel-color);
+  background-color: rgb(0,0,0,0.4);
 }
 
 #left_team > #alert {
   float: left;
   opacity: 0;
-  color: var(--dev-purple);
+  color: white;
 
   animation-duration: 0.5s;
   animation-iteration-count: 1;
@@ -300,7 +320,7 @@ body {
 #right_team > #alert {
   float: right;
   opacity: 0;
-  color: var(--dev-purple);
+  color: white;
 
   animation-duration: 0.5s;
   animation-iteration-count: 1;
@@ -315,7 +335,7 @@ body {
   vertical-align: text-bottom;
   line-height: 44px;
   font-size: 20px;
-  font-weight: normal;
+  font-weight: 600;
 }
 
 #left_team > #alert > #alert_text {
@@ -332,7 +352,7 @@ body {
   width: 5px;
   height: 30px;
   top: 5px;
-  background-color: var(--dev-purple);
+  background-color: white
 }
 
 #right_team > #alert > #alert_pole_left {
@@ -364,7 +384,7 @@ body {
   position: relative;
   width: 30px;
   height: 30px;
-  background-color: var(--sub-panel-color);
+  background-color: #f4f9ff;
   opacity: 0;
 }
 
@@ -392,7 +412,7 @@ body {
   position: relative;
   width: 5px;
   height: 30px;
-  background-color: var(--dev-purple);
+  background-color: white;
   opacity: 0;
 }
 
@@ -402,6 +422,10 @@ body {
 
 #right_team #kit_bar {
   float: left;
+}
+
+#right_team #score{
+  right:3px;
 }
 
 #timers {
@@ -415,7 +439,8 @@ body {
 
 #bomb_bar {
   width: 320px;
-  height: 10px;
+  height: 3px;
+  top: -9px;
   position: relative;
   background-color: var(--color-bomb);
   opacity: 0;
@@ -425,7 +450,8 @@ body {
 
 #defuse_bar {
   width: 320px;
-  height: 10px;
+  height: 3px;
+  top: -9px;
   position: relative;
   background-color: var(--color-defuse);
   opacity: 0;
@@ -446,7 +472,7 @@ body {
   position: relative;
   width: 310px;
   height: 40px;
-  background-color: var(--sub-panel-color);
+  background-color: rgb(0,0,0,0.4);;
   opacity: 0;
 
   animation-duration: 0.5s;
@@ -460,7 +486,7 @@ body {
   height: 30px;
   top: 5px;
   left: -5px;
-  background-color: var(--dev-purple);
+  background-color: white
 }
 
 #pole_2_middle {
@@ -470,7 +496,7 @@ body {
   height: 30px;
   top: 5px;
   right: -5px;
-  background-color: var(--dev-purple);
+  background-color: white
 }
 
 #alert_text_middle {
@@ -484,7 +510,7 @@ body {
   line-height: 46px;
   font-size: 18px;
   font-weight: normal;
-  color: var(--dev-purple);
+  color: white
 }
 
 #observed {
@@ -500,9 +526,11 @@ body {
   width: 140px;
   height: 140px;
   position: absolute;
+  display:none;
 }
 
 #obs_img {
+  display: none;
   position: relative;
   width: 140px;
   height: 140px;
@@ -516,18 +544,20 @@ body {
 }
 
 #obs_lane2 {
-  width: 480px;
+  background-color: rgba(0,0,0,0.4);
+  /*width: 480px;*/
+  border-radius: 3px 3px 0px 0px;
   height: 50px;
   position: relative;
-  left: 140px;
+  left: 0px;
 }
 
 #obs_team {
   width: 45px;
   height: 50px;
   position: absolute;
-  left: 0px;
-  background-color: var(--main-panel-color);
+  left: 62px;
+  /*background-color:  rgba(54,149,208,0.8);*/
 }
 
 #obs_team_img {
@@ -542,8 +572,8 @@ body {
   width: 250px;
   height: 50px;
   position: absolute;
-  left: 45px;
-  background-color: var(--main-panel-color);
+  left: 180px;
+  /*background-color:  rgba(54,149,208,0.8);*/
 }
 
 #obs_alias_text {
@@ -560,10 +590,11 @@ body {
   text-overflow: ellipsis;
   overflow: visible;
   white-space: nowrap;
-  color: var(--dev-purple);
+  color: #00acff;
 }
 
 #obs_realname_text {
+  display: none;
   width: 240px;
   height: 18px;
   position: relative;
@@ -584,8 +615,8 @@ body {
   width: 45px;
   height: 50px;
   position: absolute;
-  left: 295px;
-  background-color: var(--main-panel-color);
+  left: 420px;
+  /*background-color:  rgba(54,149,208,0.8);*/
 }
 
 #obs_country_img {
@@ -599,6 +630,16 @@ body {
 #obs_lane3 {
   width: 100%;
   height: 50px;
+  background-color: rgba(0,0,0,0.4);
+}
+
+#obs_lane_under{
+  display: block;
+  top: 186px;
+  position: absolute;
+  width: 620px;
+  height: 10px;
+  background-color: #00acff;
 }
 
 #obs_lane3_left_pole {
@@ -607,7 +648,7 @@ body {
   position: absolute;
   left: -5px;
   bottom: 5px;
-  background-color: var(--dev-purple);
+  display: none;
 }
 
 #obs_left_section {
@@ -615,7 +656,6 @@ body {
   height: 50px;
   position: absolute;
   left: 0px;
-  background-color: var(--main-panel-color);
 }
 
 #obs_health_section {
@@ -644,8 +684,8 @@ body {
   vertical-align: text-bottom;
   line-height: 36px;
   font-size: 20px;
-  font-weight: normal;
-  color: var(--white-full);
+  font-weight: 600;
+  color: #00acff
 }
 
 #obs_armor_section {
@@ -674,8 +714,8 @@ body {
   vertical-align: text-bottom;
   line-height: 36px;
   font-size: 20px;
-  font-weight: normal;
-  color: var(--white-full);
+  font-weight: 600;
+  color: #00acff
 }
 
 #obs_middle_section {
@@ -683,7 +723,6 @@ body {
   height: 50px;
   position: absolute;
   left: 140px;
-  background-color: var(--sub-panel-color);
 }
 
 #obs_bomb_kit {
@@ -721,8 +760,8 @@ body {
   vertical-align: text-bottom;
   line-height: 36px;
   font-size: 20px;
-  font-weight: normal;
-  color: var(--white-full);
+  font-weight: 600;
+  color: #00acff
 }
 
 #obs_kills {
@@ -762,7 +801,7 @@ body {
   line-height: 36px;
   font-size: 20px;
   font-weight: bold;
-  color: var(--dev-purple);
+  color: #00acff
 }
 
 #obs_kills_text,
@@ -778,16 +817,16 @@ body {
   vertical-align: text-bottom;
   line-height: 36px;
   font-size: 20px;
-  font-weight: normal;
-  color: var(--white-full);
+  font-weight: 600;
+  color: #00acff
 }
 
 #obs_nades {
   width: 100px;
   height: 50px;
   position: absolute;
-  right: 0px;
-  top: 0px;
+  right: -110px;
+  top: -45px;
 }
 
 #obs_nade1 {
@@ -827,7 +866,6 @@ body {
   height: 50px;
   position: absolute;
   left: 480px;
-  background-color: var(--main-panel-color);
 }
 
 #obs_bullets_section {
@@ -858,7 +896,7 @@ body {
   line-height: 36px;
   font-size: 20px;
   font-weight: normal;
-  color: var(--white-full);
+  color: #00acff
 }
 
 #obs_reserve {
@@ -873,7 +911,7 @@ body {
   line-height: 36px;
   font-size: 20px;
   font-weight: normal;
-  color: var(--dev-purple);
+  color: #00acff
 }
 
 #obs_lane3_right_pole {
@@ -881,8 +919,8 @@ body {
   height: 40px;
   position: absolute;
   left: 620px;
+  display: none;
   bottom: 5px;
-  background-color: var(--dev-purple);
 }
 
 #players_left {
@@ -900,6 +938,7 @@ body {
 }
 
 #box_section {
+  display: none;
   width: 395px;
   height: 600px;
   position: relative;
@@ -924,10 +963,13 @@ body {
 }
 
 #box_top {
-  left: 198px;
+  display: none;
+  border-radius: 3px;
+  position: absolute;
+  left: -420px;
   width: 100%;
   height: 70px;
-  background-color: var(--main-panel-color);
+  background-color: rgba(54,149,206,0.4);
 }
 
 #box_img {
@@ -973,6 +1015,7 @@ body {
 }
 
 #main_primary {
+  border-radius: 3px 3px 0px 0px;
   width: 335px;
   height: 35px;
   left: 10px;
@@ -983,14 +1026,14 @@ body {
   line-height: 48px;
   font-size: 20px;
   font-weight: normal;
-  color: var(--white-full);
+  color: white;
 }
 
 #players_right span{
   font-family: "Manjari", sans-serif;
   font-size: 20px;
   font-weight: normal;
-  color: var(--white-full);
+  color: white
 }
 
 #players_right #main_primary,
@@ -1010,7 +1053,7 @@ body {
   line-height: 34px;
   font-size: 20px;
   font-weight: normal;
-  color: var(--white-full);
+  color: white;
 }
 
 #players_right > #box_section > #box_top{
@@ -1023,14 +1066,14 @@ body {
   background-color: unset !important;
 }
 #players_right > #box_section > #box_top > #box_main {
-  background-color: var(--main-panel-color);
+  background-color:  #f4f9ff;
   right: 3px;
   font-family: "Manjari", sans-serif;
   text-align: center;
   vertical-align: text-bottom;
   font-size: 28px;
   font-weight: normal;
-  color: var(--white-full);
+  color: white;
   min-width: 200px;
   max-width: 300px;
   float: right;
@@ -1090,10 +1133,11 @@ body {
 }
 
 #box_utility {
+  border-radius: 3px;
   width: 100%;
   height: 70px;
   margin-top: 5px;
-  background-color: var(--main-panel-color);
+  background-color:  rgba(0,0,0,0.4);
   display: none;
 }
 
@@ -1109,8 +1153,8 @@ body {
   vertical-align: text-bottom;
   line-height: 23px;
   font-size: 16px;
-  font-weight: normal;
-  color: var(--white-full);
+  font-weight: 600;
+  color: white;
   position: relative;
 }
 
@@ -1120,8 +1164,8 @@ body {
   vertical-align: text-bottom;
   line-height: 23px;
   font-size: 16px;
-  font-weight: normal;
-  color: var(--white-full);
+  font-weight: 600;
+  color: white;
   position: relative;
   top: -23px;
   left: 246px;
@@ -1227,7 +1271,7 @@ body {
   line-height: 56px;
   font-size: 22px;
   font-weight: normal;
-  color: var(--white-full);
+  color: white;
   position: absolute;
   left: 47px;
 }
@@ -1258,7 +1302,7 @@ body {
   line-height: 56px;
   font-size: 22px;
   font-weight: normal;
-  color: var(--white-full);
+  color: white;
   position: absolute;
   left: 47px;
 }
@@ -1289,7 +1333,7 @@ body {
   line-height: 56px;
   font-size: 22px;
   font-weight: normal;
-  color: var(--white-full);
+  color: white;
   position: absolute;
   left: 47px;
 }
@@ -1320,16 +1364,17 @@ body {
   line-height: 56px;
   font-size: 22px;
   font-weight: normal;
-  color: var(--white-full);
+  color: white;
   position: absolute;
   left: 47px;
 }
 
 #box_monetary {
+  border-radius: 3px;
   width: 100%;
   height: 70px;
   margin-top: 5px;
-  background-color: var(--main-panel-color);
+  background-color:  rgba(0,0,0,0.4);
   display: none;
 }
 
@@ -1353,8 +1398,8 @@ body {
   vertical-align: text-bottom;
   line-height: 40px;
   font-size: 16px;
-  font-weight: normal;
-  color: var(--white-full);
+  font-weight: 600;
+  color: white;
   position: relative;
 }
 
@@ -1364,8 +1409,8 @@ body {
   vertical-align: text-bottom;
   line-height: 20px;
   font-size: 22px;
-  font-weight: normal;
-  color: var(--white-full);
+  font-weight: 600;
+  color: rgb(167, 211, 46);
   position: relative;
 }
 
@@ -1375,8 +1420,8 @@ body {
   vertical-align: text-bottom;
   line-height: 40px;
   font-size: 16px;
-  font-weight: normal;
-  color: var(--white-full);
+  font-weight: 600;
+  color: white;
   position: relative;
 }
 
@@ -1386,8 +1431,8 @@ body {
   vertical-align: text-bottom;
   line-height: 20px;
   font-size: 22px;
-  font-weight: normal;
-  color: var(--white-full);
+  font-weight: 600;
+  color: rgb(167, 211, 46);;
   position: relative;
 }
 
@@ -1397,8 +1442,8 @@ body {
   vertical-align: text-bottom;
   line-height: 40px;
   font-size: 16px;
-  font-weight: normal;
-  color: var(--white-full);
+  font-weight: 600;
+  color: white;
   position: relative;
 }
 
@@ -1408,8 +1453,8 @@ body {
   vertical-align: text-bottom;
   line-height: 20px;
   font-size: 22px;
-  font-weight: normal;
-  color: var(--white-full);
+  font-weight: 600;
+  color: rgb(167, 211, 46);
   position: relative;
 }
 
@@ -1526,10 +1571,11 @@ body {
   width: 5px;
   height: 60px;
   top: 5px;
+  display: none;
   position: absolute;
-  background-color: var(--dev-purple);
+  background-color: white
 }
-
+/*rgba(54,149,208,0.9)#fafafa*/
 #players_right .player_side_bar {
   left: 400px;
 }
@@ -1539,11 +1585,18 @@ body {
   height: 70px;
   position: absolute;
   left: 5px;
-  background-color: var(--sub-panel-color);
+  background-color:  rgba(0,0,0,0.4);
+}
+
+#players_left .player_image_holder {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
 }
 
 #players_right .player_image_holder {
   left: 330px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
 
 #player_image {
@@ -1560,18 +1613,21 @@ body {
   width: 325px;
   height: 50%;
   position: absolute;
-  background-color: var(--main-panel-color);
+  background-color:  rgba(0,0,0,0.6);
 }
 
 #players_left .player_section_top {
+  border-radius: 0px 3px 0px 0px;
   left: 75px;
 }
 
 #players_right .player_section_top {
+  border-radius: 3px 0px 0px 0px;
   right: 75px;
 }
 
 .player_health_bar {
+  border-radius: 3px 3px 0px 0px;
   width: 100%;
   height: 100%;
   position: relative;
@@ -1608,7 +1664,7 @@ body {
   font-weight: normal;
   text-align: center;
   position: relative;
-  color: var(--white-full);
+  color: white
 }
 
 .player_alias {
@@ -1636,7 +1692,7 @@ body {
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
-  color: var(--white-full);
+  color: white
 }
 
 #players_left #player_alias_text {
@@ -1691,15 +1747,17 @@ body {
   height: 50%;
   position: absolute;
   top: 50%;
-  background-color: var(--sub-panel-color);
+  background-color:  rgba(0,0,0,0.4);
 }
 
 #players_left .player_section_bottom {
   left: 75px;
+  border-radius: 0px 0px 3px 0px ;
 }
 
 #players_right .player_section_bottom {
   left: 5px;
+  border-radius: 0px 0px 0px 3px ;
 }
 
 .player_armor {
@@ -1763,7 +1821,7 @@ body {
   font-size: 18px;
   font-weight: normal;
   position: relative;
-  color: var(--color-moneys);
+  color: white;
 }
 
 #players_left #player_current_money_text {
@@ -1812,7 +1870,7 @@ body {
   font-size: 20px;
   font-weight: normal;
   position: relative;
-  color: var(--white-full);
+  color: #3695ce;
 }
 
 #players_left #player_round_kills_text {
@@ -2101,11 +2159,13 @@ body {
 }
 
 .player_stats_holder {
+  display: none;
   width: 180px;
   height: 60px;
   position: absolute;
   top: 5px;
-  background-color: var(--main-panel-color);
+  border-radius: 3px;
+  background-color:  #f4f9ff;
   z-index: -1;
 }
 
@@ -2191,7 +2251,7 @@ body {
   line-height: 42px;
   font-size: 20px;
   font-weight: bold;
-  color: var(--dev-purple);
+  color: white
 }
 
 #player_kills_text,
@@ -2206,7 +2266,7 @@ body {
   line-height: 30px;
   font-size: 20px;
   font-weight: normal;
-  color: var(--white-full);
+  color: white;
 }
 
 #player_spent_text {
@@ -2219,7 +2279,7 @@ body {
   vertical-align: text-bottom;
   line-height: 65px;
   font-size: 20px;
-  font-weight: normal;
+  font-weight: 700;
   color: var(--color-bomb);
 }
 
