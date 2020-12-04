@@ -167,6 +167,8 @@ module.exports = {
         map_one: config.Map1,
         map_two: config.Map2,
         map_three: config.Map3,
+        map_four: config.Map4,
+        map_five: config.Map5,
         hud: hud_dir,
         css: css_dir,
         anim: anim_dir,

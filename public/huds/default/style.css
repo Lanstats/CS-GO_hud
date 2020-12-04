@@ -44,6 +44,7 @@ body {
 }
 
 #plank_mur4sh{
+  border-radius: 3px;
   display:flex;
   flex-direction: row;
   font-family: "Manjari", sans-serif;
@@ -58,21 +59,17 @@ body {
   text-transform: uppercase;
 }
 
-#plank_mur4sh div{
-  font-weight: 700;
-}
-
-#plank_map1_mur4sh{
-  margin-left: 30px;
-}
-
-#plank_map3_mur4sh{
-  margin-right: 30px;
-}
-
-#plank_map2_mur4sh{
+#plank_middle_mur4sh{
+  display: flex;
+  flex-direction: row;
   margin-left: auto;
   margin-right: auto;
+}
+
+#plank_middle_mur4sh div{
+  display: block;
+  font-weight: 700;
+  margin-left: 10px;
 }
 
 #left_team {
