@@ -43,6 +43,38 @@ body {
   background: url("fonts/top.png");
 }
 
+#plank_mur4sh{
+  display:flex;
+  flex-direction: row;
+  font-family: "Manjari", sans-serif;
+  width: 360px;
+  height: 25px; 
+  position: fixed;
+  left: 25px;
+  top: 20px;
+  background-color: rgba(0,0,0,0.4);
+  color: rgba(255,255,255,0.5);
+  padding-top: 5px;
+  text-transform: uppercase;
+}
+
+#plank_mur4sh div{
+  font-weight: 700;
+}
+
+#plank_map1_mur4sh{
+  margin-left: 30px;
+}
+
+#plank_map3_mur4sh{
+  margin-right: 30px;
+}
+
+#plank_map2_mur4sh{
+  margin-left: auto;
+  margin-right: auto;
+}
+
 #left_team {
   position: relative;
   float: left;
@@ -556,7 +588,7 @@ body {
   width: 45px;
   height: 50px;
   position: absolute;
-  left: 62px;
+  left: 74px;
   /*background-color:  rgba(54,149,208,0.8);*/
 }
 
@@ -677,8 +709,8 @@ body {
   width: 35px;
   height: 30px;
   position: relative;
-  left: 34px;
-  top: -20px;
+  left: 41px;
+  top: -21px;
   font-family: "Manjari", sans-serif;
   text-align: left;
   vertical-align: text-bottom;
@@ -692,7 +724,7 @@ body {
   width: 70px;
   height: 50px;
   position: absolute;
-  left: 70px;
+  left: 80px;
 }
 
 #obs_armor_img {
@@ -707,8 +739,8 @@ body {
   width: 35px;
   height: 30px;
   position: relative;
-  left: 32px;
-  top: -20px;
+  left: 40px;
+  top: -21px;
   font-family: "Manjari", sans-serif;
   text-align: left;
   vertical-align: text-bottom;
@@ -729,7 +761,7 @@ body {
   width: 30px;
   height: 30px;
   position: absolute;
-  left: 10px;
+  left: 22px;
   top: 10px;
 }
 
@@ -896,7 +928,7 @@ body {
   line-height: 36px;
   font-size: 20px;
   font-weight: normal;
-  color: #00acff
+  color: white;
 }
 
 #obs_reserve {
@@ -1675,11 +1707,11 @@ body {
 }
 
 #players_left .player_alias {
-  left: 40px;
+  left: 45px;
 }
 
 #players_right .player_alias {
-  right: 40px;
+  right: 45px;
 }
 
 #player_alias_text {
@@ -1807,17 +1839,17 @@ body {
 }
 
 #players_left .player_current_money {
-  left: 60px;
+  left: 65px;
 }
 
 #players_right .player_current_money {
-  left: 195px;
+  left: 200px;
 }
 
 #player_current_money_text {
   font-family: "Manjari", sans-serif;
   vertical-align: text-bottom;
-  line-height: 42px;
+  line-height: 38px;
   font-size: 18px;
   font-weight: normal;
   position: relative;
@@ -1841,11 +1873,11 @@ body {
 }
 
 #players_left .player_round_kills {
-  left: 130px;
+  left: 135px;
 }
 
 #players_right .player_round_kills {
-  left: 160px;
+  left: 165px;
 }
 
 #player_skull {
@@ -1866,11 +1898,11 @@ body {
 #player_round_kills_text {
   font-family: "Manjari", sans-serif;
   vertical-align: text-bottom;
-  line-height: 42px;
+  line-height: 38px;
   font-size: 20px;
   font-weight: normal;
   position: relative;
-  color: #3695ce;
+  color:white;
 }
 
 #players_left #player_round_kills_text {
@@ -2138,18 +2170,18 @@ body {
 }
 
 .player_spec {
-  width: 5px;
-  height: 60px;
-  top: 5px;
+  width: 6px;
+  height: 70px;
+  top: 0px;
   position: absolute;
 }
 
 #players_left .player_spec {
-  left: 400px;
+  left: 398px;
 }
 
 #players_right .player_spec {
-  right: 400px;
+  right: 398px;
 }
 
 #player_spec_bar {
@@ -2158,23 +2190,32 @@ body {
   position: relative;
 }
 
+#players_right #player_spec_bar{
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+#players_left #player_spec_bar{
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
 .player_stats_holder {
-  display: none;
   width: 180px;
   height: 60px;
   position: absolute;
   top: 5px;
   border-radius: 3px;
-  background-color:  #f4f9ff;
+  background-color:  rgba(12, 15, 18, 0.6);
   z-index: -1;
 }
 
 #players_left .player_stats_holder {
-  left: 405px;
+  left: 410px;
 }
 
 #players_right .player_stats_holder {
-  right: 405px;
+  right: 410px;
 }
 
 .player_stats {

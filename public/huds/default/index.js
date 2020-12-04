@@ -32,6 +32,7 @@ var start_money = {};
 var round_now = 0;
 var last_round = 0;
 var freezetime = false;
+let map_mur="";
 
 function updatePage(data) {
   var matchup = data.getMatchType();
@@ -47,6 +48,8 @@ function updatePage(data) {
   var map = data.map();
   var previously = data.previously();
   var bomb = data.bomb();
+
+  map_mur=map;
 
   var test_player = data.getPlayer(1);
   if (test_player) {
@@ -181,6 +184,44 @@ function updateLeague() {
   $("#players_left #main_primary").text(_left_primary);
   $("#players_left #main_secondary").text(_left_secondary);
   $("#game_type_mur4sh").text(_game_type);
+  /*let gt="";
+  switch(_game_type){
+    case "Bo1":
+      gt="Best of 1";
+      break;
+    case "Bo3":
+      gt="Best of 3";
+      break;
+    case "Bo5":
+      gt="Best of 5";
+      break;
+  }
+  $("#plank_gt_mur4sh").text(gt);*/
+  let mp =(map_mur.name.match(/[A-Za-z]+[0-9]*$/)[0]).toLowerCase();
+  if(mp == _map_one.toLowerCase()){
+    $("#plank_map1_mur4sh").css("color","white");
+  }else if(mp == _map_two.toLowerCase()){
+    $("#plank_map2_mur4sh").css("color","white");
+  }else if(mp == _map_three.toLowerCase()){
+    $("#plank_map3_mur4sh").css("color","white");
+  }/*
+  switch(mp){
+    case _map_one.toLowerCase():
+      $("#plank_map1_mur4sh").css("font-weight:600;");
+      break;
+    case _map_two.toLowerCase():
+      $("#plank_map2_mur4sh").css("font-weight:600;");
+      break;
+    case _map_three.toLowerCase():
+      $("#plank_map3_mur4sh").css("font-weight:600;");
+      break;
+    default:
+      $("#plank_map1_mur4sh div").css("font-weight:400;");
+      break;
+  }*/
+  $("#plank_map1_mur4sh").text(_map_one);
+  $("#plank_map2_mur4sh").text(_map_two);
+  $("#plank_map3_mur4sh").text(_map_three);
   //$("#players_right #box_image").attr("src", _right_image);
   //$("#players_right #main_primary").text(_right_primary);
   //$("#players_right #main_secondary").text(_right_secondary);
