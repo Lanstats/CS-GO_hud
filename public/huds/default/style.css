@@ -546,7 +546,7 @@ body {
   width: 620px;
   height: 190px;
   position: fixed;
-  bottom: 85px;
+  bottom: 90px;
   left: 50%;
   transform: translateX(-50%);
 }
