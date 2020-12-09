@@ -341,7 +341,7 @@ body {
   float: left;
   opacity: 0;
   color: white;
-
+  left: 23px;
   animation-duration: 0.5s;
   animation-iteration-count: 1;
 }
