@@ -166,7 +166,7 @@ function updateTopPanel() {
   //#endregion
 
   //#region Team Flag
-  if (teams.left.flag && disp_team_flags) {
+  /*if (teams.left.flag && disp_team_flags) {
     $("#left_team #team_flag").css("background-image", "url(/files/img/flags-50/" + teams.left.flag + ".png)");
   } else {
     $("#left_team #team_flag").css("background-image", "");
@@ -175,7 +175,7 @@ function updateTopPanel() {
     $("#right_team #team_flag").css("background-image", "url(/files/img/flags-50/" + teams.right.flag + ".png)");
   } else {
     $("#right_team #team_flag").css("background-image", "");
-  }
+  }*/
   //#endregion
 }
 
@@ -751,7 +751,8 @@ function fillObserved(obs) {
   $("#obs_team_img").attr("src", "/storage/" + _img);
   if (disp_player_flags) {
     if (obs.hasOwnProperty("teamData")) {
-      if (obs.teamData.hasOwnProperty("country_code")) {
+      //console.log(obs.country_code);
+      if (obs.hasOwnProperty("country_code")) {
         $("#obs_country_img").attr("src", "/files/img/flags-50/" + obs.country_code + ".png");
         $("#obs_country_img").css("opacity", 1);
       } else {

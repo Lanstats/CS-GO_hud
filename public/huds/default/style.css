@@ -613,8 +613,8 @@ body {
   font-family: "Manjari", sans-serif;
   text-align: center;
   vertical-align: text-bottom;
-  line-height: 56px;
-  font-size: 22px;
+  line-height: 48px;
+  font-size: 26px;
   font-weight: bold;
   text-overflow: ellipsis;
   overflow: visible;
@@ -623,21 +623,20 @@ body {
 }
 
 #obs_realname_text {
-  display: none;
   width: 240px;
-  height: 18px;
+  height: 28px;
   position: relative;
   left: 5px;
   font-family: "Manjari", sans-serif;
   text-align: center;
   vertical-align: text-bottom;
-  line-height: 28px;
-  font-size: 12px;
+  line-height: 26px;
+  font-size: 18px;
   font-weight: normal;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
-  color: var(--white-dull);
+  color: white;
 }
 
 #obs_country {

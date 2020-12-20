@@ -96,8 +96,8 @@ body {
 	position: absolute;
 	background-image: url("../img/bomb-dropped.png");
 	background-size: contain;
-	height: 2.2vmin;
-	width: 2.2vmin;
+	height: 50px;
+	width: 50px;
 	bottom: -30%;
 	left: -30%;
 	transform: translate(-50%, 50%);
@@ -160,7 +160,7 @@ div.dot.T {
 
 div.dot.bomb {
 	border-radius: 2vmin .4vmin 2vmin 2.4vmin;
-	background: #FF8200;
+	background: #ff3300;
 }
 
 div.dot.active {
