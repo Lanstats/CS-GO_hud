@@ -39,18 +39,23 @@ html
           #plank_map5_mur4sh
       #top_panel
         #left_team
-          #main TEAM NAME
           #logo
             img#team_logo
-          #team_flag
-          #best_of
-            .bar
-            .block1
-            .block2
-            .block3
-            .block4
-            .block5
-          #score 10
+          #main TEAM NAME
+          //#team_flag
+          #section_sb
+            #score 10
+            #best_of
+              //.bar
+              .block1
+              .block2
+              .block3
+              .block4
+              .block5
+          #stage
+            #stage_1 ЭКО 
+            #stage_2 форс
+            #stage_3 закуп
           #alert
             #alert_text
               |ALERT TEXT
@@ -64,21 +69,27 @@ html
             #round_timer_text
               |0:00
           #round_number
-            |Round Number
+            |раунд
           #game_type_mur4sh
+            | Bo3
         #right_team
-          #main TEAM NAME
           #logo
             img#team_logo
-          #team_flag
-          #best_of
-            .bar
-            .block1
-            .block2
-            .block3
-            .block4
-            .block5
-          #score 10
+          #main TEAM NAME
+          //#team_flag
+          #section_sb
+            #score 10
+            #best_of
+              //.bar
+              .block1
+              .block2
+              .block3
+              .block4
+              .block5
+          #stage
+            #stage_3 закуп 
+            #stage_2 форс
+            #stage_1 ЭКО
           #alert
             #alert_pole_left
             #alert_text
@@ -97,10 +108,18 @@ html
             |ALERT TEXT
           #pole_2_middle
       #observed
-        #obs_avatar
-          img#obs_img
         #obs_lane1
+          #obs_health_section
+            #obs_health_img
+            #obs_health_text
+              |100
+          #obs_armor_section
+            #obs_armor_img
+            #obs_armor_text
+              |100
         #obs_lane2
+          #obs_avatar
+            img#obs_img
           #obs_team
             img#obs_team_img
           #obs_alias
@@ -111,49 +130,36 @@ html
           #obs_country
             img#obs_country_img
         #obs_lane3
-          #obs_lane3_left_pole
-          #obs_left_section
-            #obs_health_section
-              #obs_health_img
-              #obs_health_text
-                |100
-            #obs_armor_section
-              #obs_armor_img
-              #obs_armor_text
-                |100
-          #obs_middle_section
-            #obs_bomb_kit
-            #obs_round_kills
-              #obs_skull
-              #obs_round_kills_text
-            #obs_kills
-              #obs_kills_k
-                |K
-              #obs_kills_text
-                |0
-            #obs_assists
-              #obs_assists_a
-                |A
-              #obs_assists_text
-                |0
-            #obs_deaths
-              #obs_deaths_d
-                |D
-              #obs_deaths_text
-                |0
-            #obs_nades
-              #obs_nade1
-              #obs_nade2
-              #obs_nade3
-              #obs_nade4
-          #obs_right_section
-            #obs_bullets_section
+          #obs_bomb_kit
+          //#obs_round_kills
+            #obs_skull
+            #obs_round_kills_text
+          #obs_kills
+            #obs_kills_k
+              |K
+            #obs_kills_text
+              |0
+          #obs_assists
+            #obs_assists_a
+              |A
+            #obs_assists_text
+              |0
+          #obs_deaths
+            #obs_deaths_d
+              |D
+            #obs_deaths_text
+              |0
+          #obs_nades
+            #obs_nade1
+            #obs_nade2
+            #obs_nade3
+            #obs_nade4
+          #obs_bullets_section
             #obs_ammo_section
               #obs_clip
                 |150
               #obs_reserve
                 |/300
-          #obs_lane3_right_pole
         #obs_lane_under
       #players_left
         #box_section
@@ -167,19 +173,26 @@ html
             .box_heading
               #box_heading_text Utility Level
               #box_heading_subtext - Poor
+            .loss_bonus
+              .loss_bonus_text Бонус за раунд
+              .loss_boxes
+                .loss_4
+                .loss_3
+                .loss_2
+                .loss_1
             .box_grenades
               .box_nade_1
                 #util_nade_1
-                #util_nade_1_count x0
+                #util_nade_1_count 0
               .box_nade_2
                 #util_nade_2
-                #util_nade_2_count x0
+                #util_nade_2_count 0
               .box_nade_3
                 #util_nade_3
-                #util_nade_3_count x0
+                #util_nade_3_count 0
               .box_nade_4
                 #util_nade_4
-                #util_nade_4_count x0
+                #util_nade_4_count 0
           #box_monetary
             .box_equip_value
               #equip_text Equipment Value
@@ -187,12 +200,7 @@ html
             .box_team_money
               #money_text Team Money
               #money_value $80000
-            .loss_bonus
-              .loss_boxes
-                .loss_4
-                .loss_3
-                .loss_2
-                .loss_1
+            .loss_bonus_money
               #loss_text Loss Bonus
               #loss_value $1900
         #player_section
@@ -203,15 +211,13 @@ html
                 img#player_image
               .player_section_top
                 .player_health_bar
-                .player_health
-                  #player_health_text 100
                 .player_alias
-                  #player_alias_text 1| Player Name Here
-                .player_weapon_primary
-                  img#player_weapon_primary_img
-              .player_section_bottom
+                  #player_alias_text  Player Name Here
                 .player_armor
                   #player_armor_image
+                .player_health
+                  #player_health_text 100
+              .player_section_bottom
                 .player_bomb_kit
                   #player_bomb_kit_image
                 .player_current_money
@@ -224,6 +230,8 @@ html
                   #player_nade2
                   #player_nade3
                   #player_nade4
+                .player_weapon_primary
+                  img#player_weapon_primary_img
                 .player_weapon_secondary
                   img#player_weapon_secondary_img
               .player_hindered
@@ -233,13 +241,13 @@ html
                   #burning_level
               .player_dead
                 .player_dead_k
-                  #player_dead_kills_k K
+                  #player_dead_kills_k
                   #player_dead_kills_text 99
                 .player_dead_a
-                  #player_dead_assists_a A
+                  #player_dead_assists_a
                   #player_dead_assists_text 99
                 .player_dead_d
-                  #player_dead_deaths_d D
+                  #player_dead_deaths_d
                   #player_dead_deaths_text 99
             .player_spec
               #player_spec_bar
@@ -263,15 +271,13 @@ html
                 img#player_image
               .player_section_top
                 .player_health_bar
-                .player_health
-                  #player_health_text 100
                 .player_alias
-                  #player_alias_text 1| Player Name Here
-                .player_weapon_primary
-                  img#player_weapon_primary_img
-              .player_section_bottom
+                  #player_alias_text  Player Name Here
                 .player_armor
                   #player_armor_image
+                .player_health
+                  #player_health_text 100
+              .player_section_bottom
                 .player_bomb_kit
                   #player_bomb_kit_image
                 .player_current_money
@@ -284,6 +290,8 @@ html
                   #player_nade2
                   #player_nade3
                   #player_nade4
+                .player_weapon_primary
+                  img#player_weapon_primary_img
                 .player_weapon_secondary
                   img#player_weapon_secondary_img
               .player_hindered
@@ -293,13 +301,13 @@ html
                   #burning_level
               .player_dead
                 .player_dead_k
-                  #player_dead_kills_k K
+                  #player_dead_kills_k
                   #player_dead_kills_text 99
                 .player_dead_a
-                  #player_dead_assists_a A
+                  #player_dead_assists_a
                   #player_dead_assists_text 99
                 .player_dead_d
-                  #player_dead_deaths_d D
+                  #player_dead_deaths_d
                   #player_dead_deaths_text 99
             .player_spec
               #player_spec_bar
@@ -323,15 +331,13 @@ html
                 img#player_image
               .player_section_top
                 .player_health_bar
-                .player_health
-                  #player_health_text 100
                 .player_alias
-                  #player_alias_text 1| Player Name Here
-                .player_weapon_primary
-                  img#player_weapon_primary_img
-              .player_section_bottom
+                  #player_alias_text  Player Name Here
                 .player_armor
                   #player_armor_image
+                .player_health
+                  #player_health_text 100
+              .player_section_bottom
                 .player_bomb_kit
                   #player_bomb_kit_image
                 .player_current_money
@@ -344,6 +350,8 @@ html
                   #player_nade2
                   #player_nade3
                   #player_nade4
+                .player_weapon_primary
+                  img#player_weapon_primary_img
                 .player_weapon_secondary
                   img#player_weapon_secondary_img
               .player_hindered
@@ -353,13 +361,13 @@ html
                   #burning_level
               .player_dead
                 .player_dead_k
-                  #player_dead_kills_k K
+                  #player_dead_kills_k
                   #player_dead_kills_text 99
                 .player_dead_a
-                  #player_dead_assists_a A
+                  #player_dead_assists_a
                   #player_dead_assists_text 99
                 .player_dead_d
-                  #player_dead_deaths_d D
+                  #player_dead_deaths_d
                   #player_dead_deaths_text 99
             .player_spec
               #player_spec_bar
@@ -383,15 +391,13 @@ html
                 img#player_image
               .player_section_top
                 .player_health_bar
-                .player_health
-                  #player_health_text 100
                 .player_alias
-                  #player_alias_text 1| Player Name Here
-                .player_weapon_primary
-                  img#player_weapon_primary_img
-              .player_section_bottom
+                  #player_alias_text  Player Name Here
                 .player_armor
                   #player_armor_image
+                .player_health
+                  #player_health_text 100
+              .player_section_bottom
                 .player_bomb_kit
                   #player_bomb_kit_image
                 .player_current_money
@@ -404,6 +410,8 @@ html
                   #player_nade2
                   #player_nade3
                   #player_nade4
+                .player_weapon_primary
+                  img#player_weapon_primary_img
                 .player_weapon_secondary
                   img#player_weapon_secondary_img
               .player_hindered
@@ -413,13 +421,13 @@ html
                   #burning_level
               .player_dead
                 .player_dead_k
-                  #player_dead_kills_k K
+                  #player_dead_kills_k
                   #player_dead_kills_text 99
                 .player_dead_a
-                  #player_dead_assists_a A
+                  #player_dead_assists_a
                   #player_dead_assists_text 99
                 .player_dead_d
-                  #player_dead_deaths_d D
+                  #player_dead_deaths_d
                   #player_dead_deaths_text 99
             .player_spec
               #player_spec_bar
@@ -443,15 +451,13 @@ html
                 img#player_image
               .player_section_top
                 .player_health_bar
-                .player_health
-                  #player_health_text 100
                 .player_alias
-                  #player_alias_text 1| Player Name Here
-                .player_weapon_primary
-                  img#player_weapon_primary_img
-              .player_section_bottom
+                  #player_alias_text  Player Name Here
                 .player_armor
                   #player_armor_image
+                .player_health
+                  #player_health_text 100
+              .player_section_bottom
                 .player_bomb_kit
                   #player_bomb_kit_image
                 .player_current_money
@@ -464,6 +470,8 @@ html
                   #player_nade2
                   #player_nade3
                   #player_nade4
+                .player_weapon_primary
+                  img#player_weapon_primary_img
                 .player_weapon_secondary
                   img#player_weapon_secondary_img
               .player_hindered
@@ -473,13 +481,13 @@ html
                   #burning_level
               .player_dead
                 .player_dead_k
-                  #player_dead_kills_k K
+                  #player_dead_kills_k
                   #player_dead_kills_text 99
                 .player_dead_a
-                  #player_dead_assists_a A
+                  #player_dead_assists_a
                   #player_dead_assists_text 99
                 .player_dead_d
-                  #player_dead_deaths_d D
+                  #player_dead_deaths_d
                   #player_dead_deaths_text 99
             .player_spec
               #player_spec_bar
@@ -515,19 +523,26 @@ html
             .box_heading
               #box_heading_text Utility Level
               #box_heading_subtext - Poor
+            .loss_bonus
+              .loss_bonus_text Бонус за раунд
+              .loss_boxes
+                .loss_4
+                .loss_3
+                .loss_2
+                .loss_1
             .box_grenades
               .box_nade_1
                 #util_nade_1
-                #util_nade_1_count x0
+                #util_nade_1_count 0
               .box_nade_2
                 #util_nade_2
-                #util_nade_2_count x0
+                #util_nade_2_count 0
               .box_nade_3
                 #util_nade_3
-                #util_nade_3_count x0
+                #util_nade_3_count 0
               .box_nade_4
                 #util_nade_4
-                #util_nade_4_count x0
+                #util_nade_4_count 0
           #box_monetary
             .box_equip_value
               #equip_text Equipment Value
@@ -535,12 +550,7 @@ html
             .box_team_money
               #money_text Team Money
               #money_value $80000
-            .loss_bonus
-              .loss_boxes
-                .loss_4
-                .loss_3
-                .loss_2
-                .loss_1
+            .loss_bonus_money
               #loss_text Loss Bonus
               #loss_value $1900
         #player_section
@@ -551,15 +561,13 @@ html
                 img#player_image
               .player_section_top
                 .player_health_bar
-                .player_health
-                  #player_health_text 100
                 .player_alias
-                  #player_alias_text 1| Player Name Here
-                .player_weapon_primary
-                  img#player_weapon_primary_img
-              .player_section_bottom
+                  #player_alias_text  Player Name Here
                 .player_armor
                   #player_armor_image
+                .player_health
+                  #player_health_text 100
+              .player_section_bottom
                 .player_bomb_kit
                   #player_bomb_kit_image
                 .player_current_money
@@ -572,6 +580,8 @@ html
                   #player_nade2
                   #player_nade3
                   #player_nade4
+                .player_weapon_primary
+                  img#player_weapon_primary_img
                 .player_weapon_secondary
                   img#player_weapon_secondary_img
               .player_hindered
@@ -581,13 +591,13 @@ html
                   #flashed_level
               .player_dead
                 .player_dead_k
-                  #player_dead_kills_k K
+                  #player_dead_kills_k
                   #player_dead_kills_text 99
                 .player_dead_a
-                  #player_dead_assists_a A
+                  #player_dead_assists_a
                   #player_dead_assists_text 99
                 .player_dead_d
-                  #player_dead_deaths_d D
+                  #player_dead_deaths_d
                   #player_dead_deaths_text 99
             .player_spec
               #player_spec_bar
@@ -611,15 +621,13 @@ html
                 img#player_image
               .player_section_top
                 .player_health_bar
+                .player_alias
+                  #player_alias_text  Player Name Here
+                .player_armor
+                  #player_armor_image 
                 .player_health
                   #player_health_text 100
-                .player_alias
-                  #player_alias_text 1| Player Name Here
-                .player_weapon_primary
-                  img#player_weapon_primary_img
               .player_section_bottom
-                .player_armor
-                  #player_armor_image
                 .player_bomb_kit
                   #player_bomb_kit_image
                 .player_current_money
@@ -632,6 +640,8 @@ html
                   #player_nade2
                   #player_nade3
                   #player_nade4
+                .player_weapon_primary
+                  img#player_weapon_primary_img
                 .player_weapon_secondary
                   img#player_weapon_secondary_img
               .player_hindered
@@ -641,13 +651,13 @@ html
                   #flashed_level
               .player_dead
                 .player_dead_k
-                  #player_dead_kills_k K
+                  #player_dead_kills_k
                   #player_dead_kills_text 99
                 .player_dead_a
-                  #player_dead_assists_a A
+                  #player_dead_assists_a
                   #player_dead_assists_text 99
                 .player_dead_d
-                  #player_dead_deaths_d D
+                  #player_dead_deaths_d
                   #player_dead_deaths_text 99
             .player_spec
               #player_spec_bar
@@ -671,15 +681,13 @@ html
                 img#player_image
               .player_section_top
                 .player_health_bar
-                .player_health
-                  #player_health_text 100
                 .player_alias
-                  #player_alias_text 1| Player Name Here
-                .player_weapon_primary
-                  img#player_weapon_primary_img
-              .player_section_bottom
+                  #player_alias_text  Player Name Here
                 .player_armor
                   #player_armor_image
+                .player_health
+                  #player_health_text 100
+              .player_section_bottom
                 .player_bomb_kit
                   #player_bomb_kit_image
                 .player_current_money
@@ -692,6 +700,8 @@ html
                   #player_nade2
                   #player_nade3
                   #player_nade4
+                .player_weapon_primary
+                  img#player_weapon_primary_img
                 .player_weapon_secondary
                   img#player_weapon_secondary_img
               .player_hindered
@@ -701,13 +711,13 @@ html
                   #flashed_level
               .player_dead
                 .player_dead_k
-                  #player_dead_kills_k K
+                  #player_dead_kills_k
                   #player_dead_kills_text 99
                 .player_dead_a
-                  #player_dead_assists_a A
+                  #player_dead_assists_a
                   #player_dead_assists_text 99
                 .player_dead_d
-                  #player_dead_deaths_d D
+                  #player_dead_deaths_d
                   #player_dead_deaths_text 99
             .player_spec
               #player_spec_bar
@@ -731,15 +741,13 @@ html
                 img#player_image
               .player_section_top
                 .player_health_bar
-                .player_health
-                  #player_health_text 100
                 .player_alias
-                  #player_alias_text 1| Player Name Here
-                .player_weapon_primary
-                  img#player_weapon_primary_img
-              .player_section_bottom
+                  #player_alias_text  Player Name Here
                 .player_armor
                   #player_armor_image
+                .player_health
+                  #player_health_text 100
+              .player_section_bottom
                 .player_bomb_kit
                   #player_bomb_kit_image
                 .player_current_money
@@ -752,6 +760,8 @@ html
                   #player_nade2
                   #player_nade3
                   #player_nade4
+                .player_weapon_primary
+                  img#player_weapon_primary_img
                 .player_weapon_secondary
                   img#player_weapon_secondary_img
               .player_hindered
@@ -761,13 +771,13 @@ html
                   #flashed_level
               .player_dead
                 .player_dead_k
-                  #player_dead_kills_k K
+                  #player_dead_kills_k
                   #player_dead_kills_text 99
                 .player_dead_a
-                  #player_dead_assists_a A
+                  #player_dead_assists_a
                   #player_dead_assists_text 99
                 .player_dead_d
-                  #player_dead_deaths_d D
+                  #player_dead_deaths_d
                   #player_dead_deaths_text 99
             .player_spec
               #player_spec_bar
@@ -791,15 +801,13 @@ html
                 img#player_image
               .player_section_top
                 .player_health_bar
-                .player_health
-                  #player_health_text 100
                 .player_alias
-                  #player_alias_text 1| Player Name Here
-                .player_weapon_primary
-                  img#player_weapon_primary_img
-              .player_section_bottom
+                  #player_alias_text  Player Name Here
                 .player_armor
                   #player_armor_image
+                .player_health
+                  #player_health_text 100
+              .player_section_bottom
                 .player_bomb_kit
                   #player_bomb_kit_image
                 .player_current_money
@@ -812,6 +820,8 @@ html
                   #player_nade2
                   #player_nade3
                   #player_nade4
+                .player_weapon_primary
+                  img#player_weapon_primary_img
                 .player_weapon_secondary
                   img#player_weapon_secondary_img
               .player_hindered
@@ -821,13 +831,13 @@ html
                   #flashed_level
               .player_dead
                 .player_dead_k
-                  #player_dead_kills_k K
+                  #player_dead_kills_k
                   #player_dead_kills_text 99
                 .player_dead_a
-                  #player_dead_assists_a A
+                  #player_dead_assists_a
                   #player_dead_assists_text 99
                 .player_dead_d
-                  #player_dead_deaths_d D
+                  #player_dead_deaths_d
                   #player_dead_deaths_text 99
             .player_spec
               #player_spec_bar

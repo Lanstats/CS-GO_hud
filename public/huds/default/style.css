@@ -1,58 +1,58 @@
 /* malayalam 
 @font-face {
-  font-family: 'Manjari';
+  font-family: 'Proxima';
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url(https://fonts.gstatic.com/s/manjari/v3/k3kQo8UPMOBO2w1UfcHoLnnA.woff2) format('woff2');
+  src: url(https://fonts.gstatic.com/s/Proxima/v3/k3kQo8UPMOBO2w1UfcHoLnnA.woff2) format('woff2');
   unicode-range: U+0307, U+0323, U+0964-0965, U+0D02-0D7F, U+200C-200D, U+20B9, U+25CC;
 }*/
 /* latin 
 @font-face {
-  font-family: 'Manjari';
+  font-family: 'Proxima';
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url(https://fonts.gstatic.com/s/manjari/v3/k3kQo8UPMOBO2w1UfdnoLg.woff2) format('woff2');
+  src: url(https://fonts.gstatic.com/s/Proxima/v3/k3kQo8UPMOBO2w1UfdnoLg.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }*/
 @font-face {
-  font-family: 'Manjari';
+  font-family: 'Proxima';
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url("fonts/proxima_nova_regular.woff") format('woff');/*url("fonts/proxima_nova_regular.ttf") format('ttf');*/
+  src: url("fonts/proxima_nova_regular.ttf");/*url("fonts/proxima_nova_regular.ttf") format('ttf');*/
 }
 
 html,
 body {
   margin: 0;
   padding: 0;
-  font-family: "Manjari", sans-serif;
+  font-family: "Proxima";
   color: #fafafa;
   background-color: rgba(0, 0, 0, 0);
 }
 
 #top_panel {
-  width: 1100px;
-  height: 97px; 
+  /*width: 1073px;*/
+  height: 95px;
+  display: flex;
+  flex-direction: row;
   position: fixed;
-  top: 0px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: url("fonts/top.png");
+  top: 22px;
+  left: 423px;
+  background-color: rgba(0,0,0,0.5);
 }
 
 #plank_mur4sh{
-  border-radius: 3px;
   display:flex;
   flex-direction: row;
-  font-family: "Manjari", sans-serif;
-  width: 360px;
-  height: 25px; 
+  font-family: "Proxima";
+  width: 358px;
+  height: 24px; 
   position: fixed;
-  left: 13px;
-  top: 17px;
+  left: 37px;
+  top: 18px;
   background-color: rgba(0,0,0,0.4);
   color: rgba(255,255,255,0.5);
   padding-top: 5px;
@@ -72,31 +72,30 @@ body {
   margin-left: 10px;
 }
 
+#section_sb{
+  display: flex;
+  flex-direction: column;
+  width:96px;
+}
+
 #left_team {
   position: relative;
-  float: left;
-  width: 490px;
-  height: 70px;
+  /*width: 465px;*/
 }
 
 #right_team {
   position: relative;
-  float: right;
-  width: 490px;
-  height: 70px;
+  /*width: 465px;*/
 }
 
 #main {
   position: relative;
-  width: 310px;
-  height: 70px;
-  font-family: "Manjari", sans-serif;
+  top: 22px;
+  width: 272px;
+  font-family: "Proxima";
   text-align: center;
-  vertical-align: text-bottom;
-  line-height: 72px;
-  font-size: 23px;
-  font-weight: bold;
-  text-overflow: ellipsis;
+  font-size: 48px;
+  font-weight: normal;
   overflow: hidden;
   white-space: nowrap;
   color: white
@@ -112,8 +111,8 @@ body {
 
 #logo {
   position: relative;
-  width: 80px;
-  height: 70px;
+  width: 96px;
+  height: 95px;
 }
 
 #left_team #logo {
@@ -126,19 +125,16 @@ body {
 
 #team_logo {
   position: relative;
-  width: 60px;
-  height: 60px;
-  top: 5px;
+  width: 96px;
+  height: 95px;
 }
 
 #left_team #team_logo {
   float: left;
-  left: 10px;
 }
 
 #right_team #team_logo {
   float: right;
-  right: 10px;
 }
 
 #team_flag {
@@ -170,28 +166,27 @@ body {
 
 #best_of {
   position: relative;
-  width: 30px;
-  height: 70px;
+  height: 17px;
+  padding-left: 13px;
+  padding-top: 5px;
+  width: 83px;
+  display: flex;
+  flex-direction: row;
+  background-color: rgba(0,0,0,0.5);
 }
 
-#left_team #best_of {
-  float: left;
-}
-
-#right_team #best_of {
-  float: right;
-}
 
 #score {
   position: relative;
-  width: 70px;
-  height: 70px;
-  font-family: "Manjari", sans-serif;
+  padding-top:20px;
+  width: 96px;
+  height: 75px;
+  font-family: "Proxima";
   text-align: center;
   vertical-align: text-bottom;
-  line-height: 70px;
-  font-size: 30px;
-  font-weight: bold;
+  font-size: 48px;
+  font-weight: normal;
+  background-color: rgba(0,0,0,0.5);
 }
 
 #left_team #score {
@@ -218,40 +213,37 @@ body {
 .block3,
 .block4,
 .block5 {
-  width: 10px;
-  height: 10px;
-  background-color: var(--white-dull);
+  width: 8px !important; 
+  height: 8px !important;
+  background-color: white;
   opacity: 0;
+  position: relative;
+  border: 1px solid red;
 }
 
 .block1 {
-  position: absolute;
-  left: 10px;
-  top: 15px;
+  position: relative;
+  left: -1px;
 }
 
 .block2 {
-  position: absolute;
-  left: 10px;
-  top: 30px;
+  position: relative;
+  left: 4px;
 }
 
 .block3 {
-  position: absolute;
+  position: relative;
   left: 10px;
-  top: 45px;
 }
 
 .block4 {
-  position: absolute;
-  left: 10px;
-  top: 22.5px;
+  position: relative;
+  left: 16px;
 }
 
 .block5 {
-  position: absolute;
-  left: 10px;
-  top: 37.5px;
+  position: relative;
+  left: 21px;
 }
 
 #left_team .bar {
@@ -263,91 +255,128 @@ body {
 }
 
 #center_section {
-  position: relative;
-  float: left;
-  width: 120;
-  height: 70px;
+  width: 145px;
+  height: 117px;
 }
 
 #round_timer {
-  position: absolute;
-  float: left;
-  top:-5px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 120px;
-  height: 50px;
+  position: relative;
+  top: 2px;
 }
 
 #round_timer_text {
   position: relative;
-  width: 120px;
-  height: 70px;
-  font-family: "Manjari", sans-serif;
+  font-family: "Proxima";
   text-align: center;
   vertical-align: text-bottom;
-  line-height: 70px;
-  font-size: 30px;
-  font-weight: bold;
+  font-size: 48px;
+  font-weight: normal;
   color: white;
-
   animation-duration: 0.25s;
   animation-iteration-count: 1;
 }
 
 #round_number {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  top: 45px;
-  float: left;
-  width: 120px;
-  height: 20px;
-  font-family: "Manjari", sans-serif;
+  top: 58px;
+  height: 27px;
+  width: 145px;
+  font-family: "Proxima";
   text-align: center;
   vertical-align: text-bottom;
-  line-height: 24px;
-  font-size: 14px;
+  font-size: 26px;
   font-weight: normal;
 }
 
 #game_type_mur4sh{
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  top: 73px;
-  float: left;
-  width: 120px;
-  height: 20px;
-  font-family: "Manjari", sans-serif;
+  background-color: rgba(0,0,0,0.5);
+  position: relative;
+  top: 8px;
+  width: 145px;
+  height: 22px;
+  font-family: "Proxima";
   text-align: center;
-  vertical-align: text-bottom;
-  line-height: 24px;
-  font-size: 14px;
+  font-size: 0px;
   font-weight: normal;
   color:white;
 }
 
-#alert {
-  right: 22px;
+#stage{
+  display:flex;
+  flex-direction: row;
   position: relative;
-  top: 2px;
+  width: 368px;
+  height: 40px;
+  opacity: 1;
+  background-color: rgba(0,0,0,0.5);
+  font-family: "Proxima";
+  text-align: center;
+  font-size: 26px;
+  font-weight: normal;
+  color:white;
+}
+
+#right_team #stage_1{
+  width:122px;
+}
+
+#left_team #stage_1{
+  width:122px;
+  border-right: 2px solid white;
+}
+
+#stage_2{
+  width:122px;
+  border-right: 2px solid white;
+}
+
+#right_team #stage_3{
+  width:122px;
+  border-right: 2px solid white;
+}
+
+#left_team #stage_3{
+  width:122px;
+}
+
+#left_team > #stage {
+  top:-22px;
+  color: white;
+  left: 0px;
+  animation-duration: 0.5s;
+  animation-iteration-count: 1;
+}
+
+#right_team > #stage {
+  top:-22px;
+  right: -96px;
+  color: white;
+
+  animation-duration: 0.5s;
+  animation-iteration-count: 1;
+}
+
+#alert {
+  position: relative;
+  top: 22px;
   width: 355px;
   height: 40px;
-  background-color: rgba(0,0,0,0.4);
+  background-color: rgba(0,0,0,0.5);
 }
 
 #left_team > #alert {
   float: left;
+  top:-22px;
   opacity: 0;
   color: white;
-  left: 23px;
+  left: 0px;
   animation-duration: 0.5s;
   animation-iteration-count: 1;
 }
 
 #right_team > #alert {
   float: right;
+  right: 0px;
+  top:-22px;
   opacity: 0;
   color: white;
 
@@ -359,7 +388,7 @@ body {
   position: relative;
   width: 355px;
   height: 40px;
-  font-family: "Manjari", sans-serif;
+  font-family: "Proxima";
   text-align: center;
   vertical-align: text-bottom;
   line-height: 44px;
@@ -453,55 +482,49 @@ body {
   float: left;
 }
 
-#right_team #score{
-  right:3px;
-}
-
 #timers {
   width: 320px;
   height: 20px;
-  top: 80px;
+  top: 148px;
   position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 790px;
 }
 
 #bomb_bar {
-  width: 320px;
-  height: 3px;
+  width: 337px;
+  height: 9px;
   top: -9px;
   position: relative;
   background-color: var(--color-bomb);
   opacity: 0;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 1;
 }
 
 #defuse_bar {
-  width: 320px;
-  height: 3px;
+  width: 337px;
+  height: 9px;
   top: -9px;
   position: relative;
   background-color: var(--color-defuse);
   opacity: 0;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 1;
 }
 
 #alert_middle_holder {
   position: fixed;
-  width: 310px;
+  width: 338px;
   height: 40px;
-  top: 100px;
+  top: 0px;
   left: 50%;
   transform: translateX(-50%);
 }
 
 #alert_middle {
   position: relative;
-  width: 310px;
+  width: 337px;
+  top:157px;
   height: 40px;
-  background-color: rgba(0,0,0,0.4);;
+  background-color: rgba(0,0,0,0.5);
   opacity: 0;
 
   animation-duration: 0.5s;
@@ -533,7 +556,7 @@ body {
   float: left;
   width: 300px;
   height: 40px;
-  font-family: "Manjari", sans-serif;
+  font-family: "Proxima";
   text-align: center;
   vertical-align: text-bottom;
   line-height: 46px;
@@ -543,79 +566,78 @@ body {
 }
 
 #observed {
-  width: 620px;
-  height: 190px;
+  width: 622px;
+  height: 52px;
   position: fixed;
   bottom: 105px;
   left: 50%;
+  display:flex;
+  flex-direction: row;
+  background-color: rgba(0,0,0,0.5);
   transform: translateX(-50%);
 }
 
 #obs_avatar {
   width: 140px;
   height: 140px;
-  position: absolute;
-  display:none;
+  position: relative;
+  display: block;
+  top:-140px;
+  left: 24px;
 }
 
 #obs_img {
-  display: none;
+  display: block;
   position: relative;
   width: 140px;
   height: 140px;
 }
 
 #obs_lane1 {
-  width: 480px;
-  height: 90px;
+  width: 218px;
   position: relative;
-  left: 140px;
 }
 
 #obs_lane2 {
-  background-color: rgba(0,0,0,0.4);
-  /*width: 480px;*/
   border-radius: 3px 3px 0px 0px;
-  height: 50px;
+  display: flex;
+  flex-direction: column;
   position: relative;
   left: 0px;
+  background-color: rgba(0,0,0,0.5);
+  width: 186px;
 }
 
 #obs_team {
-  width: 45px;
-  height: 50px;
-  position: absolute;
-  left: 74px;
+  width: 22px;
+  height: 18px;
+  position: relative;
+  left: 0px;
+  top:-141px;
   /*background-color:  rgba(54,149,208,0.8);*/
 }
 
 #obs_team_img {
-  width: 40px;
-  height: 40px;
+  width: 22;
+  height: 18;
   position: relative;
   left: 5px;
   top: 5px;
 }
 
 #obs_alias {
-  width: 250px;
-  height: 50px;
-  position: absolute;
-  left: 180px;
-  /*background-color:  rgba(54,149,208,0.8);*/
+  position: relative;
+  left: 0px;
+  top: -157px;
 }
 
 #obs_alias_text {
-  width: 240px;
-  height: 32px;
   position: relative;
-  left: 5px;
-  font-family: "Manjari", sans-serif;
+  font-family: "Proxima";
   text-align: center;
   vertical-align: text-bottom;
-  line-height: 48px;
-  font-size: 26px;
-  font-weight: bold;
+  font-size: 20px;
+  font-weight: normal;
   text-overflow: ellipsis;
   overflow: visible;
   white-space: nowrap;
@@ -623,14 +645,10 @@ body {
 }
 
 #obs_realname_text {
-  width: 240px;
-  height: 28px;
   position: relative;
-  left: 5px;
-  font-family: "Manjari", sans-serif;
+  font-family: "Proxima";
   text-align: center;
   vertical-align: text-bottom;
-  line-height: 36px;
   font-size: 18px;
   font-weight: normal;
   text-overflow: ellipsis;
@@ -640,32 +658,31 @@ body {
 }
 
 #obs_country {
-  width: 45px;
-  height: 50px;
-  position: absolute;
-  left: 420px;
+  width: 22px;
+  height: 18px;
+  position: relative;
+  left: 160px;
+  top:-201px;
   /*background-color:  rgba(54,149,208,0.8);*/
 }
 
 #obs_country_img {
-  width: 40px;
-  height: 27px;
+  width: 22;
+  height: 18;
   position: relative;
-  right: 0px;
-  top: 12px;
 }
 
 #obs_lane3 {
-  width: 100%;
-  height: 50px;
-  background-color: rgba(0,0,0,0.4);
+  width: 218px;
+  display: flex;
+  flex-direction: row;
 }
 
 #obs_lane_under{
   display: block;
-  top: 186px;
+  top: 52px;
   position: absolute;
-  width: 620px;
+  width: 622px;
   height: 10px;
   background-color: #00acff;
 }
@@ -687,10 +704,9 @@ body {
 }
 
 #obs_health_section {
+  top: 6px;
   width: 70px;
-  height: 50px;
   position: absolute;
-  left: 0px;
 }
 
 #obs_health_img {
@@ -698,25 +714,25 @@ body {
   height: 30px;
   position: relative;
   left: 4px;
-  top: 10px;
+  top: 5px;
 }
 
 #obs_health_text {
+  top: -21px;
   width: 35px;
   height: 30px;
   position: relative;
   left: 41px;
-  top: -21px;
-  font-family: "Manjari", sans-serif;
+  font-family: "Proxima";
   text-align: left;
   vertical-align: text-bottom;
-  line-height: 36px;
   font-size: 20px;
   font-weight: 600;
-  color: #00acff
+  color: white;
 }
 
 #obs_armor_section {
+  top: 6px;
   width: 70px;
   height: 50px;
   position: absolute;
@@ -728,22 +744,21 @@ body {
   height: 30px;
   position: relative;
   left: 3px;
-  top: 10px;
+  top: 5px;
 }
 
 #obs_armor_text {
+  top: -21px;
   width: 35px;
   height: 30px;
   position: relative;
   left: 40px;
-  top: -21px;
-  font-family: "Manjari", sans-serif;
+  font-family: "Proxima";
   text-align: left;
   vertical-align: text-bottom;
-  line-height: 36px;
   font-size: 20px;
   font-weight: 600;
-  color: #00acff
+  color: white;
 }
 
 #obs_middle_section {
@@ -756,9 +771,9 @@ body {
 #obs_bomb_kit {
   width: 30px;
   height: 30px;
-  position: absolute;
-  left: 22px;
-  top: 10px;
+  position: relative;
+  left: 5px;
+  top: 11px;
 }
 
 #obs_round_kills {
@@ -783,7 +798,7 @@ body {
   position: absolute;
   top: 0px;
   left: 20px;
-  font-family: "Manjari", sans-serif;
+  font-family: "Proxima";
   text-align: left;
   vertical-align: text-bottom;
   line-height: 36px;
@@ -793,26 +808,20 @@ body {
 }
 
 #obs_kills {
-  width: 50px;
-  height: 50px;
-  position: absolute;
-  left: 92px;
+  position: relative;
+  left: 0px;
   top: 0px;
 }
 
 #obs_assists {
-  width: 50px;
-  height: 50px;
-  position: absolute;
-  left: 142px;
+  position: relative;
+  left: 0px;
   top: 0px;
 }
 
 #obs_deaths {
-  width: 50px;
-  height: 50px;
-  position: absolute;
-  left: 192px;
+  position: relative;
+  left: 0px;
   top: 0px;
 }
 
@@ -823,13 +832,13 @@ body {
   height: 30px;
   position: relative;
   top: 10px;
-  font-family: "Manjari", sans-serif;
+  font-family: "Proxima";
   text-align: right;
   vertical-align: text-bottom;
   line-height: 36px;
   font-size: 20px;
-  font-weight: bold;
-  color: #00acff
+  font-weight: normal;
+  color: white;
 }
 
 #obs_kills_text,
@@ -840,53 +849,49 @@ body {
   position: relative;
   left: 24px;
   top: -20px;
-  font-family: "Manjari", sans-serif;
+  font-family: "Proxima";
   text-align: left;
   vertical-align: text-bottom;
   line-height: 36px;
   font-size: 20px;
-  font-weight: 600;
-  color: #00acff
+  font-weight: 500;
+  color: white;
 }
 
 #obs_nades {
-  width: 100px;
-  height: 50px;
-  position: absolute;
-  right: -110px;
-  top: -45px;
+  left: 15px;
+  top: 20px;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+}
+
+#obs_nades div{
+  margin-right:5px;
 }
 
 #obs_nade1 {
-  width: 25px;
-  height: 30px;
-  position: absolute;
-  left: 75px;
-  top: 8px;
+  width: 16px;
+  height: 16px;
+  position: relative;
 }
 
 #obs_nade2 {
-  width: 25px;
-  height: 30px;
-  position: absolute;
-  left: 50px;
-  top: 8px;
+  width: 16px;
+  height: 16px;
+  position: relative;
 }
 
 #obs_nade3 {
-  width: 25px;
-  height: 30px;
-  position: absolute;
-  left: 25px;
-  top: 8px;
+  width: 16px;
+  height: 16px;
+  position: relative;
 }
 
 #obs_nade4 {
-  width: 25px;
-  height: 30px;
-  position: absolute;
-  left: 0px;
-  top: 8px;
+  width: 16px;
+  height: 16px;
+  position: relative;
 }
 
 #obs_right_section {
@@ -897,6 +902,7 @@ body {
 }
 
 #obs_bullets_section {
+  display:none;
   width: 30px;
   height: 30px;
   position: absolute;
@@ -918,7 +924,7 @@ body {
   position: absolute;
   left: 15px;
 
-  font-family: "Manjari", sans-serif;
+  font-family: "Proxima";
   text-align: right;
   vertical-align: text-bottom;
   line-height: 36px;
@@ -933,7 +939,7 @@ body {
   position: absolute;
   left: 48px;
 
-  font-family: "Manjari", sans-serif;
+  font-family: "Proxima";
   text-align: left;
   vertical-align: text-bottom;
   line-height: 36px;
@@ -976,7 +982,6 @@ body {
 }
 
 #players_left > #box_section {
-  left: 5px;
 }
 
 #players_right > #box_section {
@@ -985,7 +990,7 @@ body {
 
 #player_section {
   width: 100%;
-  height: 370px;
+  height: 434px;
   position: relative;
   top: 5px;
 }
@@ -1048,7 +1053,7 @@ body {
   height: 35px;
   left: 10px;
   position: relative;
-  font-family: "Manjari", sans-serif;
+  font-family: "Proxima";
   text-align: left;
   vertical-align: text-bottom;
   line-height: 48px;
@@ -1058,7 +1063,7 @@ body {
 }
 
 #players_right span{
-  font-family: "Manjari", sans-serif;
+  font-family: "Proxima";
   font-size: 20px;
   font-weight: normal;
   color: white
@@ -1075,7 +1080,7 @@ body {
   height: 50%;
   left: 10px;
   position: relative;
-  font-family: "Manjari", sans-serif;
+  font-family: "Proxima";
   text-align: left;
   vertical-align: text-bottom;
   line-height: 34px;
@@ -1096,7 +1101,7 @@ body {
 #players_right > #box_section > #box_top > #box_main {
   background-color:  #f4f9ff;
   right: 3px;
-  font-family: "Manjari", sans-serif;
+  font-family: "Proxima";
   text-align: center;
   vertical-align: text-bottom;
   font-size: 28px;
@@ -1161,22 +1166,29 @@ body {
 }
 
 #box_utility {
-  border-radius: 3px;
-  width: 100%;
-  height: 70px;
+  width: 363px;
+  height: 63px;
   margin-top: 5px;
   background-color:  rgba(0,0,0,0.4);
-  display: none;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+
+#players_right #box_utility{
+  right: -34px;
+  position: relative;
 }
 
 .box_heading {
   width: 100%;
   height: 20px;
+  display:none;
   position: relative;
 }
 
 #box_heading_text {
-  font-family: "Manjari", sans-serif;
+  font-family: "Proxima";
   text-align: center;
   vertical-align: text-bottom;
   line-height: 23px;
@@ -1187,7 +1199,7 @@ body {
 }
 
 #box_heading_subtext {
-  font-family: "Manjari", sans-serif;
+  font-family: "Proxima";
   text-align: left;
   vertical-align: text-bottom;
   line-height: 23px;
@@ -1200,16 +1212,17 @@ body {
 }
 
 .box_grenades {
-  width: 100%;
-  height: 50px;
   position: relative;
+  top: 20px;
+  left: 10px;
+  padding-left:10px;
+  display: flex;
 }
 
 .box_nade_1 {
-  width: 90px;
-  height: 50px;
-  position: absolute;
-  left: 0px;
+    margin-right: 10px;
+  display: flex;
+  flex-direction: row;
 }
 
 .util_smokegrenade_default {
@@ -1280,121 +1293,106 @@ body {
 }
 
 #util_nade_1 {
-  height: 50px;
-  width: 45px;
+  height: 25px;
+  width: 25px;
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
-  position: absolute;
+  position: relative;
+  background-image: url("/files/img/grenades/weapon_smokegrenade.png");
+  filter: brightness(0) invert(1);
   /* left: 5px; */
   top: -4px;
 }
 
 #util_nade_1_count {
-  height: 50px;
-  width: 45px;
-  font-family: "Manjari", sans-serif;
+  font-family: "Proxima";
   text-align: left;
   vertical-align: text-bottom;
-  line-height: 56px;
-  font-size: 22px;
+  font-size: 20px;
   font-weight: normal;
   color: white;
-  position: absolute;
-  left: 47px;
 }
 
 .box_nade_2 {
-  width: 90px;
-  height: 50px;
-  position: absolute;
-  left: 101px;
+    margin-right: 10px;
+  display: flex;
+  flex-direction: row;
 }
 
 #util_nade_2 {
-  height: 50px;
-  width: 45px;
+  height: 25px;
+  width: 25px;
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
-  position: absolute;
+  position: relative;
+  background-image: url("/files/img/grenades/weapon_molotov.png");
+  filter: brightness(0) invert(1);
   top: -4px;
 }
 
 #util_nade_2_count {
-  height: 50px;
-  width: 45px;
-  font-family: "Manjari", sans-serif;
+  font-family: "Proxima";
   text-align: left;
   vertical-align: text-bottom;
-  line-height: 56px;
-  font-size: 22px;
+  font-size: 20px;
   font-weight: normal;
   color: white;
-  position: absolute;
-  left: 47px;
 }
 
 .box_nade_3 {
-  width: 90px;
-  height: 50px;
-  position: absolute;
-  right: 101px;
+    margin-right: 10px;
+  display: flex;
+  flex-direction: row;
 }
 
 #util_nade_3 {
-  height: 50px;
-  width: 45px;
+  height: 25px;
+  width: 25px;
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
-  position: absolute;
+  position: relative;
+  background-image: url("/files/img/grenades/weapon_flashbang.png");
+  filter: brightness(0) invert(1);
   top: -4px;
 }
 
 #util_nade_3_count {
-  height: 50px;
-  width: 45px;
-  font-family: "Manjari", sans-serif;
+  font-family: "Proxima";
   text-align: left;
   vertical-align: text-bottom;
-  line-height: 56px;
-  font-size: 22px;
+  font-size: 20px;
   font-weight: normal;
   color: white;
-  position: absolute;
-  left: 47px;
 }
 
 .box_nade_4 {
-  width: 90px;
-  height: 50px;
-  position: absolute;
-  right: 0px;
+    margin-right: 10px;
+  display: flex;
+  flex-direction: row;
 }
 
 #util_nade_4 {
-  height: 50px;
-  width: 45px;
+  height: 25px;
+  width: 25px;
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
-  position: absolute;
+  position: relative;
+  background-image: url("/files/img/grenades/weapon_hegrenade.png");
+  filter: brightness(0) invert(1);
   top: -4px;
 }
 
 #util_nade_4_count {
-  height: 50px;
-  width: 45px;
-  font-family: "Manjari", sans-serif;
+  font-family: "Proxima";
   text-align: left;
   vertical-align: text-bottom;
-  line-height: 56px;
-  font-size: 22px;
+  font-size: 20px;
   font-weight: normal;
   color: white;
-  position: absolute;
-  left: 47px;
 }
 
 #box_monetary {
@@ -1421,7 +1419,7 @@ body {
 }
 
 #equip_text {
-  font-family: "Manjari", sans-serif;
+  font-family: "Proxima";
   text-align: center;
   vertical-align: text-bottom;
   line-height: 40px;
@@ -1432,7 +1430,7 @@ body {
 }
 
 #equip_value {
-  font-family: "Manjari", sans-serif;
+  font-family: "Proxima";
   text-align: center;
   vertical-align: text-bottom;
   line-height: 20px;
@@ -1443,7 +1441,7 @@ body {
 }
 
 #money_text {
-  font-family: "Manjari", sans-serif;
+  font-family: "Proxima";
   text-align: center;
   vertical-align: text-bottom;
   line-height: 40px;
@@ -1454,7 +1452,7 @@ body {
 }
 
 #money_value {
-  font-family: "Manjari", sans-serif;
+  font-family: "Proxima";
   text-align: center;
   vertical-align: text-bottom;
   line-height: 20px;
@@ -1465,7 +1463,7 @@ body {
 }
 
 #loss_text {
-  font-family: "Manjari", sans-serif;
+  font-family: "Proxima";
   text-align: center;
   vertical-align: text-bottom;
   line-height: 40px;
@@ -1476,7 +1474,7 @@ body {
 }
 
 #loss_value {
-  font-family: "Manjari", sans-serif;
+  font-family: "Proxima";
   text-align: center;
   vertical-align: text-bottom;
   line-height: 20px;
@@ -1500,10 +1498,25 @@ body {
   left: 140px;
 }
 
-.loss_bonus {
+.loss_bonus_money {
   width: 135px;
   height: 70px;
   position: absolute;
+}
+
+.loss_bonus {
+  width: 135px;
+  height: 44px;
+  position: relative;
+  top: 10px;
+}
+
+.loss_bonus_text{
+  font-family: "Proxima";
+  font-size: 16px;
+  color:white;
+  position: relative;
+  text-transform: uppercase;
 }
 
 #players_left .loss_bonus {
@@ -1514,49 +1527,63 @@ body {
   right: 0px;
 }
 
-.loss_boxes {
-  width: 20px;
-  height: 70px;
-  position: absolute;
-}
-
-#players_left .loss_boxes {
+#players_left .loss_bonus_money {
   left: 0px;
 }
 
-#players_right .loss_boxes {
+#players_right .loss_bonus_money {
   right: 0px;
 }
 
-.loss_1 {
-  width: 10px;
-  height: 14px;
-  top: 10px;
+.loss_boxes {
+  float:left;
+  width: 135px;
   position: relative;
+  display: flex;
+  flex-direction: row;
+}
+
+#players_left .loss_bonus {
+  left: 10px;
+}
+
+#players_right .loss_bonus {
+  right: -10px;
+}
+
+.loss_1 {
+  margin-right: 10px;
+  width: 22px;
+  height: 22px;
+  position: relative;
+  border:1px solid gray;
   background-color: var(--white-dull);
 }
 
 .loss_2 {
-  width: 10px;
-  height: 14px;
-  top: 8px;
+  width: 22px;
+  height: 22px;
+  margin-right: 10px;
   position: relative;
+  border:1px solid gray;
   background-color: var(--white-dull);
 }
 
 .loss_3 {
-  width: 10px;
-  height: 14px;
-  top: 6px;
+  width: 22px;
+  height: 22px;
+  margin-right: 10px;
   position: relative;
+  border:1px solid gray;
   background-color: var(--white-dull);
 }
 
 .loss_4 {
-  width: 10px;
-  height: 14px;
-  top: 4px;
+  margin-right: 10px;
+  width: 22px;
+  height: 22px;
   position: relative;
+  border:1px solid gray;
   background-color: var(--white-dull);
 }
 
@@ -1571,7 +1598,7 @@ body {
 #players_right .loss_2,
 #players_right .loss_3,
 #players_right .loss_4 {
-  left: 10px;
+  left: 0px;
 }
 
 #player1,
@@ -1580,13 +1607,12 @@ body {
 #player4,
 #player5 {
   width: 100%;
-  height: 70px;
+  height: 86px;
   position: relative;
-  margin-bottom: 5px;
 }
 
 .player_main_holder {
-  width: 405px;
+  width: 363px;
   height: 70px;
   position: absolute;
 }
@@ -1609,11 +1635,9 @@ body {
 }
 
 .player_image_holder {
-  width: 70px;
-  height: 70px;
+  width: 86px;
+  height: 86px;
   position: absolute;
-  left: 5px;
-  background-color:  rgba(0,0,0,0.4);
 }
 
 #players_left .player_image_holder {
@@ -1629,8 +1653,8 @@ body {
 
 #player_image {
   position: relative;
-  width: 70px;
-  height: 70px;
+  width: 86px;
+  height: 86px;
 }
 
 #player_image.dead {
@@ -1638,26 +1662,24 @@ body {
 }
 
 .player_section_top {
-  width: 325px;
-  height: 50%;
+  width: 363px;
+  height: 27px;
   position: absolute;
   background-color:  rgba(0,0,0,0.6);
 }
 
 #players_left .player_section_top {
-  border-radius: 0px 3px 0px 0px;
-  left: 75px;
+
 }
 
 #players_right .player_section_top {
-  border-radius: 3px 0px 0px 0px;
-  right: 75px;
+  right: -37px;
 }
 
 .player_health_bar {
   border-radius: 3px 3px 0px 0px;
   width: 100%;
-  height: 100%;
+  height: 27px;
   position: relative;
 }
 
@@ -1672,49 +1694,48 @@ body {
 .player_health {
   width: 40px;
   height: 100%;
-  position: absolute;
+  position: relative;
   top: 0px;
 }
 
 #players_left .player_health {
-  left: 0px;
+  left: 300px;
 }
 
 #players_right .player_health {
-  left: 285px;
+  left: 20;
+  top: -18px;
 }
 
 #player_health_text {
-  font-family: "Manjari", sans-serif;
+  font-family: "Proxima";
   vertical-align: text-bottom;
-  line-height: 40px;
   font-size: 20px;
   font-weight: normal;
   text-align: center;
   position: relative;
-  color: white
+  color: white;
+  top: -25px;
 }
 
 .player_alias {
   width: 185px;
-  height: 100%;
   position: absolute;
-  top: 0px;
+  top: -1px;
 }
 
 #players_left .player_alias {
-  left: 45px;
+  left: 83px;
 }
 
 #players_right .player_alias {
-  right: 45px;
+  right: 83px;
 }
 
 #player_alias_text {
-  font-family: "Manjari", sans-serif;
+  font-family: "Proxima";
   vertical-align: text-bottom;
-  line-height: 40px;
-  font-size: 20px;
+  font-size: 23px;
   font-weight: normal;
   position: relative;
   text-overflow: ellipsis;
@@ -1724,7 +1745,7 @@ body {
 }
 
 #players_left #player_alias_text {
-  text-align: left;
+  left:10px;
 }
 
 #players_right #player_alias_text {
@@ -1771,36 +1792,36 @@ body {
 }
 
 .player_section_bottom {
-  width: 325px;
-  height: 50%;
-  position: absolute;
-  top: 50%;
+  width: 363px;
+  height: 59px;
+  position: relative;
+  top: 27px;
   background-color:  rgba(0,0,0,0.4);
 }
 
 #players_left .player_section_bottom {
-  left: 75px;
-  border-radius: 0px 0px 3px 0px ;
 }
 
 #players_right .player_section_bottom {
-  left: 5px;
-  border-radius: 0px 0px 0px 3px ;
+  left: 37px;
 }
 
 .player_armor {
-  width: 25px;
-  height: 25px;
-  top: 5px;
-  position: absolute;
+  width: 18px;
+  height: 18px;
+  top: -23px;
+  position: relative;
 }
 
 #players_left .player_armor {
-  left: 5px;
+  left: -68px;
+  float: right;
 }
 
 #players_right .player_armor {
-  left: 295px;
+  left: 67px;
+  float: left;
+  top: -30px;
 }
 
 #player_armor_image {
@@ -1816,7 +1837,8 @@ body {
 }
 
 #players_left .player_bomb_kit {
-  left: 32px;
+  left: 265px;
+  top: 24px;
 }
 
 #players_right .player_bomb_kit {
@@ -1835,31 +1857,29 @@ body {
 }
 
 #players_left .player_current_money {
-  left: 65px;
+  left: 85px;
 }
 
 #players_right .player_current_money {
-  left: 200px;
+  left: 222px;
 }
 
 #player_current_money_text {
-  font-family: "Manjari", sans-serif;
+  font-family: "Proxima";
   vertical-align: text-bottom;
-  line-height: 38px;
-  font-size: 18px;
+  top:5px;
+  font-size: 20px;
   font-weight: normal;
   position: relative;
   color: white;
 }
 
 #players_left #player_current_money_text {
-  text-align: left;
-  left: 1px;
+  left: 10px;
 }
 
 #players_right #player_current_money_text {
-  text-align: left;
-  left: 7px;
+
 }
 
 .player_round_kills {
@@ -1892,7 +1912,7 @@ body {
 }
 
 #player_round_kills_text {
-  font-family: "Manjari", sans-serif;
+  font-family: "Proxima";
   vertical-align: text-bottom;
   line-height: 38px;
   font-size: 20px;
@@ -1983,6 +2003,7 @@ body {
 }
 
 .player_weapon_secondary {
+  display: none;
   width: 60px;
   height: 25px;
   position: relative;
@@ -2017,6 +2038,7 @@ body {
 }
 
 .player_hindered {
+  display:none;
   width: 80px;
   height: 70px;
   position: absolute;
@@ -2101,20 +2123,23 @@ body {
 
 .player_dead {
   width: 100px;
-  height: 70px;
-  position: absolute;
+  position: relative;
   opacity: 0;
+  top: -5px;
+  left: -169px;
 }
 
 #players_left .player_dead {
-  right: 5px;
+  float:right;
 }
 
 #players_right .player_dead {
-  left: 5px;
+  left: 35px;
 }
 
 .player_dead_k {
+  display: flex;
+  flex-direction: row;
   width: 32px;
   height: 100%;
   position: absolute;
@@ -2122,6 +2147,8 @@ body {
 }
 
 .player_dead_a {
+  display: none;
+  flex-direction: row;
   width: 32px;
   height: 100%;
   position: absolute;
@@ -2129,40 +2156,56 @@ body {
 }
 
 .player_dead_d {
+  display: flex;
+  flex-direction: row;
   width: 32px;
   height: 100%;
+  margin-left:25px;
   position: absolute;
-  left: 68px;
+  left: 37px;
+}
+
+#player_dead_kills_k{
+  width: 21px;
+  height: 21px;
+  object-fit: fill;
+  background:url("/files/img/elements/killed.png");
+}
+
+#player_dead_deaths_d{
+  width: 21px;
+  height: 17px;
+  left:5px;
+  object-fit: fill;
+  background:url("/files/img/elements/skull_v2.png");
 }
 
 #player_dead_kills_k,
 #player_dead_assists_a,
 #player_dead_deaths_d {
-  width: 32px;
-  height: 35px;
+  width: 21px;
+  height: 17px;
+  top: 3px;
   position: relative;
-  font-family: "Manjari", sans-serif;
-  text-align: center;
-  vertical-align: text-bottom;
-  line-height: 42px;
-  font-size: 20px;
-  font-weight: bold;
-  color: var(--white-half);
 }
 
 #player_dead_kills_text,
 #player_dead_assists_text,
 #player_dead_deaths_text {
   width: 32px;
+  left: 5px;
   height: 35px;
   position: relative;
-  font-family: "Manjari", sans-serif;
+  font-family: "Proxima";
   text-align: center;
   vertical-align: text-bottom;
-  line-height: 40px;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: normal;
   color: var(--white-half);
+}
+
+#player_dead_deaths_text{
+  left:10px;
 }
 
 .player_spec {
@@ -2282,12 +2325,12 @@ body {
   width: 32px;
   height: 30px;
   position: relative;
-  font-family: "Manjari", sans-serif;
+  font-family: "Proxima";
   text-align: center;
   vertical-align: text-bottom;
   line-height: 42px;
   font-size: 20px;
-  font-weight: bold;
+  font-weight: normal;
   color: white
 }
 
@@ -2297,7 +2340,7 @@ body {
   width: 32px;
   height: 30px;
   position: relative;
-  font-family: "Manjari", sans-serif;
+  font-family: "Proxima";
   text-align: center;
   vertical-align: text-bottom;
   line-height: 30px;
@@ -2311,7 +2354,7 @@ body {
   height: 60px;
   position: relative;
   left: 5px;
-  font-family: "Manjari", sans-serif;
+  font-family: "Proxima";
   text-align: left;
   vertical-align: text-bottom;
   line-height: 65px;

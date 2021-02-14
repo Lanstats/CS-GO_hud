@@ -274,7 +274,7 @@ function updateLeague() {
 
 function updateRoundNow(round, map) {
   round_now = map.round + (round.phase == "over" || round.phase == "intermission" ? 0 : 1);
-  $("#round_number").text("Round " + round_now + " / 30");
+  $("#round_number").text("Раунд " + round_now + " / 30");
   if ((round.phase == "freezetime" && !freezetime) || round_now != last_round) {
     start_money = {};
   }
@@ -701,8 +701,8 @@ function fillObserved(obs) {
   let weapons = obs.weapons;
   team_color = obs.team == "CT" ? COLOR_NEW_CT : COLOR_NEW_T;
   //#region Poles
-  $("#obs_lane3_left_pole").css("background-color", team_color);
-  $("#obs_lane3_right_pole").css("background-color", team_color);
+  //$("#obs_lane3_left_pole").css("background-color", team_color);
+  //$("#obs_lane3_right_pole").css("background-color", team_color);
   //#endregion
 
   $("#obs_alias_text").text(obs.name);
@@ -855,14 +855,14 @@ function fillObserved(obs) {
     $("#obs_bomb_kit").addClass("obs_kit");
   }
 
-  skull_color = obs.team == "CT" ? "CT" : "T";
+  /*skull_color = obs.team == "CT" ? "CT" : "T";
   $("#obs_round_kills #obs_skull").removeClass();
   if (stats.round_kills > 0) {
     $("#obs_round_kills #obs_skull").addClass("obs_skull_" + skull_color);
     $("#obs_round_kills #obs_round_kills_text").text(stats.round_kills);
   } else {
     $("#obs_round_kills #obs_round_kills_text").text("");
-  }
+  }*/
 }
 
 function updatePlayers(players, observed, phase, previously) {
