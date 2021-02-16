@@ -1,12 +1,12 @@
 //const COLOR_CT = "rgba(87, 136, 168, 1.0)";
-const COLOR_CT = "rgb(90, 184, 244)";
+const COLOR_CT = "#3695ce";
 //const COLOR_T = "rgba(193, 149, 17, 1.0)";
 const COLOR_T = "rgb(245,172,41)";
 //#df2451
 //F4F9FF
 const COLOR_WARM_WHITE = "F4F9FF";
 //const COLOR_NEW_CT = "rgba(90, 184, 244, 1.0)";
-const COLOR_NEW_CT = "rgb(90, 184, 244)";
+const COLOR_NEW_CT = "#3580ed";
 //const COLOR_NEW_T = "rgba(240, 201, 65, 1.0)";
 const COLOR_NEW_T = "rgb(245,172,41)";
 const COLOR_RED = "rgba(242, 34, 34, 1.0)";
@@ -86,42 +86,54 @@ function setupBestOf(matchup, match) {
     if (matchup == "bo1") {
       $("#left_team .block2")
         .css("opacity", "1")
-        .css("background-color", match.team_1.map_score >= 1 ? COLOR_WHITE : "");
+        .css("background-color", match.team_1.map_score >= 1 ? COLOR_WHITE : "")
+        .css("border", "1px solid "+match.team_1.map_score >= 1 ? COLOR_WHITE : "");
       $("#right_team .block2")
         .css("opacity", "1")
-        .css("background-color", match.team_2.map_score >= 1 ? COLOR_WHITE : "");
+        .css("background-color", match.team_2.map_score >= 1 ? COLOR_WHITE : "")
+        .css("border", "1px solid "+match.team_1.map_score >= 1 ? COLOR_WHITE : "");
     } else if (matchup == "bo3") {
       $("#left_team .block4")
         .css("opacity", "1")
-        .css("background-color", match.team_1.map_score >= 1 ? COLOR_WHITE : "");
+        .css("background-color", match.team_1.map_score >= 1 ? COLOR_WHITE : "")
+        .css("border", "1px solid "+match.team_1.map_score >= 1 ? COLOR_WHITE : "");
       $("#left_team .block5")
         .css("opacity", "1")
-        .css("background-color", match.team_1.map_score >= 2 ? COLOR_WHITE : "");
+        .css("background-color", match.team_1.map_score >= 2 ? COLOR_WHITE : "")
+        .css("border", "1px solid "+match.team_1.map_score >= 1 ? COLOR_WHITE : "");
       $("#right_team .block4")
         .css("opacity", "1")
-        .css("background-color", match.team_2.map_score >= 1 ? COLOR_WHITE : "");
+        .css("background-color", match.team_2.map_score >= 1 ? COLOR_WHITE : "")
+        .css("border", "1px solid "+match.team_1.map_score >= 1 ? COLOR_WHITE : "");
       $("#right_team .block5")
         .css("opacity", "1")
-        .css("background-color", match.team_2.map_score >= 2 ? COLOR_WHITE : "");
+        .css("background-color", match.team_2.map_score >= 2 ? COLOR_WHITE : "")
+        .css("border", "1px solid "+match.team_1.map_score >= 1 ? COLOR_WHITE : "");
     } else if (matchup == "bo5") {
       $("#left_team .block1")
         .css("opacity", "1")
-        .css("background-color", match.team_1.map_score >= 1 ? COLOR_WHITE : "");
+        .css("background-color", match.team_1.map_score >= 1 ? COLOR_WHITE : "")
+        .css("border", "1px solid "+match.team_1.map_score >= 1 ? COLOR_WHITE : "");
       $("#left_team .block2")
         .css("opacity", "1")
-        .css("background-color", match.team_1.map_score >= 2 ? COLOR_WHITE : "");
+        .css("background-color", match.team_1.map_score >= 2 ? COLOR_WHITE : "")
+        .css("border", "1px solid "+match.team_1.map_score >= 1 ? COLOR_WHITE : "");
       $("#left_team .block3")
         .css("opacity", "1")
-        .css("background-color", match.team_1.map_score >= 3 ? COLOR_WHITE : "");
+        .css("background-color", match.team_1.map_score >= 3 ? COLOR_WHITE : "")
+        .css("border", "1px solid "+match.team_1.map_score >= 1 ? COLOR_WHITE : "");
       $("#right_team .block1")
         .css("opacity", "1")
-        .css("background-color", match.team_2.map_score >= 1 ? COLOR_WHITE : "");
+        .css("background-color", match.team_2.map_score >= 1 ? COLOR_WHITE : "")
+        .css("border", "1px solid "+match.team_1.map_score >= 1 ? COLOR_WHITE : "");
       $("#right_team .block2")
         .css("opacity", "1")
-        .css("background-color", match.team_2.map_score >= 2 ? COLOR_WHITE : "");
+        .css("background-color", match.team_2.map_score >= 2 ? COLOR_WHITE : "")
+        .css("border", "1px solid "+match.team_1.map_score >= 1 ? COLOR_WHITE : "");
       $("#right_team .block3")
         .css("opacity", "1")
-        .css("background-color", match.team_2.map_score >= 3 ? COLOR_WHITE : "");
+        .css("background-color", match.team_2.map_score >= 3 ? COLOR_WHITE : "")
+        .css("border", "1px solid "+match.team_1.map_score >= 1 ? COLOR_WHITE : "");
     }
   }
 }
@@ -184,7 +196,7 @@ function updateLeague() {
   $("#players_left #main_primary").text(_left_primary);
   $("#players_left #main_secondary").text(_left_secondary);
   $("#game_type_mur4sh").text(_game_type);
-  /*let gt="";
+  let gt="";
   switch(_game_type){
     case "Bo1":
       gt="Best of 1";
@@ -193,10 +205,11 @@ function updateLeague() {
       gt="Best of 3";
       break;
     case "Bo5":
-      gt="Best of 5";
+      gt="Bo5"
+      $(".planks_mur4sh").css("margin-left","8px");
       break;
   }
-  $("#plank_gt_mur4sh").text(gt);*/
+  $("#plank_type_mur4sh").text(gt);
   let mp =(map_mur.name.match(/[A-Za-z]+[0-9]*$/)[0]).toLowerCase();
   if(_game_type == "Bo3"){
     $("#plank_map1_mur4sh").text(_map_one);
@@ -274,7 +287,7 @@ function updateLeague() {
 
 function updateRoundNow(round, map) {
   round_now = map.round + (round.phase == "over" || round.phase == "intermission" ? 0 : 1);
-  $("#round_number").text("Раунд " + round_now + " / 30");
+  $("#round_number").text("Раунд " + round_now + "/30");
   if ((round.phase == "freezetime" && !freezetime) || round_now != last_round) {
     start_money = {};
   }
@@ -335,8 +348,8 @@ function updateStateFreezetime(phase, previously) {
     showPlayerStats(phase);
     $("#players_left #box_utility").slideDown(500);
     $("#players_right #box_utility").slideDown(500);
-    $("#players_left #box_monetary").slideDown(500);
-    $("#players_right #box_monetary").slideDown(500);
+    //$("#players_left #box_monetary").slideDown(500);
+    //$("#players_right #box_monetary").slideDown(500);
     $("#players_left #box_top").slideUp(500);
     $("#round_timer_text").css("color", COLOR_GRAY);
     if (previously.hasOwnProperty("round")) {
@@ -571,7 +584,9 @@ function updateStateDefuse(phase, bomb, players) {
             }
           });
           // 13 characters for name
-          showAlertSlide(defusing_side, COLOR_NEW_CT, defuser.name + " is defusing the bomb");
+          let name;
+          defuser.name.length>15?name=defuser.name.substr(0,15)+"...":name=defuser.name;
+          showAlertSlide(defusing_side, COLOR_NEW_CT, name + " is defusing the bomb");
         }
       }
     }
@@ -585,8 +600,8 @@ function updateStateLive(phase, bomb, players, previously) {
     resetBomb();
     hidePlayerStats(phase, previously);
     if (checkPrev(previously, "freezetime")) {
-      $("#players_left #box_monetary").slideUp(500);
-      $("#players_right #box_monetary").slideUp(500);
+      //$("#players_left #box_monetary").slideUp(500);
+      //$("#players_right #box_monetary").slideUp(500);
       $("#players_left #box_top").slideDown(500);
       //$("#players_right #box_top").slideUp(500);
     }
@@ -621,7 +636,9 @@ function updateStateLive(phase, bomb, players, previously) {
           }
         });
         // 13 characters for name
-        showAlertSlide(side, COLOR_NEW_T, planter.name + " is planting the bomb");
+        let name;
+        planter.name.length>15?name=planter.name.substr(0,15)+"...":name=planter.name;
+        showAlertSlide(side, COLOR_NEW_T, name + " is planting the bomb");
       }
     }
   }
@@ -699,13 +716,14 @@ function updateObserved(observed) {
 function fillObserved(obs) {
   let stats = obs.getStats();
   let weapons = obs.weapons;
-  team_color = obs.team == "CT" ? COLOR_NEW_CT : COLOR_NEW_T;
+  team_color = obs.team == "CT" ? COLOR_CT : COLOR_T;
   //#region Poles
   //$("#obs_lane3_left_pole").css("background-color", team_color);
   //$("#obs_lane3_right_pole").css("background-color", team_color);
   //#endregion
-
-  $("#obs_alias_text").text(obs.name);
+  let name;
+  obs.name.length>12?name=obs.name.substr(0,12)+"...":name=obs.name;
+  $("#obs_alias_text").text(name);
   $("#obs_alias_text").css("color", team_color);
   $("#obs_lane_under").css("background-color", team_color);
   if (obs.real_name && obs.real_name != obs.name) {
@@ -768,47 +786,47 @@ function fillObserved(obs) {
   $("#obs_health_text").text(stats.health);
   $("#obs_health_img").removeClass();
   if (stats.health <= 20) {
-    $("#obs_health_img").addClass("health_" + obs.team);
+    $("#obs_health_img").addClass("health_default"); //+ obs.team);
     $("#obs_health_text").css("color", COLOR_RED);
   } else if (stats.health > 20) {
-    $("#obs_health_img").addClass("health_full_" + obs.team);
-    $("#obs_health_text").css("color", team_color);
+    $("#obs_health_img").addClass("health_full_default"); //+ obs.team);
+    $("#obs_health_text").css("color","white")//, team_color);
   }
 
   $("#obs_armor_text").text(stats.armor);
-  $("#obs_armor_text").css("color", team_color);
+  $("#obs_armor_text").css("color","white")//, team_color);
   $("#obs_armor_img").removeClass();
   if (stats.helmet) {
     if (stats.armor == 0) {
-      $("#obs_armor_img").addClass("armor_none_" + obs.team);
+      $("#obs_armor_img").addClass("armor_none_default")// + obs.team);
     } else if (stats.armor <= 30) {
-      $("#obs_armor_img").addClass("armor_half_helm_" + obs.team);
+      $("#obs_armor_img").addClass("armor_half_helm_default")// + obs.team);
     } else if (stats.armor <= 100) {
-      $("#obs_armor_img").addClass("armor_helm_" + obs.team);
+      $("#obs_armor_img").addClass("armor_helm_default")// + obs.team);
     }
   } else {
     if (stats.armor == 0) {
-      $("#obs_armor_img").addClass("armor_none_" + obs.team);
+      $("#obs_armor_img").addClass("armor_none_default")//" + obs.team);
     } else if (stats.armor <= 30) {
-      $("#obs_armor_img").addClass("armor_half_" + obs.team);
+      $("#obs_armor_img").addClass("armor_half_default")//" + obs.team);
     } else if (stats.armor <= 100) {
-      $("#obs_armor_img").addClass("armor_kev_" + obs.team);
+      $("#obs_armor_img").addClass("armor_kev_default")//" + obs.team);
     }
   }
 
-  $("#obs_kills_k").css("color", team_color);
+  //$("#obs_kills_k").css("color", team_color);
   $("#obs_kills_text").text(stats.kills);
-  $("#obs_kills_text").css("color", team_color);
+  //$("#obs_kills_text").css("color", team_color);
 
-  $("#obs_assists_a").css("color", team_color);
+  //$("#obs_assists_a").css("color", team_color);
   $("#obs_assists_text").text(stats.assists);
-  $("#obs_assists_text").css("color", team_color);
+  //$("#obs_assists_text").css("color", team_color);
 
-  $("#obs_deaths_d").css("color", team_color);
+  //$("#obs_deaths_d").css("color", team_color);
   $("#obs_deaths_text").text(stats.deaths);
-  $("#obs_deaths_text").css("color", team_color);
+  //$("#obs_deaths_text").css("color", team_color);
 
-  $("#obs_round_kills_text").css("color", team_color);
+  //$("#obs_round_kills_text").css("color", team_color);
 
   $("#obs_reserve").css("color", team_color);
 
@@ -963,12 +981,12 @@ function fillPlayer(player, nr, side, observed, phase, previously) {
   }
 
   if (slot >= 1 && slot <= 5) {
-    $top.find("#player_alias_text").text(slot + "| " + player.name);
+    $top.find("#player_alias_text").text(player.name); //slot + "| " + 
   } else {
     if (slot == 10) {
-      $top.find("#player_alias_text").text(player.name + " |0");
+      $top.find("#player_alias_text").text(player.name);// + " |0");
     } else {
-      $top.find("#player_alias_text").text(player.name + " |" + slot);
+      $top.find("#player_alias_text").text(player.name);// + " |" + slot);
     }
   }
 
@@ -986,33 +1004,33 @@ function fillPlayer(player, nr, side, observed, phase, previously) {
     $bottom.find("#player_bomb_kit_image").css("opacity", 0);
     $bottom.find("#player_armor_image").css("opacity", 0);
     $top.find("#player_health_text").css("opacity", 0);
-    $player.find(".player_dead").css("opacity", 1);
+    //$player.find(".player_dead").css("opacity", 1);
     if (side.substr(8) == "left") {
-      $player.find("#player_alias_text").css("left", "-35px");
+      /*$player.find("#player_alias_text").css("left", "-35px");
       $player.find("#player_current_money_text").css("left", "-55px");
       $player.find("#player_skull").css("left", "-55px");
-      $player.find("#player_round_kills_text").css("left", "-35px");
+      $player.find("#player_round_kills_text").css("left", "-35px");*/
     } else if (side.substr(8) == "right") {
-      $player.find("#player_alias_text").css("right", "-35px");
+      /*$player.find("#player_alias_text").css("right", "-35px");
       $player.find("#player_current_money_text").css("left", "65px");
       $player.find("#player_skull").css("right", "-55px");
-      $player.find("#player_round_kills_text").css("right", "-35px");
+      $player.find("#player_round_kills_text").css("right", "-35px");*/
     }
   } else {
     $bottom.find("#player_bomb_kit_image").css("opacity", 1);
     $bottom.find("#player_armor_image").css("opacity", 1);
     $top.find("#player_health_text").css("opacity", 1);
-    $player.find(".player_dead").css("opacity", 0);
+    //$player.find(".player_dead").css("opacity", 0);
     if (side.substr(8) == "left") {
-      $player.find("#player_alias_text").css("left", "0px");
+      /*$player.find("#player_alias_text").css("left", "0px");
       $player.find("#player_current_money_text").css("left", "1px");
       $player.find("#player_skull").css("left", "0px");
-      $player.find("#player_round_kills_text").css("left", "20px");
+      $player.find("#player_round_kills_text").css("left", "20px");*/
     } else if (side.substr(8) == "right") {
-      $player.find("#player_alias_text").css("right", "0px");
+      /*$player.find("#player_alias_text").css("right", "0px");
       $player.find("#player_current_money_text").css("left", "7px");
       $player.find("#player_skull").css("right", "0px");
-      $player.find("#player_round_kills_text").css("right", "20px");
+      $player.find("#player_round_kills_text").css("right", "20px");*/
     }
   }
 
@@ -1092,10 +1110,10 @@ function fillPlayer(player, nr, side, observed, phase, previously) {
     $bottom.find("#player_round_kills_text").text(stats.round_kills);
   }
 
-  $top
+  $bottom
     .find("#player_weapon_primary_img")
     .attr("src", "")
-    .removeClass();
+    .css("display","none");
   $bottom
     .find("#player_weapon_secondary_img")
     .attr("src", "")
@@ -1131,10 +1149,11 @@ function fillPlayer(player, nr, side, observed, phase, previously) {
             .addClass("invert")
             .addClass(view);
         } else {
-          $top
+          $bottom
             .find("#player_weapon_primary_img")
             .attr("src", "/files/img/weapons/" + name + ".png")
             .addClass("invert")
+            .css("display","block")
             .addClass(view);
         }
       }
@@ -1145,10 +1164,11 @@ function fillPlayer(player, nr, side, observed, phase, previously) {
     }
     if (!checkGuns(weapons)) {
       view += side.substr(8) == "right" ? " img-hor" : "";
-      $top
+      $bottom
         .find("#player_weapon_primary_img")
         .attr("src", "/files/img/weapons/" + name + ".png")
         .addClass("invert")
+        .css("display","block")
         .addClass(view);
     }
   }
@@ -1432,6 +1452,29 @@ function updateTeamValues(left, right) {
   $("#players_right #money_text").css("color", right_color);
   $("#players_right #money_value").text("$" + right.team_money);
 
+  if(Number(left.equip_value)<5000){
+    $("#left_team #stage_1").css("background-color", left_color);
+  }else if(Number(left.equip_value)>=5000 && Number(left.equip_value)<=15000){
+    $("#left_team #stage_1").css("background-color", left_color);
+    $("#left_team #stage_2").css("background-color", left_color);
+  }else{
+    $("#left_team #stage_1").css("background-color", left_color);
+    $("#left_team #stage_2").css("background-color", left_color);
+    $("#left_team #stage_3").css("background-color", left_color);
+  }
+
+  if(Number(right.equip_value)<5000){
+    $("#right_team #stage_1").css("background-color", right_color);
+  }else if(Number(right.equip_value)>=5000 && Number(right.equip_value)<=15000){
+    $("#right_team #stage_1").css("background-color", right_color);
+    $("#right_team #stage_2").css("background-color", right_color);
+  }else{
+    $("#right_team #stage_1").css("background-color", right_color);
+    $("#right_team #stage_2").css("background-color", right_color);
+    $("#right_team #stage_3").css("background-color", right_color);
+  }
+
+
   $("#players_left #equip_text").css("color", left_color);
   $("#players_left #equip_value").text("$" + left.equip_value);
   $("#players_right #equip_text").css("color", right_color);
@@ -1449,44 +1492,44 @@ function updateTeamValues(left, right) {
     left_loss = 1400;
   } else if (left.consecutive_round_losses == 1) {
     left_loss = 1900;
-    $("#players_left .loss_1").css("background-color", left_color);
+    $("#players_left .loss_1").css("background-color", "white");
   } else if (left.consecutive_round_losses == 2) {
     left_loss = 2400;
-    $("#players_left .loss_1").css("background-color", left_color);
-    $("#players_left .loss_2").css("background-color", left_color);
+    $("#players_left .loss_1").css("background-color", "white");
+    $("#players_left .loss_2").css("background-color", "white");
   } else if (left.consecutive_round_losses == 3) {
     left_loss = 2900;
-    $("#players_left .loss_1").css("background-color", left_color);
-    $("#players_left .loss_2").css("background-color", left_color);
-    $("#players_left .loss_3").css("background-color", left_color);
+    $("#players_left .loss_1").css("background-color", "white");
+    $("#players_left .loss_2").css("background-color", "white");
+    $("#players_left .loss_3").css("background-color", "white");
   } else if (left.consecutive_round_losses >= 4) {
     left_loss = 3400;
-    $("#players_left .loss_1").css("background-color", left_color);
-    $("#players_left .loss_2").css("background-color", left_color);
-    $("#players_left .loss_3").css("background-color", left_color);
-    $("#players_left .loss_4").css("background-color", left_color);
+    $("#players_left .loss_1").css("background-color", "white");
+    $("#players_left .loss_2").css("background-color", "white");
+    $("#players_left .loss_3").css("background-color", "white");
+    $("#players_left .loss_4").css("background-color", "white");
   }
 
   if (right.consecutive_round_losses == 0) {
     right_loss = 1400;
   } else if (right.consecutive_round_losses == 1) {
     right_loss = 1900;
-    $("#players_right .loss_1").css("background-color", right_color);
+    $("#players_right .loss_1").css("background-color", "white");
   } else if (right.consecutive_round_losses == 2) {
     right_loss = 2400;
-    $("#players_right .loss_1").css("background-color", right_color);
-    $("#players_right .loss_2").css("background-color", right_color);
+    $("#players_right .loss_1").css("background-color", "white");
+    $("#players_right .loss_2").css("background-color", "white");
   } else if (right.consecutive_round_losses == 3) {
     right_loss = 2900;
-    $("#players_right .loss_1").css("background-color", right_color);
-    $("#players_right .loss_2").css("background-color", right_color);
-    $("#players_right .loss_3").css("background-color", right_color);
+    $("#players_right .loss_1").css("background-color", "white");
+    $("#players_right .loss_2").css("background-color", "white");
+    $("#players_right .loss_3").css("background-color", "white");
   } else if (right.consecutive_round_losses >= 4) {
     right_loss = 3400;
-    $("#players_right .loss_1").css("background-color", right_color);
-    $("#players_right .loss_2").css("background-color", right_color);
-    $("#players_right .loss_3").css("background-color", right_color);
-    $("#players_right .loss_4").css("background-color", right_color);
+    $("#players_right .loss_1").css("background-color", "white");
+    $("#players_right .loss_2").css("background-color", "white");
+    $("#players_right .loss_3").css("background-color", "white");
+    $("#players_right .loss_4").css("background-color", "white");
   }
 
   $("#players_left #loss_text").css("color", left_color);
@@ -1635,22 +1678,22 @@ function countNades(left, right) {
   $("#players_left #box_heading_text").css("color", side_left == "CT" ? COLOR_NEW_CT : COLOR_NEW_T);
   $("#players_right #box_heading_text").css("color", side_right == "CT" ? COLOR_NEW_CT : COLOR_NEW_T);
 
-  $("#players_left #util_nade_1_count").text("x" + count_left_smokegrenade);
+  $("#players_left #util_nade_1_count").text("" + count_left_smokegrenade);
   $("#players_left #util_nade_1").addClass("util_smokegrenade_" + side_left);
-  $("#players_left #util_nade_2_count").text("x" + (count_left_incgrenade + count_left_molotov));
+  $("#players_left #util_nade_2_count").text("" + (count_left_incgrenade + count_left_molotov));
   $("#players_left #util_nade_2").addClass(side_left == "CT" ? "util_incgrenade_CT" : "util_molotov_T");
-  $("#players_left #util_nade_3_count").text("x" + count_left_flashbang);
+  $("#players_left #util_nade_3_count").text("" + count_left_flashbang);
   $("#players_left #util_nade_3").addClass("util_flashbang_" + side_left);
-  $("#players_left #util_nade_4_count").text("x" + count_left_hegrenade);
+  $("#players_left #util_nade_4_count").text("" + count_left_hegrenade);
   $("#players_left #util_nade_4").addClass("util_hegrenade_" + side_left);
 
-  $("#players_right #util_nade_4_count").text("x" + count_right_smokegrenade);
+  $("#players_right #util_nade_4_count").text("" + count_right_smokegrenade);
   $("#players_right #util_nade_4").addClass("util_smokegrenade_" + side_right);
-  $("#players_right #util_nade_3_count").text("x" + (count_right_incgrenade + count_right_molotov));
+  $("#players_right #util_nade_3_count").text("" + (count_right_incgrenade + count_right_molotov));
   $("#players_right #util_nade_3").addClass(side_right == "CT" ? "util_incgrenade_CT" : "util_molotov_T");
-  $("#players_right #util_nade_2_count").text("x" + count_right_flashbang);
+  $("#players_right #util_nade_2_count").text("" + count_right_flashbang);
   $("#players_right #util_nade_2").addClass("util_flashbang_" + side_right);
-  $("#players_right #util_nade_1_count").text("x" + count_right_hegrenade);
+  $("#players_right #util_nade_1_count").text("" + count_right_hegrenade);
   $("#players_right #util_nade_1").addClass("util_hegrenade_" + side_right);
 }
 

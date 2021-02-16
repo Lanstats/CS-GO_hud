@@ -10,13 +10,13 @@
   "AvatarDirectory": "./public/files/avatars/",
   "SpecialEvent": "SHOWMATCH",
   "LeftImage": "/files/league/league.png",
-  "LeftPrimary": "Первый Киберспортивный Кубок",
-  "LeftSecondary": "Московской Железной Дороги по CS:GO",
+  "LeftPrimary": "Text 1",
+  "LeftSecondary": "Text 2",
   "Map1": "Vertigo",
   "Map2": "Train",
   "Map3": "Nuke",
   "Map4": "Overpass",
   "Map5": "Inferno",
-  "GameType": "Bo3",
+  "GameType": "Bo5",
   "GSIToken": "120987"
 }

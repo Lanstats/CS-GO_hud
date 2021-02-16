@@ -48,10 +48,10 @@ body {
   display:flex;
   flex-direction: row;
   font-family: "Proxima";
-  width: 358px;
+  width: 363px;
   height: 24px; 
   position: fixed;
-  left: 37px;
+  left: 33px;
   top: 18px;
   background-color: rgba(0,0,0,0.4);
   color: rgba(255,255,255,0.5);
@@ -59,16 +59,22 @@ body {
   text-transform: uppercase;
 }
 
+#plank_type_mur4sh{
+  color: white;
+  position: relative;
+  left:-10px;
+}
+
 #plank_middle_mur4sh{
   display: flex;
   flex-direction: row;
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: 10px;
 }
 
-#plank_middle_mur4sh div{
+.planks_mur4sh{
+  text-overflow: ellipsis;
   display: block;
-  font-weight: 700;
+  /*font-weight: 700;*/
   margin-left: 10px;
 }
 
@@ -89,6 +95,7 @@ body {
 }
 
 #main {
+  text-overflow: ellipsis;
   position: relative;
   top: 22px;
   width: 272px;
@@ -396,6 +403,11 @@ body {
   font-weight: 600;
 }
 
+#alert_text span{
+  text-overflow: ellipsis;
+  width:185px;
+}
+
 #left_team > #alert > #alert_text {
   float: left;
 }
@@ -588,6 +600,7 @@ body {
 
 #obs_img {
   display: block;
+  object-fit: contain;
   position: relative;
   width: 140px;
   height: 140px;
@@ -595,7 +608,10 @@ body {
 
 #obs_lane1 {
   width: 218px;
+  top: 15px;
   position: relative;
+  display: flex;
+  flex-direction: row;
 }
 
 #obs_lane2 {
@@ -612,17 +628,16 @@ body {
   width: 22px;
   height: 18px;
   position: relative;
-  left: 0px;
-  top:-141px;
+  left: 5px;
+  top: -136px;
   /*background-color:  rgba(54,149,208,0.8);*/
 }
 
 #obs_team_img {
   width: 22;
   height: 18;
+  object-fit: contain;
   position: relative;
-  left: 5px;
-  top: 5px;
 }
 
 #obs_alias {
@@ -635,6 +650,9 @@ body {
   position: relative;
   font-family: "Proxima";
   text-align: center;
+  width: 120px;
+  margin-right: auto;
+  margin-left: AUTO;
   vertical-align: text-bottom;
   font-size: 20px;
   font-weight: normal;
@@ -662,7 +680,7 @@ body {
   height: 18px;
   position: relative;
   left: 160px;
-  top:-201px;
+  top:-178px;
   /*background-color:  rgba(54,149,208,0.8);*/
 }
 
@@ -683,7 +701,7 @@ body {
   top: 52px;
   position: absolute;
   width: 622px;
-  height: 10px;
+  height: 4px;
   background-color: #00acff;
 }
 
@@ -704,60 +722,58 @@ body {
 }
 
 #obs_health_section {
-  top: 6px;
-  width: 70px;
-  position: absolute;
+  margin-left:41px;
+  width: 50px;
+  position: relative;
+  display: flex;
+  flex-direction: row;
 }
 
 #obs_health_img {
-  width: 30px;
-  height: 30px;
+  width: 15px;
+  height: 15px;
   position: relative;
   left: 4px;
   top: 5px;
 }
 
 #obs_health_text {
-  top: -21px;
-  width: 35px;
-  height: 30px;
   position: relative;
-  left: 41px;
+  left: 6px;
+  top: 2px;
   font-family: "Proxima";
   text-align: left;
   vertical-align: text-bottom;
-  font-size: 20px;
-  font-weight: 600;
+  font-size: 18px;
+  /*font-weight: 600;*/
   color: white;
 }
 
 #obs_armor_section {
-  top: 6px;
-  width: 70px;
-  height: 50px;
-  position: absolute;
-  left: 80px;
+  width: 50px;
+  position: relative;
+  left: 0px;
+  display: flex;
+  flex-direction: row;
 }
 
 #obs_armor_img {
-  width: 30px;
-  height: 30px;
+  width: 15px;
+  height: 15px;
   position: relative;
   left: 3px;
   top: 5px;
 }
 
 #obs_armor_text {
-  top: -21px;
-  width: 35px;
-  height: 30px;
   position: relative;
-  left: 40px;
+  left: 6px;
+  top: 2px;
   font-family: "Proxima";
   text-align: left;
   vertical-align: text-bottom;
-  font-size: 20px;
-  font-weight: 600;
+  font-size: 18px;
+  /*font-weight: 600;*/
   color: white;
 }
 
@@ -860,14 +876,14 @@ body {
 
 #obs_nades {
   left: 15px;
-  top: 20px;
+  top: 18px;
   position: relative;
   display: flex;
   flex-direction: row;
 }
 
 #obs_nades div{
-  margin-right:5px;
+  margin-right:3px;
 }
 
 #obs_nade1 {
@@ -960,15 +976,15 @@ body {
 #players_left {
   width: 585px;
   position: fixed;
-  bottom: 10px;
-  left: 10px;
+  bottom: 15px;
+  left: 33px;
 }
 
 #players_right {
   width: 585px;
   position: fixed;
-  bottom: 10px;
-  right: 10px;
+  bottom: 15px;
+  right: 33px;
 }
 
 #box_section {
@@ -1000,7 +1016,7 @@ body {
   border-radius: 3px;
   position: absolute;
   left: -420px;
-  width: 100%;
+  width: 363px;
   height: 70px;
   background-color: rgba(54,149,206,0.4);
 }
@@ -1214,7 +1230,6 @@ body {
 .box_grenades {
   position: relative;
   top: 20px;
-  left: 10px;
   padding-left:10px;
   display: flex;
 }
@@ -1303,9 +1318,11 @@ body {
   filter: brightness(0) invert(1);
   /* left: 5px; */
   top: -4px;
+  margin-right: 5px;
 }
 
 #util_nade_1_count {
+  height: 20px;
   font-family: "Proxima";
   text-align: left;
   vertical-align: text-bottom;
@@ -1330,9 +1347,11 @@ body {
   background-image: url("/files/img/grenades/weapon_molotov.png");
   filter: brightness(0) invert(1);
   top: -4px;
+  margin-right: 5px;
 }
 
 #util_nade_2_count {
+  height: 20px;
   font-family: "Proxima";
   text-align: left;
   vertical-align: text-bottom;
@@ -1357,9 +1376,11 @@ body {
   background-image: url("/files/img/grenades/weapon_flashbang.png");
   filter: brightness(0) invert(1);
   top: -4px;
+  margin-right: 5px;
 }
 
 #util_nade_3_count {
+  height: 20px;
   font-family: "Proxima";
   text-align: left;
   vertical-align: text-bottom;
@@ -1384,9 +1405,11 @@ body {
   background-image: url("/files/img/grenades/weapon_hegrenade.png");
   filter: brightness(0) invert(1);
   top: -4px;
+  margin-right: 5px;
 }
 
 #util_nade_4_count {
+  height: 20px;
   font-family: "Proxima";
   text-align: left;
   vertical-align: text-bottom;
@@ -1613,7 +1636,7 @@ body {
 
 .player_main_holder {
   width: 363px;
-  height: 70px;
+  height: 96px;
   position: absolute;
 }
 
@@ -1641,20 +1664,18 @@ body {
 }
 
 #players_left .player_image_holder {
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
 }
 
 #players_right .player_image_holder {
-  left: 330px;
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
+  right: -37px;
 }
 
 #player_image {
   position: relative;
-  width: 86px;
+  width: 80px;
   height: 86px;
+  object-fit: contain;
+  z-index: 1;
 }
 
 #player_image.dead {
@@ -1692,10 +1713,10 @@ body {
 }
 
 .player_health {
+  height: 25px;
   width: 40px;
-  height: 100%;
   position: relative;
-  top: 0px;
+  
 }
 
 #players_left .player_health {
@@ -1704,12 +1725,14 @@ body {
 
 #players_right .player_health {
   left: 20;
-  top: -18px;
+}
+
+#players_right #player_health_text{
+  top: -43px;
 }
 
 #player_health_text {
   font-family: "Proxima";
-  vertical-align: text-bottom;
   font-size: 20px;
   font-weight: normal;
   text-align: center;
@@ -1750,34 +1773,39 @@ body {
 
 #players_right #player_alias_text {
   text-align: right;
+  right: 10px;
 }
 
 .player_weapon_primary {
-  width: 100px;
+  width: 93px;
   height: 25px;
   position: relative;
   top: 5px;
+  
 }
 
 #players_left .player_weapon_primary {
-  left: 223px;
+  right: 35px;
+  float: right;
 }
 
 #players_right .player_weapon_primary {
-  left: 2px;
+  left: 35px;
+  float:left;
 }
 
 #player_weapon_primary_img {
   width: 100%;
   height: 100%;
+  object-fit: fill;
 }
 
 #player_weapon_primary_img {
   position: absolute;
   max-height: 100%;
   max-width: 100%;
-  width: auto;
-  height: auto;
+  width: 100%;
+  height: 100%;
   top: 0;
   bottom: 0;
   margin: auto;
@@ -1821,7 +1849,6 @@ body {
 #players_right .player_armor {
   left: 67px;
   float: left;
-  top: -30px;
 }
 
 #player_armor_image {
@@ -1830,19 +1857,20 @@ body {
 }
 
 .player_bomb_kit {
-  width: 25px;
-  height: 25px;
+  width: 16px;
+  height: 16px;
   position: absolute;
-  top: 5px;
+  top: 34px;
+  
 }
 
 #players_left .player_bomb_kit {
-  left: 265px;
-  top: 24px;
+  float: right;
+  right: 112px;
 }
 
 #players_right .player_bomb_kit {
-  left: 268px;
+  left: 112px;
 }
 
 #player_bomb_kit_image {
@@ -1851,56 +1879,50 @@ body {
 }
 
 .player_current_money {
+  top:5px;
   width: 70px;
-  height: 100%;
   position: absolute;
 }
 
 #players_left .player_current_money {
-  left: 85px;
+  left: 95px;
 }
 
 #players_right .player_current_money {
-  left: 222px;
+  left: 212px;
 }
 
 #player_current_money_text {
   font-family: "Proxima";
   vertical-align: text-bottom;
-  top:5px;
   font-size: 20px;
   font-weight: normal;
   position: relative;
-  color: white;
-}
-
-#players_left #player_current_money_text {
-  left: 10px;
-}
-
-#players_right #player_current_money_text {
-
+  color: #00d700;
 }
 
 .player_round_kills {
-  width: 35px;
-  height: 100%;
+  width: 30px;
+  top: 6px;
+  height: 18px;
+  display:none;
   position: absolute;
+  /*display:flex;
+  flex-direction: row;*/
 }
 
 #players_left .player_round_kills {
-  left: 135px;
+  left: 160px;
 }
 
 #players_right .player_round_kills {
-  left: 165px;
+  left: 173px;
 }
 
 #player_skull {
-  width: 18px;
-  height: 18px;
-  position: absolute;
-  top: 9px;
+  width: 13px;
+  height: 20px;
+  position: relative;
 }
 
 #players_left #player_skull {
@@ -1914,7 +1936,6 @@ body {
 #player_round_kills_text {
   font-family: "Proxima";
   vertical-align: text-bottom;
-  line-height: 38px;
   font-size: 20px;
   font-weight: normal;
   position: relative;
@@ -1923,87 +1944,100 @@ body {
 
 #players_left #player_round_kills_text {
   text-align: left;
-  left: 20px;
+  left: 8px;
+  top:-2px;
 }
 
 #players_right #player_round_kills_text {
   text-align: right;
-  right: 20px;
-}
-
-.player_nades {
-  width: 90px;
-  height: 35px;
-  position: absolute;
+  right: -2px;
   top: -2px;
 }
 
+.player_nades {
+  width: 73px;
+  position: absolute;
+  top: 34px;
+  display: flex;
+  flex-direction: row;
+  
+}
+
+#players_left .player_nades div{
+  margin-left:auto;
+}
+
 #players_left .player_nades {
-  left: 165px;
+  float: right;
+  right: 35px;
+}
+
+#players_right .player_nades div{
+  margin-right: auto;
 }
 
 #players_right .player_nades {
-  left: 70px;
+  left: 35px;
 }
 
 #player_nade1 {
-  width: 20px;
-  height: 35px;
-  position: absolute;
+  width: 16px;
+  height: 16px;
+  position: relative;
 }
 
 #players_left #player_nade1 {
-  left: 68px;
+  
 }
 
 #players_right #player_nade1 {
-  left: 2px;
+  
 }
 
 #player_nade2 {
-  width: 20px;
-  height: 35px;
-  position: absolute;
+  width: 16px;
+  height: 16px;
+  position: relative;
 }
 
 #players_left #player_nade2 {
-  left: 46px;
+  
 }
 
 #players_right #player_nade2 {
-  left: 24px;
+  
 }
 
 #player_nade3 {
-  width: 20px;
-  height: 35px;
-  position: absolute;
+  width: 16px;
+  height: 16px;
+  position: relative;
 }
 
 #players_left #player_nade3 {
-  left: 24px;
+  
 }
 
 #players_right #player_nade3 {
-  left: 46px;
+  
 }
 
 #player_nade4 {
-  width: 20px;
-  height: 35px;
-  position: absolute;
+  width: 16px;
+  height: 16px;
+  position: relative;
 }
 
 #players_left #player_nade4 {
-  left: 2px;
+  
 }
 
 #players_right #player_nade4 {
-  left: 68px;
+  
 }
 
 .player_weapon_secondary {
-  display: none;
+  display: block;
   width: 60px;
   height: 25px;
   position: relative;
@@ -2011,11 +2045,11 @@ body {
 }
 
 #players_left .player_weapon_secondary {
-  left: 263px;
+  left: 161px;
 }
 
 #players_right .player_weapon_secondary {
-  left: 2px;
+  left: 156px;
 }
 
 #player_weapon_secondary_img {
@@ -2030,7 +2064,6 @@ body {
 }
 
 #players_left #player_weapon_secondary_img {
-  right: 0;
 }
 
 #players_right #player_weapon_secondary_img {
@@ -2043,6 +2076,7 @@ body {
   height: 70px;
   position: absolute;
   z-index: -1;
+  top: 12px;
 }
 
 #players_left .player_hindered {
@@ -2123,18 +2157,20 @@ body {
 
 .player_dead {
   width: 100px;
+  height: 20px;
   position: relative;
-  opacity: 0;
-  top: -5px;
-  left: -169px;
+  opacity: 1;
+  top: -2px;
 }
 
 #players_left .player_dead {
-  float:right;
+  float: left;
+  left: 95px;
 }
 
 #players_right .player_dead {
-  left: 35px;
+  float: right;
+  right: 60px;
 }
 
 .player_dead_k {
@@ -2166,25 +2202,23 @@ body {
 }
 
 #player_dead_kills_k{
-  width: 21px;
-  height: 21px;
-  object-fit: fill;
+  width: 18px;
+  height: 18px;
   background:url("/files/img/elements/killed.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
 }
 
 #player_dead_deaths_d{
-  width: 21px;
-  height: 17px;
-  left:5px;
-  object-fit: fill;
-  background:url("/files/img/elements/skull_v2.png");
+  left: 3px
 }
 
 #player_dead_kills_k,
 #player_dead_assists_a,
 #player_dead_deaths_d {
-  width: 21px;
-  height: 17px;
+  width: 18px;
+  height: 18px;
   top: 3px;
   position: relative;
 }
@@ -2205,22 +2239,22 @@ body {
 }
 
 #player_dead_deaths_text{
-  left:10px;
+  left: 6px;
 }
 
 .player_spec {
   width: 6px;
-  height: 70px;
-  top: 0px;
-  position: absolute;
+  height: 84px;
+  top: 1px;
+  position: relative;
 }
 
 #players_left .player_spec {
-  left: 398px;
+  left: 363px;
 }
 
 #players_right .player_spec {
-  right: 398px;
+  right: -211px;
 }
 
 #player_spec_bar {
@@ -2247,6 +2281,7 @@ body {
   border-radius: 3px;
   background-color:  rgba(12, 15, 18, 0.6);
   z-index: -1;
+  display: none;
 }
 
 #players_left .player_stats_holder {
@@ -2513,8 +2548,8 @@ body {
 
 .health_default {
   background-image: url("/files/img/elements/icon_health_default.png");
-  max-height: 30px;
-  max-width: 30px;
+  height: 15px;
+  width: 15px;
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
@@ -2522,8 +2557,8 @@ body {
 
 .health_CT {
   background-image: url("/files/img/elements/icon_health_CT.png");
-  max-height: 30px;
-  max-width: 30px;
+  height: 15px;
+  width: 15px;
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
@@ -2531,8 +2566,8 @@ body {
 
 .health_T {
   background-image: url("/files/img/elements/icon_health_T.png");
-  max-height: 30px;
-  max-width: 30px;
+  height: 15px;
+  width: 15px;
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
@@ -2540,8 +2575,8 @@ body {
 
 .health_full_default {
   background-image: url("/files/img/elements/icon_health_full_default.png");
-  max-height: 30px;
-  max-width: 30px;
+  height: 15px;
+  width: 15px;
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
@@ -2549,8 +2584,8 @@ body {
 
 .health_full_CT {
   background-image: url("/files/img/elements/icon_health_full_CT.png");
-  max-height: 30px;
-  max-width: 30px;
+  height: 15px;
+  width: 15px;
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
@@ -2558,8 +2593,8 @@ body {
 
 .health_full_T {
   background-image: url("/files/img/elements/icon_health_full_T.png");
-  max-height: 30px;
-  max-width: 30px;
+  height: 15px;
+  width: 15px;
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
@@ -2567,8 +2602,8 @@ body {
 
 .armor_none_default {
   background-image: url("/files/img/elements/icon_armor_none_default.png");
-  max-height: 30px;
-  max-width: 30px;
+  height: 15px;
+  width: 15px;
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
@@ -2576,8 +2611,8 @@ body {
 
 .armor_none_CT {
   background-image: url("/files/img/elements/icon_armor_none_CT.png");
-  max-height: 30px;
-  max-width: 30px;
+  height: 15px;
+  width: 15px;
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
@@ -2585,8 +2620,8 @@ body {
 
 .armor_none_T {
   background-image: url("/files/img/elements/icon_armor_none_T.png");
-  max-height: 30px;
-  max-width: 30px;
+  height: 15px;
+  width: 15px;
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
@@ -2594,8 +2629,8 @@ body {
 
 .armor_helm_default {
   background-image: url("/files/img/elements/icon_armor_helmet_default.png");
-  max-height: 30px;
-  max-width: 30px;
+  height: 15px;
+  width: 15px;
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
@@ -2603,8 +2638,8 @@ body {
 
 .armor_helm_CT {
   background-image: url("/files/img/elements/icon_armor_helmet_CT.png");
-  max-height: 30px;
-  max-width: 30px;
+  height: 15px;
+  width: 15px;
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
@@ -2612,8 +2647,8 @@ body {
 
 .armor_helm_T {
   background-image: url("/files/img/elements/icon_armor_helmet_T.png");
-  max-height: 30px;
-  max-width: 30px;
+  height: 15px;
+  width: 15px;
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
@@ -2621,8 +2656,8 @@ body {
 
 .armor_kev_default {
   background-image: url("/files/img/elements/icon_armor_full_default.png");
-  max-height: 30px;
-  max-width: 30px;
+  height: 15px;
+  width: 15px;
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
@@ -2630,8 +2665,8 @@ body {
 
 .armor_kev_CT {
   background-image: url("/files/img/elements/icon_armor_full_CT.png");
-  max-height: 30px;
-  max-width: 30px;
+  height: 15px;
+  width: 15px;
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
@@ -2639,8 +2674,8 @@ body {
 
 .armor_kev_T {
   background-image: url("/files/img/elements/icon_armor_full_T.png");
-  max-height: 30px;
-  max-width: 30px;
+  height: 15px;
+  width: 15px;
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
@@ -2648,8 +2683,8 @@ body {
 
 .armor_half_default {
   background-image: url("/files/img/elements/icon_armor_half_default.png");
-  max-height: 30px;
-  max-width: 30px;
+  height: 15px;
+  width: 15px;
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
@@ -2657,8 +2692,8 @@ body {
 
 .armor_half_CT {
   background-image: url("/files/img/elements/icon_armor_half_CT.png");
-  max-height: 30px;
-  max-width: 30px;
+  height: 15px;
+  width: 15px;
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
@@ -2666,8 +2701,8 @@ body {
 
 .armor_half_T {
   background-image: url("/files/img/elements/icon_armor_half_T.png");
-  max-height: 30px;
-  max-width: 30px;
+  height: 15px;
+  width: 15px;
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
@@ -2675,8 +2710,8 @@ body {
 
 .armor_half_helm_default {
   background-image: url("/files/img/elements/icon_armor_half_helmet_default.png");
-  max-height: 30px;
-  max-width: 30px;
+  height: 15px;
+  width: 15px;
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
@@ -2684,8 +2719,8 @@ body {
 
 .armor_half_helm_CT {
   background-image: url("/files/img/elements/icon_armor_half_helmet_CT.png");
-  max-height: 30px;
-  max-width: 30px;
+  height: 15px;
+  width: 15px;
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
@@ -2693,8 +2728,8 @@ body {
 
 .armor_half_helm_T {
   background-image: url("/files/img/elements/icon_armor_half_helmet_T.png");
-  max-height: 30px;
-  max-width: 30px;
+  height: 15px;
+  width: 15px;
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
@@ -2702,8 +2737,8 @@ body {
 
 .bullets_default {
   background-image: url("/files/img/elements/icon_bullets_default.png");
-  max-height: 30px;
-  max-width: 30px;
+  height: 15px;
+  width: 15px;
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
@@ -2711,8 +2746,8 @@ body {
 
 .bullets_CT {
   background-image: url("/files/img/elements/icon_bullets_CT.png");
-  max-height: 30px;
-  max-width: 30px;
+  height: 15px;
+  width: 15px;
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
@@ -2720,8 +2755,8 @@ body {
 
 .bullets_T {
   background-image: url("/files/img/elements/icon_bullets_T.png");
-  max-height: 30px;
-  max-width: 30px;
+  height: 15px;
+  width: 15px;
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
@@ -2834,8 +2869,8 @@ body {
 
 .player_skull_default {
   background-image: url("/files/img/elements/icon_skull_default.png");
-  max-height: 18px;
-  max-width: 18px;
+  height: 18px;
+  width: 18px;
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
