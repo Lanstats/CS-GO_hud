@@ -33,6 +33,9 @@ var round_now = 0;
 var last_round = 0;
 var freezetime = false;
 let map_mur="";
+let left_count = 0;
+let right_count = 0;
+let full_top = true;
 
 function updatePage(data) {
   var matchup = data.getMatchType();
@@ -158,8 +161,8 @@ function updateTopPanel() {
   //#endregion
 
   //#region Poles
-  //$("#left_team .bar").css("background-color", teams.left.side == "ct" ? COLOR_NEW_CT : COLOR_NEW_T);
-  //$("#right_team .bar").css("background-color", teams.right.side == "ct" ? COLOR_NEW_CT : COLOR_NEW_T);
+  $("#left_team .bar").css("background-color", teams.left.side == "ct" ? COLOR_NEW_CT : COLOR_NEW_T);
+  $("#right_team .bar").css("background-color", teams.right.side == "ct" ? COLOR_NEW_CT : COLOR_NEW_T);
   $("#left_team #alert #alert_pole_right").css("background-color", teams.left.side == "ct" ? COLOR_NEW_CT : COLOR_NEW_T);
   $("#right_team #alert #alert_pole_left").css("background-color", teams.right.side == "ct" ? COLOR_NEW_CT : COLOR_NEW_T);
   $("#match_pole_1").css("background-color", teams.left.side == "ct" ? COLOR_NEW_CT : COLOR_NEW_T);
@@ -341,6 +344,142 @@ function updateStateWarmup(phase) {
   }
 }
 
+function SlideShort(){
+  full_top = false;
+  $("#right_team #score")
+  .css("background-color", "unset");
+  $("#right_team #best_of")
+  .css("background-color", "unset");
+  $("#left_team #score")
+  .css("background-color", "unset");
+  $("#left_team #best_of")
+  .css("background-color", "unset");
+  $("#left_team #main").removeClass('fadeInText')
+  $("#top_panel").removeClass('long_x')
+  $("#right_team #main").removeClass('fadeInText')
+  $("#right_team #team_logo").removeClass('scaleUpLogoRight')
+  $("#left_team #team_logo").removeClass('scaleUpLogoLeft')
+  $("#teams_powers").removeClass('fadeOutDown')/*.css("display", 'block')*/
+  $('#round_timer_text').css('top','0px');
+  animateElement("#teams_powers", "fadeInUp", function () {});
+  animateElement("#left_team #main", "fadeOutText", function () {
+    $("#left_team #main")
+      //.css("display", 'none')
+      .css("width", '0px');
+  });
+  animateElement("#right_team #main", "fadeOutText", function () {
+    $("#right_team #main")
+      //.css("display", 'none')
+      .css("width", '0px');
+  });
+  animateElement("#left_team #stage", "fadeOutLeft", function () {
+    //$("#left_team #stage").css("display", 'none')
+  });
+  animateElement("#right_team #stage", "fadeOutRight", function () {
+    //$("#right_team #stage").css("display", 'none')
+  });
+  $("#game_type_mur4sh")/*.css("display", 'none')*/.css("width", '0px');
+  animateElement("#top_panel", "zip_x", function () {});
+  $("#right_team .bar").css('opacity','1');
+  $("#left_team .bar").css('opacity','1');
+  $("#left_team #section_sb").css('display','flex').css('flex-direction','row').css('width','auto').css('margin-left','21px').css('left','21px');
+  $("#right_team #section_sb").css('display','flex').css('flex-direction','row').css('width','auto').css('margin-right','0px');
+  $("#left_team #section_sb").removeClass('fadeInLeft')
+  $("#right_team #section_sb").removeClass('fadeInRight')
+  animateElement("#left_team #section_sb", "fadeInLeft", function () {});
+  animateElement("#right_team #section_sb", "fadeInRight", function () {});
+  $("#right_team  #team_logo").css('object-fit','contain');
+  $("#left_team  #team_logo").css('object-fit','contain');
+  animateElement("#left_team #team_logo", "scaleDownLogoLeft", function () {});
+  animateElement("#right_team #team_logo", "scaleDownLogoRight", function () {});
+  $('#timers').css('top','126px').css('left','727px').css('width','456px');
+
+  $("#left_team #alert").css('top','20px').css('left','-180px');
+  $("#left_team #score").css('width','42px').css("color", 'white').css('padding-top','0px').css('left','20px');
+  $("#right_team #alert").css('top','20px').css('left','170px');
+  $("#right_team #score").css('width','42px').css("color", 'white').css('padding-top','0px').css('margin-left','27px').css('right','18px');
+  $("#left_team").css('width','200px');
+  $("#right_team").css('width','200px');
+  $("#round_timer_text").css('font-size','36px').css('margin-bottom','10px');;
+  $("#round_number").css('font-size','20px');
+  animateElement("#right_team #section_sb", "fadeIn", function () {});
+  $("#left_team #best_of").css('display','flex').css('flex-direction','column').css('height','auto').css('padding-top','3px').css('width','auto').css('padding-left','0px').css('left','-53px');
+  $("#right_team #best_of").css('display','flex').css('flex-direction','column').css('height','auto').css('padding-top','3px').css('width','auto').css('padding-left','0px').css('left','5px');
+
+  $('.block1').css('top','5px').css('left','0px').css('margin-top','1px')
+  $('.block2').css('top','-2px').css('left','0px').css('margin-top','1px')
+  $('.block3').css('top','-2px').css('left','0px').css('margin-top','1px')
+  $('.block4').css('top','-4px').css('left','0px').css('margin-top','1px')
+  $('.block5').css('top','-9px').css('left','0px').css('margin-top','1px')
+  let text = $("#round_number").text();
+  $("#round_number").text(text.replace(/Раунд /,''));
+}
+
+function SlideLong(){
+  full_top= true;
+  let text = $("#round_number").text();
+  if(!text.match(/Раунд /)){
+    $("#round_number").text('Раунд '+text.match(/\d+\/\d+/g)[0]);
+  }
+  $("#right_team #score")
+  .css("background-color", "rgba(0,0,0,0.5)");
+  $("#right_team #best_of")
+  .css("background-color", "rgba(0,0,0,0.5)");
+  $("#left_team #score")
+  .css("background-color", "rgba(0,0,0,0.5)");
+  $("#left_team #best_of")
+  .css("background-color", "rgba(0,0,0,0.5)");
+  $("#top_panel").removeClass('zip_x')
+  $("#left_team #main").removeClass('fadeOutText')
+  $("#right_team #main").removeClass('fadeOutText')
+  $("#left_team #stage").removeClass('fadeOutLeft')
+  $("#right_team #stage").removeClass('fadeOutRight')
+  $("#right_team #team_logo").removeClass('scaleDownLogoRight')
+  $("#left_team #team_logo").removeClass('scaleDownLogoLeft')
+  $("#left_team #section_sb").removeClass('fadeInLeft')
+  $("#right_team #section_sb").removeClass('fadeInRight')
+  $("#left_team #main").css("display", 'block').css("width", '727px');
+  $("#right_team #main").css("display", 'block').css("width", '727px');
+  $("#teams_powers").removeClass('fadeInUp')
+  animateElement("#teams_powers", "fadeOutDown", function () {  /*$("#teams_powers").css("display", 'none')*/});
+  animateElement("#left_team #main", "fadeInText", function () {});
+  animateElement("#right_team #main", "fadeInText", function () {});
+  $("#left_team #stage").css("display", 'flex')
+  $("#right_team #stage").css("display", 'flex')
+  animateElement("#left_team #stage", "fadeInLeft", function () {});
+  animateElement("#right_team #stage", "fadeInRight", function () {});
+  $("#game_type_mur4sh").css("display", 'block').css("width", '145px');
+  animateElement("#top_panel", "long_x", function () {});
+  $("#right_team .bar").css('opacity','0');
+  $("#left_team .bar").css('opacity','0');
+  $("#left_team #section_sb").css('display','flex').css('flex-direction','column').css('width','96px').css('margin-left','368px').css('left','0px');
+  $("#right_team #section_sb").css('display','flex').css('flex-direction','column').css('width','96px').css('margin-right','368px');
+  animateElement("#left_team #section_sb", "fadeInLeft", function () {});
+  animateElement("#right_team #section_sb", "fadeInRight", function () {});
+
+  animateElement("#left_team #team_logo", "scaleUpLogoLeft", function () {});
+  animateElement("#right_team #team_logo", "scaleUpLogoRight", function () {});
+  $('#timers').css('top','126px').css('left','790px').css('width','337px');
+
+  $("#left_team #alert").css('top','17px').css('left','0px');
+  $("#left_team #score").css('width','96px').css('padding-top','20px').css('left','0px');
+  $("#right_team #alert").css('top','17px').css('left','0px');
+  $("#right_team #score").css('width','96px').css('padding-top','20px').css('margin-left','0px').css('right','0px');
+  $("#left_team").css('width','auto');
+  $("#right_team").css('width','auto');
+  $("#round_timer_text").css('font-size','48px').css('margin-bottom','0px');
+  $("#round_number").css('font-size','26px');
+  animateElement("#right_team #section_sb", "fadeIn", function () {});
+  $("#left_team #best_of").css('display','flex').css('flex-direction','row').css('height','17px').css('padding-top','5px').css('width','83px').css('padding-left','13px').css('left','0px');
+  $("#right_team #best_of").css('display','flex').css('flex-direction','row').css('height','17px').css('padding-top','5px').css('width','83px').css('padding-left','13px').css('left','0px');
+
+  $('.block1').css('top','0px').css('left','-1px').css('margin-top','0px')
+  $('.block2').css('top','0px').css('left','4px').css('margin-top','0px')
+  $('.block3').css('top','0px').css('left','10px').css('margin-top','0px')
+  $('.block4').css('top','0px').css('left','16px').css('margin-top','0px')
+  $('.block5').css('top','0px').css('left','21px').css('margin-top','0px')
+}
+
 function updateStateFreezetime(phase, previously) {
   if (phase) {
     removeRoundTimeGraphics();
@@ -348,6 +487,7 @@ function updateStateFreezetime(phase, previously) {
     showPlayerStats(phase);
     $("#players_left #box_utility").slideDown(500);
     $("#players_right #box_utility").slideDown(500);
+    SlideLong()
     //$("#players_left #box_monetary").slideDown(500);
     //$("#players_right #box_monetary").slideDown(500);
     $("#players_left #box_top").slideUp(500);
@@ -496,6 +636,7 @@ function updateStatePlanted(phase, round, previously) {
       if (checkPrev(previously, "live")) {
         $("#players_left #box_utility").slideDown(500);
         $("#players_right #box_utility").slideDown(500);
+        //SlideLong()
         $("#players_left #box_top").slideUp(500);
         //$("#players_right #box_top").slideDown(500);
       }
@@ -507,6 +648,7 @@ function updateStatePlanted(phase, round, previously) {
       if (phase.phase_ends_in <= 35) {
         $("#players_left #box_utility").slideUp(500);
         $("#players_right #box_utility").slideUp(500);
+        //SlideShort()
         $("#players_left #box_top").slideDown(500);
         //$("#players_right #box_top").slideUp(500);
       }
@@ -608,6 +750,7 @@ function updateStateLive(phase, bomb, players, previously) {
     if (phase.phase_ends_in <= 109.9) {
       $("#players_left #box_utility").slideUp(500);
       $("#players_right #box_utility").slideUp(500);
+      SlideShort()
       $("#players_left #box_top").slideDown(500);
     }
     if (phase.phase_ends_in <= 5) {
@@ -649,6 +792,7 @@ function updateStatePaused(phase, type, previously) {
   resetBomb();
   $("#players_left #box_utility").slideDown(500);
   $("#players_right #box_utility").slideDown(500);
+  SlideLong()
   $("#players_left #box_top").slideUp(500);
   $("#alert_middle").removeClass();
   if (type == "paused") {
@@ -890,6 +1034,8 @@ function updatePlayers(players, observed, phase, previously) {
 }
 
 function fillPlayers(teams, observed, phase, previously) {
+  left_count = 5;
+  right_count = 5;
   if (teams.left.players) {
     for (var i = 0; i < 5; i++) {
       if (i >= teams.left.players.length) {
@@ -918,6 +1064,16 @@ function fillPlayers(teams, observed, phase, previously) {
       }
     }
   }
+  UpdateAlive(teams);
+}
+
+function UpdateAlive(teams){
+  $("#alive_left_team")
+    .text(left_count)
+    .css("color", teams.left.side == "ct" ? COLOR_NEW_CT : COLOR_NEW_T);
+  $("#alive_right_team")
+    .text(right_count)
+    .css("color", teams.right.side == "ct" ? COLOR_NEW_CT : COLOR_NEW_T);
 }
 
 function fillPlayer(player, nr, side, observed, phase, previously) {
@@ -1006,11 +1162,13 @@ function fillPlayer(player, nr, side, observed, phase, previously) {
     $top.find("#player_health_text").css("opacity", 0);
     //$player.find(".player_dead").css("opacity", 1);
     if (side.substr(8) == "left") {
+      left_count--;
       /*$player.find("#player_alias_text").css("left", "-35px");
       $player.find("#player_current_money_text").css("left", "-55px");
       $player.find("#player_skull").css("left", "-55px");
       $player.find("#player_round_kills_text").css("left", "-35px");*/
     } else if (side.substr(8) == "right") {
+      right_count--;
       /*$player.find("#player_alias_text").css("right", "-35px");
       $player.find("#player_current_money_text").css("left", "65px");
       $player.find("#player_skull").css("right", "-55px");
@@ -1022,11 +1180,13 @@ function fillPlayer(player, nr, side, observed, phase, previously) {
     $top.find("#player_health_text").css("opacity", 1);
     //$player.find(".player_dead").css("opacity", 0);
     if (side.substr(8) == "left") {
+      //left_count++;
       /*$player.find("#player_alias_text").css("left", "0px");
       $player.find("#player_current_money_text").css("left", "1px");
       $player.find("#player_skull").css("left", "0px");
       $player.find("#player_round_kills_text").css("left", "20px");*/
     } else if (side.substr(8) == "right") {
+      //right_count++;
       /*$player.find("#player_alias_text").css("right", "0px");
       $player.find("#player_current_money_text").css("left", "7px");
       $player.find("#player_skull").css("right", "0px");
@@ -1070,11 +1230,11 @@ function fillPlayer(player, nr, side, observed, phase, previously) {
   $top.find(".player_health_bar").css("background", gradient_single);
   $top.find("#player_health_text").text(stats.health);
 
-  let armor_icon = $bottom.find("#player_armor_image");
+  let armor_icon = $top.find("#player_armor_image");
   armor_icon.removeClass();
   if (stats.helmet) {
     if (stats.armor == 0) {
-      // armor_icon.addClass("armor_none_default");
+      //armor_icon.addClass("armor_none_default");
     } else if (stats.armor <= 50) {
       armor_icon.addClass("armor_half_helm_default");
     } else if (stats.armor <= 100) {
@@ -1082,7 +1242,7 @@ function fillPlayer(player, nr, side, observed, phase, previously) {
     }
   } else {
     if (stats.armor == 0) {
-      // armor_icon.addClass("armor_none_default");
+      //armor_icon.addClass("armor_none_default");
     } else if (stats.armor <= 50) {
       armor_icon.addClass("armor_half_default");
     } else if (stats.armor <= 100) {
@@ -1451,6 +1611,19 @@ function updateTeamValues(left, right) {
   $("#players_left #money_value").text("$" + left.team_money);
   $("#players_right #money_text").css("color", right_color);
   $("#players_right #money_value").text("$" + right.team_money);
+
+  $("#left_team #stage_1").css("background-color", 'none');
+  $("#left_team #stage_2").css("background-color", 'none');
+  $("#left_team #stage_3").css("background-color", 'none');
+  $("#right_team #stage_1").css("background-color", 'none');
+  $("#right_team #stage_2").css("background-color", 'none');
+  $("#right_team #stage_3").css("background-color", 'none');
+
+  let total = Number(left.equip_value) + Number(right.equip_value);
+  let lt = (Number(left.equip_value)/total)*100
+
+  $('#teams_powers #left_tp').css("width",Math.round(lt)+'%').css('background-color',left_color);
+  $('#teams_powers #right_tp').css("width",Math.round(100-lt)+'%').css('background-color',right_color);
 
   if(Number(left.equip_value)<5000){
     $("#left_team #stage_1").css("background-color", left_color);

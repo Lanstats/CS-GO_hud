@@ -34,7 +34,7 @@ body {
 }
 
 #top_panel {
-  /*width: 1073px;*/
+  width: 1073px;
   height: 95px;
   display: flex;
   flex-direction: row;
@@ -82,21 +82,32 @@ body {
   display: flex;
   flex-direction: column;
   width:96px;
+  position: relative;
+}
+
+#left_team #section_sb{
+  margin-left: 368px; 
+}
+
+#right_team #section_sb{
+  margin-right: 368px; 
 }
 
 #left_team {
-  position: relative;
+  position: absolute;
+  left:0px;
   /*width: 465px;*/
 }
 
 #right_team {
-  position: relative;
+  position: absolute;
+  right:0px;
   /*width: 465px;*/
 }
 
 #main {
   text-overflow: ellipsis;
-  position: relative;
+  position: absolute;
   top: 22px;
   width: 272px;
   font-family: "Proxima";
@@ -110,10 +121,12 @@ body {
 
 #left_team #main {
   float: left;
+  left:104px;
 }
 
 #right_team #main {
   float: right;
+  left:88px;
 }
 
 #logo {
@@ -207,12 +220,13 @@ body {
 }
 
 .bar {
-  position: relative;
+  position: absolute;
   width: 5px;
-  height: 50px;
-  top: 10px;
+  height: 40px;
+  top: 9px;
   background-color: white;
-  display: none;
+  display: block;
+  opacity: 1;
 }
 
 .block1,
@@ -255,15 +269,19 @@ body {
 
 #left_team .bar {
   float: left;
+  left: 15px;
 }
 
 #right_team .bar {
   float: right;
+  left: -10px;
 }
 
 #center_section {
   width: 145px;
   height: 117px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #round_timer {
@@ -286,7 +304,7 @@ body {
 #round_number {
   top: 58px;
   height: 27px;
-  width: 145px;
+  width: 100%;
   font-family: "Proxima";
   text-align: center;
   vertical-align: text-bottom;
@@ -296,8 +314,8 @@ body {
 
 #game_type_mur4sh{
   background-color: rgba(0,0,0,0.5);
-  position: relative;
-  top: 8px;
+  position: absolute;
+  top: 95px;
   width: 145px;
   height: 22px;
   font-family: "Proxima";
@@ -310,7 +328,7 @@ body {
 #stage{
   display:flex;
   flex-direction: row;
-  position: relative;
+  position: absolute;
   width: 368px;
   height: 40px;
   opacity: 1;
@@ -346,7 +364,7 @@ body {
 }
 
 #left_team > #stage {
-  top:-22px;
+  top:95px;
   color: white;
   left: 0px;
   animation-duration: 0.5s;
@@ -354,8 +372,8 @@ body {
 }
 
 #right_team > #stage {
-  top:-22px;
-  right: -96px;
+  top:95px;
+  right: -0px;
   color: white;
 
   animation-duration: 0.5s;
@@ -372,7 +390,7 @@ body {
 
 #left_team > #alert {
   float: left;
-  top:-22px;
+  top:17px;
   opacity: 0;
   color: white;
   left: 0px;
@@ -383,7 +401,7 @@ body {
 #right_team > #alert {
   float: right;
   right: 0px;
-  top:-22px;
+  top:17px;
   opacity: 0;
   color: white;
 
@@ -494,8 +512,33 @@ body {
   float: left;
 }
 
+#teams_powers {
+  width: 456px;
+  height: 10px;
+  top: 107px;
+  position: absolute;
+  left: 728px;
+  display: block;
+  opacity: 0;
+}
+
+#left_tp{
+  width: 50%;
+  height: 100%;
+  background-color: blue;
+  position: absolute;
+}
+
+#right_tp{
+  right: 0px;
+  width: 50%;
+  height: 100%;
+  background-color: red;
+  position: absolute;
+}
+
 #timers {
-  width: 320px;
+  width: 337px;
   height: 20px;
   top: 148px;
   position: absolute;
@@ -503,7 +546,7 @@ body {
 }
 
 #bomb_bar {
-  width: 337px;
+  width: 100%;
   height: 9px;
   top: -9px;
   position: relative;
@@ -513,7 +556,7 @@ body {
 }
 
 #defuse_bar {
-  width: 337px;
+  width: 100%;
   height: 9px;
   top: -9px;
   position: relative;
@@ -680,7 +723,7 @@ body {
   height: 18px;
   position: relative;
   left: 160px;
-  top:-178px;
+  top: -200px;
   /*background-color:  rgba(54,149,208,0.8);*/
 }
 
@@ -785,11 +828,11 @@ body {
 }
 
 #obs_bomb_kit {
-  width: 30px;
-  height: 30px;
+  width: 15px;
+  height: 15px;
   position: relative;
   left: 5px;
-  top: 11px;
+  top: 20px;
 }
 
 #obs_round_kills {
@@ -875,7 +918,7 @@ body {
 }
 
 #obs_nades {
-  left: 15px;
+  left: 35px;
   top: 18px;
   position: relative;
   display: flex;
@@ -1652,7 +1695,7 @@ body {
   position: absolute;
   background-color: white
 }
-/*rgba(54,149,208,0.9)#fafafa*/
+
 #players_right .player_side_bar {
   left: 400px;
 }
@@ -1664,10 +1707,11 @@ body {
 }
 
 #players_left .player_image_holder {
+  left:0px;
 }
 
 #players_right .player_image_holder {
-  right: -37px;
+  right: -43px;
 }
 
 #player_image {
@@ -1698,7 +1742,7 @@ body {
 }
 
 .player_health_bar {
-  border-radius: 3px 3px 0px 0px;
+  /*border-radius: 3px 3px 0px 0px;*/
   width: 100%;
   height: 27px;
   position: relative;
@@ -1713,10 +1757,7 @@ body {
 }
 
 .player_health {
-  height: 25px;
-  width: 40px;
   position: relative;
-  
 }
 
 #players_left .player_health {
@@ -1724,18 +1765,23 @@ body {
 }
 
 #players_right .player_health {
-  left: 20;
+  left: 15;
+}
+
+#players_left #player_health_text{
+  text-align: center;
+  left: -148px;
 }
 
 #players_right #player_health_text{
-  top: -43px;
+  text-align: center;
+  left: -170px;
 }
 
 #player_health_text {
   font-family: "Proxima";
   font-size: 20px;
   font-weight: normal;
-  text-align: center;
   position: relative;
   color: white;
   top: -25px;
@@ -1784,6 +1830,56 @@ body {
   
 }
 
+#alive_mur4sh{
+  position: absolute;
+  width:200px;
+  height:76px;
+  right: 38px;
+  top: 22px;
+  display: none;
+}
+
+#alive_left_team, #alive_right_team{
+  position: relative;
+  display: block;
+  font-family: 'Proxima';
+  text-transform: uppercase;
+  text-align: center;
+} 
+
+#alive_left_team{
+  top:-1px;
+  margin-left: auto;
+  margin-right: 5px;
+}
+
+#alive_right_team{
+  margin-right: auto;
+  margin-left: 5px;
+}
+
+#alive_top{
+  position: relative;
+  width: 100%;
+  height: 29px;
+  background-color: #b6b6b6;
+  font-family: 'Proxima';
+  font-size: 25px;
+  color: white;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+#alive_bottom{
+  display: flex;
+  flex-direction: row;
+  width:100%;
+  /*height: 47px;*/
+  font-family: 'Proxima';
+  background-color:rgba(0,0,0,0.5);
+  font-size:48px;
+}
+
 #players_left .player_weapon_primary {
   right: 35px;
   float: right;
@@ -1791,13 +1887,13 @@ body {
 
 #players_right .player_weapon_primary {
   left: 35px;
-  float:left;
+  float: left;
 }
 
 #player_weapon_primary_img {
   width: 100%;
   height: 100%;
-  object-fit: fill;
+  object-fit: contain;
 }
 
 #player_weapon_primary_img {
@@ -1847,7 +1943,7 @@ body {
 }
 
 #players_right .player_armor {
-  left: 67px;
+  left: 60px;
   float: left;
 }
 
@@ -1860,7 +1956,7 @@ body {
   width: 16px;
   height: 16px;
   position: absolute;
-  top: 34px;
+  top: 35px;
   
 }
 
@@ -2244,8 +2340,8 @@ body {
 
 .player_spec {
   width: 6px;
-  height: 84px;
-  top: 1px;
+  height: 86px;
+  top: 0px;
   position: relative;
 }
 
@@ -2421,8 +2517,10 @@ body {
 
 .bomb_active {
   background-image: url("/files/img/elements/icon_c4_T.gif");
-  max-height: 40px;
-  width: auto;
+  height: 40px;
+  width: 40px;
+  margin-right: auto;
+  margin-left: auto;
   top: 8px;
   background-repeat: no-repeat;
   background-size: contain;
@@ -2431,8 +2529,10 @@ body {
 
 .bomb_exploded {
   background-image: url("/files/img/elements/icon_bomb_explosion_T.png");
-  max-height: 40px;
-  width: auto;
+  height: 40px;
+  width: 40px;
+  margin-right: auto;
+  margin-left: auto;
   top: 8px;
   background-repeat: no-repeat;
   background-size: contain;
@@ -2441,8 +2541,10 @@ body {
 
 .bomb_defused {
   background-image: url("/files/img/elements/icon_defuse_CT.png");
-  max-height: 40px;
-  width: auto;
+  height: 40px;
+  width: 40px;
+  margin-right: auto;
+  margin-left: auto;
   top: 8px;
   background-repeat: no-repeat;
   background-size: contain;
@@ -2451,8 +2553,10 @@ body {
 
 .pause_active {
   background-image: url("/files/img/elements/icon_pause_default.png");
-  max-height: 40px;
-  width: auto;
+  height: 40px;
+  width: 40px;
+  margin-right: auto;
+  margin-left: auto;
   top: 8px;
   background-repeat: no-repeat;
   background-size: contain;
@@ -2461,8 +2565,10 @@ body {
 
 .pause_active_T {
   background-image: url("/files/img/elements/icon_pause_T.png");
-  max-height: 40px;
-  width: auto;
+  height: 40px;
+  width: 40px;
+  margin-right: auto;
+  margin-left: auto;
   top: 8px;
   background-repeat: no-repeat;
   background-size: contain;
@@ -2471,8 +2577,10 @@ body {
 
 .pause_active_CT {
   background-image: url("/files/img/elements/icon_pause_CT.png");
-  max-height: 40px;
-  width: auto;
+  height: 40px;
+  width: 40px;
+  margin-right: auto;
+  margin-left: auto;
   top: 8px;
   background-repeat: no-repeat;
   background-size: contain;
@@ -2481,8 +2589,10 @@ body {
 
 .players_eliminated_T {
   background-image: url("/files/img/elements/icon_skull_T.png");
-  max-height: 40px;
-  width: auto;
+  height: 40px;
+  width: 40px;
+  margin-right: auto;
+  margin-left: auto;
   top: 8px;
   background-repeat: no-repeat;
   background-size: contain;
@@ -2491,8 +2601,10 @@ body {
 
 .players_eliminated_CT {
   background-image: url("/files/img/elements/icon_skull_CT.png");
-  max-height: 40px;
-  width: auto;
+  height: 40px;
+  width: 40px;
+  margin-right: auto;
+  margin-left: auto;
   top: 8px;
   background-repeat: no-repeat;
   background-size: contain;
@@ -2501,8 +2613,10 @@ body {
 
 .round_time_reached {
   background-image: url("/files/img/elements/icon_timer_CT.png");
-  max-height: 40px;
-  width: auto;
+  height: 40px;
+  width: 40px;
+  margin-right: auto;
+  margin-left: auto;
   top: 8px;
   background-repeat: no-repeat;
   background-size: contain;
@@ -2511,8 +2625,10 @@ body {
 
 .round_warmup {
   background-image: url("/files/img/elements/icon_hourglass_default.png");
-  max-height: 40px;
-  width: auto;
+  height: 40px;
+  width: 40px;
+  margin-right: auto;
+  margin-left: auto;
   top: 8px;
   background-repeat: no-repeat;
   background-size: contain;
@@ -2824,8 +2940,8 @@ body {
 
 .obs_kit {
   background-image: url("/files/img/elements/icon_defuse_default.png");
-  max-height: 30px;
-  max-width: 30px;
+  max-height: 15px;
+  max-width: 15px;
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
@@ -2833,8 +2949,8 @@ body {
 
 .obs_bomb {
   background-image: url("/files/img/elements/icon_bomb_default.png");
-  max-height: 30px;
-  max-width: 30px;
+  max-height: 15px;
+  max-width: 15px;
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
