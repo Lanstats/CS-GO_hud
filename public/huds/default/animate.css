@@ -582,6 +582,24 @@
   animation-duration: 0.5s;
 }
 
+@keyframes zip_xy {
+  from {
+    width:1073px;
+    height:25px;
+    left: 423px;
+  }
+  to {
+    width:456px;
+    height:10px;
+    left: 728px;
+  }
+}
+
+.zip_xy{
+  animation-name: zip_xy;
+  animation-duration: 0.5s;
+}
+
 @keyframes long_x {
   from {
     width:456px;
@@ -595,6 +613,24 @@
 
 .long_x{
   animation-name: long_x;
+  animation-duration: 0.5s;
+}
+
+@keyframes long_xy {
+  from {
+    width:456px;
+    height:10px;
+    left: 728px;
+  }
+  to {
+    width:1073px;
+    height:25px;
+    left: 423px;
+  }
+}
+
+.long_xy{
+  animation-name: long_xy;
   animation-duration: 0.5s;
 }
 

@@ -1,7 +1,7 @@
 //const COLOR_CT = "rgba(87, 136, 168, 1.0)";
 const COLOR_CT = "#3695ce";
 //const COLOR_T = "rgba(193, 149, 17, 1.0)";
-const COLOR_T = "rgb(245,172,41)";
+const COLOR_T = "#fe9900";
 //#df2451
 //F4F9FF
 const COLOR_WARM_WHITE = "F4F9FF";
@@ -145,28 +145,28 @@ function updateTopPanel() {
   //#region Team Name
   $("#left_team #main")
     .text(teams.left.name.toUpperCase())
-    .css("color", teams.left.side == "ct" ? COLOR_NEW_CT : COLOR_NEW_T);
+    .css("color", teams.left.side == "ct" ? COLOR_NEW_CT : COLOR_T);
   $("#right_team #main")
     .text(teams.right.name.toUpperCase())
-    .css("color", teams.right.side == "ct" ? COLOR_NEW_CT : COLOR_NEW_T);
+    .css("color", teams.right.side == "ct" ? COLOR_NEW_CT : COLOR_T);
   //#endregion
 
   //#region Team Score
   $("#left_team #score")
     .text(teams.left.score)
-    .css("color", teams.left.side == "ct" ? COLOR_NEW_CT : COLOR_NEW_T);
+    .css("color", teams.left.side == "ct" ? COLOR_NEW_CT : COLOR_T);
   $("#right_team #score")
     .text(teams.right.score)
-    .css("color", teams.right.side == "ct" ? COLOR_NEW_CT : COLOR_NEW_T);
+    .css("color", teams.right.side == "ct" ? COLOR_NEW_CT : COLOR_T);
   //#endregion
 
   //#region Poles
-  $("#left_team .bar").css("background-color", teams.left.side == "ct" ? COLOR_NEW_CT : COLOR_NEW_T);
-  $("#right_team .bar").css("background-color", teams.right.side == "ct" ? COLOR_NEW_CT : COLOR_NEW_T);
-  $("#left_team #alert #alert_pole_right").css("background-color", teams.left.side == "ct" ? COLOR_NEW_CT : COLOR_NEW_T);
-  $("#right_team #alert #alert_pole_left").css("background-color", teams.right.side == "ct" ? COLOR_NEW_CT : COLOR_NEW_T);
-  $("#match_pole_1").css("background-color", teams.left.side == "ct" ? COLOR_NEW_CT : COLOR_NEW_T);
-  $("#match_pole_2").css("background-color", teams.right.side == "ct" ? COLOR_NEW_CT : COLOR_NEW_T);
+  $("#left_team .bar").css("background-color", teams.left.side == "ct" ? COLOR_NEW_CT : COLOR_T);
+  $("#right_team .bar").css("background-color", teams.right.side == "ct" ? COLOR_NEW_CT : COLOR_T);
+  $("#left_team #alert #alert_pole_right").css("background-color", teams.left.side == "ct" ? COLOR_NEW_CT : COLOR_T);
+  $("#right_team #alert #alert_pole_left").css("background-color", teams.right.side == "ct" ? COLOR_NEW_CT : COLOR_T);
+  $("#match_pole_1").css("background-color", teams.left.side == "ct" ? COLOR_NEW_CT : COLOR_T);
+  $("#match_pole_2").css("background-color", teams.right.side == "ct" ? COLOR_NEW_CT : COLOR_T);
   //#endregion
 
   //#region Team Logos
@@ -359,9 +359,13 @@ function SlideShort(){
   $("#right_team #main").removeClass('fadeInText')
   $("#right_team #team_logo").removeClass('scaleUpLogoRight')
   $("#left_team #team_logo").removeClass('scaleUpLogoLeft')
-  $("#teams_powers").removeClass('fadeOutDown')/*.css("display", 'block')*/
+  $("#teams_powers #right_tp_text").removeClass('fadeInLeft')
+  $("#teams_powers #left_tp_text").removeClass('fadeInRight')
+  animateElement("#teams_powers #right_tp_text", "fadeOutLeft", function () {});
+  animateElement("#teams_powers #left_tp_text", "fadeOutRight", function () {});
+  $("#teams_powers").removeClass('long_xy').css("top", '107px')//.css("height", '10px')
   $('#round_timer_text').css('top','0px');
-  animateElement("#teams_powers", "fadeInUp", function () {});
+  animateElement("#teams_powers", "zip_xy", function () {});
   animateElement("#left_team #main", "fadeOutText", function () {
     $("#left_team #main")
       //.css("display", 'none')
@@ -372,12 +376,10 @@ function SlideShort(){
       //.css("display", 'none')
       .css("width", '0px');
   });
-  animateElement("#left_team #stage", "fadeOutLeft", function () {
-    //$("#left_team #stage").css("display", 'none')
-  });
-  animateElement("#right_team #stage", "fadeOutRight", function () {
-    //$("#right_team #stage").css("display", 'none')
-  });
+  //animateElement("#left_team #stage", "fadeOutLeft", function () {});
+  //animateElement("#right_team #stage", "fadeOutRight", function () {});
+  animateElement("#left_team #stage", "fadeOutLeft", function () {});
+  animateElement("#right_team #stage", "fadeOutRight", function () {});
   $("#game_type_mur4sh")/*.css("display", 'none')*/.css("width", '0px');
   animateElement("#top_panel", "zip_x", function () {});
   $("#right_team .bar").css('opacity','1');
@@ -432,23 +434,29 @@ function SlideLong(){
   $("#top_panel").removeClass('zip_x')
   $("#left_team #main").removeClass('fadeOutText')
   $("#right_team #main").removeClass('fadeOutText')
-  $("#left_team #stage").removeClass('fadeOutLeft')
-  $("#right_team #stage").removeClass('fadeOutRight')
+  //$("#left_team #stage").removeClass('fadeOutLeft')
+  //$("#right_team #stage").removeClass('fadeOutRight')
   $("#right_team #team_logo").removeClass('scaleDownLogoRight')
   $("#left_team #team_logo").removeClass('scaleDownLogoLeft')
   $("#left_team #section_sb").removeClass('fadeInLeft')
   $("#right_team #section_sb").removeClass('fadeInRight')
   $("#left_team #main").css("display", 'block').css("width", '727px');
   $("#right_team #main").css("display", 'block').css("width", '727px');
-  $("#teams_powers").removeClass('fadeInUp')
-  animateElement("#teams_powers", "fadeOutDown", function () {  /*$("#teams_powers").css("display", 'none')*/});
+  $("#teams_powers").removeClass('zip_xy').css("top", '117px')//.css("height", '25px');
+  $("#teams_powers #right_tp_text").removeClass('fadeOutLeft')
+  $("#teams_powers #left_tp_text").removeClass('fadeOutRight')
+  animateElement("#teams_powers #right_tp_text", "fadeInLeft", function () {});
+  animateElement("#teams_powers #left_tp_text", "fadeInRight", function () {});
+  animateElement("#teams_powers", "long_xy", function () {});
   animateElement("#left_team #main", "fadeInText", function () {});
   animateElement("#right_team #main", "fadeInText", function () {});
-  $("#left_team #stage").css("display", 'flex')
-  $("#right_team #stage").css("display", 'flex')
+  //$("#left_team #stage").css("display", 'flex')
+  //$("#right_team #stage").css("display", 'flex')
+  //animateElement("#left_team #stage", "fadeInLeft", function () {});
+  //animateElement("#right_team #stage", "fadeInRight", function () {});
   animateElement("#left_team #stage", "fadeInLeft", function () {});
   animateElement("#right_team #stage", "fadeInRight", function () {});
-  $("#game_type_mur4sh").css("display", 'block').css("width", '145px');
+  $("#game_type_mur4sh")/*.css("display", 'block')*/.css("width", '145px');
   animateElement("#top_panel", "long_x", function () {});
   $("#right_team .bar").css('opacity','0');
   $("#left_team .bar").css('opacity','0');
@@ -459,7 +467,7 @@ function SlideLong(){
 
   animateElement("#left_team #team_logo", "scaleUpLogoLeft", function () {});
   animateElement("#right_team #team_logo", "scaleUpLogoRight", function () {});
-  $('#timers').css('top','126px').css('left','790px').css('width','337px');
+  $('#timers').css('top','151px').css('left','422px').css('width','1073px');
 
   $("#left_team #alert").css('top','17px').css('left','0px');
   $("#left_team #score").css('width','96px').css('padding-top','20px').css('left','0px');
@@ -470,8 +478,8 @@ function SlideLong(){
   $("#round_timer_text").css('font-size','48px').css('margin-bottom','0px');
   $("#round_number").css('font-size','26px');
   animateElement("#right_team #section_sb", "fadeIn", function () {});
-  $("#left_team #best_of").css('display','flex').css('flex-direction','row').css('height','17px').css('padding-top','5px').css('width','83px').css('padding-left','13px').css('left','0px');
-  $("#right_team #best_of").css('display','flex').css('flex-direction','row').css('height','17px').css('padding-top','5px').css('width','83px').css('padding-left','13px').css('left','0px');
+  $("#left_team #best_of").css('display','none').css('flex-direction','row').css('height','17px').css('padding-top','5px').css('width','83px').css('padding-left','13px').css('left','0px');
+  $("#right_team #best_of").css('display','none').css('flex-direction','row').css('height','17px').css('padding-top','5px').css('width','83px').css('padding-left','13px').css('left','0px');
 
   $('.block1').css('top','0px').css('left','-1px').css('margin-top','0px')
   $('.block2').css('top','0px').css('left','4px').css('margin-top','0px')
@@ -556,7 +564,7 @@ function updateStateOver(phase, round, previously) {
     } else if (round.win_team == "T") {
       if (teams.left.side == "t") {
         // * T alert on Left
-        showAlertSlide("#left_team", COLOR_NEW_T, "WINS THE ROUND");
+        showAlertSlide("#left_team", COLOR_T, "WINS THE ROUND");
         if (checkPrev(previously, "defuse")) {
           $("#right_team #alert")
             .css("opacity", 0)
@@ -564,7 +572,7 @@ function updateStateOver(phase, round, previously) {
         }
       } else {
         // * T alert on Right
-        showAlertSlide("#right_team", COLOR_NEW_T, "WINS THE ROUND");
+        showAlertSlide("#right_team", COLOR_T, "WINS THE ROUND");
         if (checkPrev(previously, "defuse")) {
           $("#left_team #alert")
             .css("opacity", 0)
@@ -658,7 +666,7 @@ function updateStatePlanted(phase, round, previously) {
         if ($("#round_timer_text").hasClass("animated")) $("#round_timer_text").removeClass("animated");
         if ($("#round_timer_text").hasClass("flash")) $("#round_timer_text").removeClass("flash");
         animateRoundTimer("bomb_active", false);
-        showMiddleAlert(COLOR_NEW_T, COLOR_NEW_T, "BOMB PLANTED", COLOR_NEW_T);
+        showMiddleAlert(COLOR_T, COLOR_T, "BOMB PLANTED", COLOR_T);
         var wait = setTimeout(function () {
           $("#alert_middle")
             .css("opacity", 0)
@@ -781,7 +789,7 @@ function updateStateLive(phase, bomb, players, previously) {
         // 13 characters for name
         let name;
         planter.name.length>15?name=planter.name.substr(0,15)+"...":name=planter.name;
-        showAlertSlide(side, COLOR_NEW_T, name + " is planting the bomb");
+        showAlertSlide(side, COLOR_T, name + " is planting the bomb");
       }
     }
   }
@@ -798,8 +806,8 @@ function updateStatePaused(phase, type, previously) {
   if (type == "paused") {
     if (checkPrev(previously, "freezetime") || checkPrev(previously, "live") || checkPrev(previously, "defuse") || checkPrev(previously, "bomb"))
       animateRoundTimer("pause_active", false);
-    $("#alert_middle #pole_1_middle").css("background-color", teams.left.side == "ct" ? COLOR_NEW_CT : COLOR_NEW_T);
-    $("#alert_middle #pole_2_middle").css("background-color", teams.right.side == "ct" ? COLOR_NEW_CT : COLOR_NEW_T);
+    $("#alert_middle #pole_1_middle").css("background-color", teams.left.side == "ct" ? COLOR_NEW_CT : COLOR_T);
+    $("#alert_middle #pole_2_middle").css("background-color", teams.right.side == "ct" ? COLOR_NEW_CT : COLOR_T);
     $("#alert_middle #alert_text_middle")
       .text("MATCH PAUSED")
       .css("color", COLOR_WHITE);
@@ -813,15 +821,15 @@ function updateStatePaused(phase, type, previously) {
       }
       $("#round_timer_text")
         .text(count_minute + ":" + count_seconds)
-        .css("color", COLOR_NEW_T);
+        .css("color", COLOR_T);
     }
-    $("#alert_middle #pole_1_middle").css("background-color", COLOR_NEW_T);
-    $("#alert_middle #pole_2_middle").css("background-color", COLOR_NEW_T);
+    $("#alert_middle #pole_1_middle").css("background-color", COLOR_T);
+    $("#alert_middle #pole_2_middle").css("background-color", COLOR_T);
     $("#alert_middle #alert_text_middle")
       .text(teams.left.side == "t" ? teams.left.name.toUpperCase() + " TIMEOUT" : teams.right.name.toUpperCase() + " TIMEOUT")
-      .css("color", COLOR_NEW_T);
-    showAlertSlide("#left_team", teams.left.side == "t" ? COLOR_NEW_T : COLOR_NEW_CT, "Timeouts Remaining: " + teams.left.timeouts_remaining);
-    showAlertSlide("#right_team", teams.right.side == "t" ? COLOR_NEW_T : COLOR_NEW_CT, "Timeouts Remaining: " + teams.right.timeouts_remaining);
+      .css("color", COLOR_T);
+    showAlertSlide("#left_team", teams.left.side == "t" ? COLOR_T : COLOR_NEW_CT, "Timeouts Remaining: " + teams.left.timeouts_remaining);
+    showAlertSlide("#right_team", teams.right.side == "t" ? COLOR_T : COLOR_NEW_CT, "Timeouts Remaining: " + teams.right.timeouts_remaining);
   } else if (type == "timeout_ct") {
     if (phase.phase_ends_in) {
       var clock_time = Math.abs(Math.ceil(phase.phase_ends_in));
@@ -839,8 +847,8 @@ function updateStatePaused(phase, type, previously) {
     $("#alert_middle #alert_text_middle")
       .text(teams.left.side == "ct" ? teams.left.name.toUpperCase() + " TIMEOUT" : teams.right.name.toUpperCase() + " TIMEOUT")
       .css("color", COLOR_NEW_CT);
-    showAlertSlide("#left_team", teams.left.side == "ct" ? COLOR_NEW_CT : COLOR_NEW_T, "Timeouts Remaining: " + teams.left.timeouts_remaining);
-    showAlertSlide("#right_team", teams.right.side == "ct" ? COLOR_NEW_CT : COLOR_NEW_T, "Timeouts Remaining: " + teams.right.timeouts_remaining);
+    showAlertSlide("#left_team", teams.left.side == "ct" ? COLOR_NEW_CT : COLOR_T, "Timeouts Remaining: " + teams.left.timeouts_remaining);
+    showAlertSlide("#right_team", teams.right.side == "ct" ? COLOR_NEW_CT : COLOR_T, "Timeouts Remaining: " + teams.right.timeouts_remaining);
   }
 
   $("#alert_middle")
@@ -995,10 +1003,14 @@ function fillObserved(obs) {
     }
     if (weapon.state == "active" || weapon.state == "reloading") {
       if (weapon.type == "Grenade" || weapon.type == "C4" || weapon.type == "Knife" || stats.health == 0) {
+        $("#obs_bullets_section").css('opacity','0')
+        $("#obs_nades").css('opacity','1')
         $("#obs_clip").css("color", COLOR_WHITE);
         $("#obs_clip").text("-");
         $("#obs_reserve").text("/-");
       } else {
+        $("#obs_bullets_section").css('opacity','1')
+        $("#obs_nades").css('opacity','0')
         $("#obs_clip").text(weapon.ammo_clip);
         if (weapon.ammo_clip <= 3) {
           $("#obs_clip").css("color", COLOR_RED);
@@ -1070,10 +1082,10 @@ function fillPlayers(teams, observed, phase, previously) {
 function UpdateAlive(teams){
   $("#alive_left_team")
     .text(left_count)
-    .css("color", teams.left.side == "ct" ? COLOR_NEW_CT : COLOR_NEW_T);
+    .css("color", teams.left.side == "ct" ? COLOR_NEW_CT : COLOR_T);
   $("#alive_right_team")
     .text(right_count)
-    .css("color", teams.right.side == "ct" ? COLOR_NEW_CT : COLOR_NEW_T);
+    .css("color", teams.right.side == "ct" ? COLOR_NEW_CT : COLOR_T);
 }
 
 function fillPlayer(player, nr, side, observed, phase, previously) {
@@ -1084,9 +1096,9 @@ function fillPlayer(player, nr, side, observed, phase, previously) {
   let team = player.team.toLowerCase();
   let obs_slot = observed.observer_slot;
   let dead = stats.health == 0;
-  let health_color = stats.health <= 20 ? COLOR_RED : team == "ct" ? COLOR_NEW_CT : COLOR_NEW_T;
+  let health_color = stats.health <= 20 ? COLOR_RED : team == "ct" ? COLOR_NEW_CT : COLOR_T;
   let alt_health_color = stats.health <= 20 ? COLOR_RED : team == "ct" ? COLOR_CT : COLOR_T;
-  let side_color = team == "ct" ? COLOR_NEW_CT : COLOR_NEW_T;
+  let side_color = team == "ct" ? COLOR_NEW_CT : COLOR_T;
 
   let $player = $("#" + side).find("#player" + (nr + 1));
 
@@ -1304,9 +1316,10 @@ function fillPlayer(player, nr, side, observed, phase, previously) {
         view += side.substr(8) == "right" ? " img-hor" : "";
         if (type == "Pistol") {
           $bottom
-            .find("#player_weapon_secondary_img")
+            .find("#player_weapon_primary_img")
             .attr("src", "/files/img/weapons/" + name + ".png")
             .addClass("invert")
+            .css("display","block")
             .addClass(view);
         } else {
           $bottom
@@ -1605,27 +1618,35 @@ function checkGuns(weapons) {
 }
 
 function updateTeamValues(left, right) {
-  let left_color = left.side == "ct" ? COLOR_NEW_CT : COLOR_NEW_T;
-  let right_color = right.side == "ct" ? COLOR_NEW_CT : COLOR_NEW_T;
+  let left_color = left.side == "ct" ? COLOR_NEW_CT : COLOR_T;
+  let right_color = right.side == "ct" ? COLOR_NEW_CT : COLOR_T;
   $("#players_left #money_text").css("color", left_color);
   $("#players_left #money_value").text("$" + left.team_money);
   $("#players_right #money_text").css("color", right_color);
   $("#players_right #money_value").text("$" + right.team_money);
 
-  $("#left_team #stage_1").css("background-color", 'none');
+  /*$("#left_team #stage_1").css("background-color", 'none');
   $("#left_team #stage_2").css("background-color", 'none');
   $("#left_team #stage_3").css("background-color", 'none');
   $("#right_team #stage_1").css("background-color", 'none');
   $("#right_team #stage_2").css("background-color", 'none');
-  $("#right_team #stage_3").css("background-color", 'none');
+  $("#right_team #stage_3").css("background-color", 'none');*/
 
   let total = Number(left.equip_value) + Number(right.equip_value);
   let lt = (Number(left.equip_value)/total)*100
 
   $('#teams_powers #left_tp').css("width",Math.round(lt)+'%').css('background-color',left_color);
   $('#teams_powers #right_tp').css("width",Math.round(100-lt)+'%').css('background-color',right_color);
+  
+  if(_money_power){
+    $('#teams_powers #left_tp_text').text('$'+Number(left.equip_value));
+    $('#teams_powers #right_tp_text').text('$'+Number(right.equip_value));
+  }else{
+    $('#teams_powers #left_tp_text').text(Math.round(lt)+'%');
+    $('#teams_powers #right_tp_text').text(Math.round(100-lt)+'%');
+  }
 
-  if(Number(left.equip_value)<5000){
+  /*if(Number(left.equip_value)<5000){
     $("#left_team #stage_1").css("background-color", left_color);
   }else if(Number(left.equip_value)>=5000 && Number(left.equip_value)<=15000){
     $("#left_team #stage_1").css("background-color", left_color);
@@ -1645,7 +1666,7 @@ function updateTeamValues(left, right) {
     $("#right_team #stage_1").css("background-color", right_color);
     $("#right_team #stage_2").css("background-color", right_color);
     $("#right_team #stage_3").css("background-color", right_color);
-  }
+  }*/
 
 
   $("#players_left #equip_text").css("color", left_color);
@@ -1848,8 +1869,8 @@ function countNades(left, right) {
       .css("color", "#22f222");
   }
 
-  $("#players_left #box_heading_text").css("color", side_left == "CT" ? COLOR_NEW_CT : COLOR_NEW_T);
-  $("#players_right #box_heading_text").css("color", side_right == "CT" ? COLOR_NEW_CT : COLOR_NEW_T);
+  $("#players_left #box_heading_text").css("color", side_left == "CT" ? COLOR_NEW_CT : COLOR_T);
+  $("#players_right #box_heading_text").css("color", side_right == "CT" ? COLOR_NEW_CT : COLOR_T);
 
   $("#players_left #util_nade_1_count").text("" + count_left_smokegrenade);
   $("#players_left #util_nade_1").addClass("util_smokegrenade_" + side_left);

@@ -18,5 +18,6 @@
   "Map4": "Overpass",
   "Map5": "Inferno",
   "GameType": "Bo5",
-  "GSIToken": "120987"
+  "GSIToken": "120987",
+  "MoneyPower":true
 }

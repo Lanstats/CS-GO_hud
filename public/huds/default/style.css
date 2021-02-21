@@ -190,7 +190,7 @@ body {
   padding-left: 13px;
   padding-top: 5px;
   width: 83px;
-  display: flex;
+  display: none;
   flex-direction: row;
   background-color: rgba(0,0,0,0.5);
 }
@@ -323,10 +323,11 @@ body {
   font-size: 0px;
   font-weight: normal;
   color:white;
+  display: none;
 }
 
 #stage{
-  display:flex;
+  display:none;
   flex-direction: row;
   position: absolute;
   width: 368px;
@@ -514,12 +515,22 @@ body {
 
 #teams_powers {
   width: 456px;
-  height: 10px;
-  top: 107px;
+  height: 25px;
+  top: 122px;
   position: absolute;
   left: 728px;
   display: block;
-  opacity: 0;
+}
+
+#left_tp_text{
+  left:10px;
+  position: relative;
+}
+
+#right_tp_text{
+  float:right;
+  left:-10px;
+  position: relative;
 }
 
 #left_tp{
@@ -868,20 +879,20 @@ body {
 
 #obs_kills {
   position: relative;
-  left: 0px;
-  top: 0px;
+  left: 8px;
+  top: 5px;
 }
 
 #obs_assists {
   position: relative;
-  left: 0px;
-  top: 0px;
+  left: 8px;
+  top: 5px;
 }
 
 #obs_deaths {
   position: relative;
-  left: 0px;
-  top: 0px;
+  left: 8px;
+  top: 5px;
 }
 
 #obs_kills_k,
@@ -892,9 +903,7 @@ body {
   position: relative;
   top: 10px;
   font-family: "Proxima";
-  text-align: right;
   vertical-align: text-bottom;
-  line-height: 36px;
   font-size: 20px;
   font-weight: normal;
   color: white;
@@ -903,22 +912,21 @@ body {
 #obs_kills_text,
 #obs_assists_text,
 #obs_deaths_text {
-  width: 28px;
+  width: 35px;
   height: 30px;
   position: relative;
-  left: 24px;
+  left: 12px;
   top: -20px;
   font-family: "Proxima";
   text-align: left;
   vertical-align: text-bottom;
-  line-height: 36px;
   font-size: 20px;
   font-weight: 500;
   color: white;
 }
 
 #obs_nades {
-  left: 35px;
+  left: 14px;
   top: 18px;
   position: relative;
   display: flex;
@@ -961,32 +969,30 @@ body {
 }
 
 #obs_bullets_section {
-  display:none;
-  width: 30px;
-  height: 30px;
+  display: block;
+  width: 20px;
+  height: 20px;
   position: absolute;
-  left: 18px;
-  top: 10px;
+  right: 68px;
+  top: 16px;
 }
 
 #obs_ammo_section {
   width: 100px;
   height: 30px;
   position: absolute;
-  left: 35px;
-  top: 10px;
+  top: -1px;
+  left: 5px;
 }
 
 #obs_clip {
   width: 32px;
-  height: 30px;
   position: absolute;
   left: 15px;
 
   font-family: "Proxima";
   text-align: right;
   vertical-align: text-bottom;
-  line-height: 36px;
   font-size: 20px;
   font-weight: normal;
   color: white;
@@ -994,14 +1000,12 @@ body {
 
 #obs_reserve {
   width: 44px;
-  height: 30px;
   position: absolute;
   left: 48px;
 
   font-family: "Proxima";
   text-align: left;
   vertical-align: text-bottom;
-  line-height: 36px;
   font-size: 20px;
   font-weight: normal;
   color: #00acff

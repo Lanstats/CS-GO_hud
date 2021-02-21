@@ -169,6 +169,7 @@ module.exports = {
         map_three: config.Map3,
         map_four: config.Map4,
         map_five: config.Map5,
+        money_power: config.MoneyPower,
         hud: hud_dir,
         css: css_dir,
         anim: anim_dir,
