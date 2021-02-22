@@ -585,12 +585,10 @@
 @keyframes zip_xy {
   from {
     width:1073px;
-    height:25px;
     left: 423px;
   }
   to {
     width:456px;
-    height:10px;
     left: 728px;
   }
 }
@@ -619,12 +617,10 @@
 @keyframes long_xy {
   from {
     width:456px;
-    height:10px;
     left: 728px;
   }
   to {
     width:1073px;
-    height:25px;
     left: 423px;
   }
 }
@@ -1434,28 +1430,28 @@
 @keyframes scaleDownLogoLeft {
   from {
     margin-left:0px;
-    width: 96px;
-    height: 95px;
+    /*width: 96px;
+    height: 95px;*/
   }
 
   to {
     margin-left:40px;
-    width: 58px;
-    height: 58px;
+    /*width: 58px;
+    height: 58px;*/
   }
 }
 
 @-webkit-keyframes scaleDownLogoLeft {
   from {
     margin-left:0px;
-    width: 96px;
-    height: 95px;
+    /*width: 96px;
+    height: 95px;*/
   }
 
   to {
     margin-left:40px;
-    width: 58px;
-    height: 58px;
+    /*width: 58px;
+    height: 58px;*/
   }
 }
 
@@ -1467,28 +1463,28 @@
 @keyframes scaleUpLogoLeft {
   from {
     margin-left:40px;
-    width: 58px;
-    height: 58px;
+    /*width: 58px;
+    height: 58px;*/
   }
 
   to {
     margin-left:0px;
-    width: 96px;
-    height: 95px;
+    /*width: 96px;
+    height: 95px;*/
   }
 }
 
 @-webkit-keyframes scaleUpLogoLeft {
   from {
     margin-left:40px;
-    width: 58px;
-    height: 58px;
+    /*width: 58px;
+    height: 58px;*/
   }
 
   to {
     margin-left:0px;
-    width: 96px;
-    height: 95px;
+    /*width: 96px;
+    height: 95px;*/
   }
 }
 
@@ -1500,28 +1496,28 @@
 @keyframes scaleDownLogoRight {
   from {
     margin-right:0px;
-    width: 96px;
-    height: 95px;
+    /*width: 96px;
+    height: 95px;*/
   }
 
   to {
     margin-right:52px;
-    width: 58px;
-    height: 58px;
+    /*width: 58px;
+    height: 58px;*/
   }
 }
 
 @-webkit-keyframes scaleDownLogoRight {
   from {
     margin-right:0px;
-    width: 96px;
-    height: 95px;
+    /*width: 96px;
+    height: 95px;*/
   }
 
   to {
     margin-right:52px;
-    width: 58px;
-    height: 58px;
+    /*width: 58px;
+    height: 58px;*/
   }
 }
 
@@ -1533,28 +1529,28 @@
 @keyframes scaleUpLogoRight {
   from {
     margin-right:52px;
-    width: 58px;
-    height: 58px;
+   /* width: 58px;
+    height: 58px;*/
   }
 
   to {
     margin-right:0px;
-    width: 96px;
-    height: 95px;
+    /*width: 96px;
+    height: 95px;*/
   }
 }
 
 @-webkit-keyframes scaleUpLogoRight {
   from {
     margin-right:52px;
-    width: 58px;
-    height: 58px;
+    /*width: 58px;
+    height: 58px;*/
   }
 
   to {
     margin-right:0px;
-    width: 96px;
-    height: 95px;
+    /*width: 96px;
+    height: 95px;*/
   }
 }
 
@@ -1900,15 +1896,12 @@
 
 @-webkit-keyframes fadeOutText {
   from {
-    position: absolute;
     opacity: 1;
     width: 272px;
-    top: -80px;
   }
 
   to {
     opacity: 1;
-    top: -80px;
     width:0px;
   }
 }

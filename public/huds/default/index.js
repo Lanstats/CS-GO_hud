@@ -1,12 +1,12 @@
 //const COLOR_CT = "rgba(87, 136, 168, 1.0)";
-const COLOR_CT = "#3695ce";
+const COLOR_CT = "rgb(54, 149, 206)";
 //const COLOR_T = "rgba(193, 149, 17, 1.0)";
 const COLOR_T = "#fe9900";
 //#df2451
 //F4F9FF
 const COLOR_WARM_WHITE = "F4F9FF";
 //const COLOR_NEW_CT = "rgba(90, 184, 244, 1.0)";
-const COLOR_NEW_CT = "#3580ed";
+const COLOR_NEW_CT = "rgb(54, 149, 206)";
 //const COLOR_NEW_T = "rgba(240, 201, 65, 1.0)";
 const COLOR_NEW_T = "rgb(245,172,41)";
 const COLOR_RED = "rgba(242, 34, 34, 1.0)";
@@ -144,20 +144,20 @@ function setupBestOf(matchup, match) {
 function updateTopPanel() {
   //#region Team Name
   $("#left_team #main")
-    .text(teams.left.name.toUpperCase())
+    .text(teams.left.name)
     .css("color", teams.left.side == "ct" ? COLOR_NEW_CT : COLOR_T);
   $("#right_team #main")
-    .text(teams.right.name.toUpperCase())
+    .text(teams.right.name)
     .css("color", teams.right.side == "ct" ? COLOR_NEW_CT : COLOR_T);
   //#endregion
 
   //#region Team Score
   $("#left_team #score")
     .text(teams.left.score)
-    .css("color", teams.left.side == "ct" ? COLOR_NEW_CT : COLOR_T);
+    //.css("color", teams.left.side == "ct" ? COLOR_NEW_CT : COLOR_T);
   $("#right_team #score")
     .text(teams.right.score)
-    .css("color", teams.right.side == "ct" ? COLOR_NEW_CT : COLOR_T);
+    //.css("color", teams.right.side == "ct" ? COLOR_NEW_CT : COLOR_T);
   //#endregion
 
   //#region Poles
@@ -290,7 +290,7 @@ function updateLeague() {
 
 function updateRoundNow(round, map) {
   round_now = map.round + (round.phase == "over" || round.phase == "intermission" ? 0 : 1);
-  $("#round_number").text("Раунд " + round_now + "/30");
+  $("#round_number").text(round_now + "/30");
   if ((round.phase == "freezetime" && !freezetime) || round_now != last_round) {
     start_money = {};
   }
@@ -346,14 +346,14 @@ function updateStateWarmup(phase) {
 
 function SlideShort(){
   full_top = false;
-  $("#right_team #score")
+  /*$("#right_team #score")
   .css("background-color", "unset");
   $("#right_team #best_of")
   .css("background-color", "unset");
   $("#left_team #score")
   .css("background-color", "unset");
   $("#left_team #best_of")
-  .css("background-color", "unset");
+  .css("background-color", "unset");*/
   $("#left_team #main").removeClass('fadeInText')
   $("#top_panel").removeClass('long_x')
   $("#right_team #main").removeClass('fadeInText')
@@ -363,9 +363,11 @@ function SlideShort(){
   $("#teams_powers #left_tp_text").removeClass('fadeInRight')
   animateElement("#teams_powers #right_tp_text", "fadeOutLeft", function () {});
   animateElement("#teams_powers #left_tp_text", "fadeOutRight", function () {});
-  $("#teams_powers").removeClass('long_xy').css("top", '107px')//.css("height", '10px')
+  $("#teams_powers").removeClass('long_xy')//.css("height", '10px')
+  $("#timers").removeClass('long_xy')//.css("height", '10px')
   $('#round_timer_text').css('top','0px');
   animateElement("#teams_powers", "zip_xy", function () {});
+  animateElement("#timers", "zip_xy", function () {});
   animateElement("#left_team #main", "fadeOutText", function () {
     $("#left_team #main")
       //.css("display", 'none')
@@ -382,31 +384,29 @@ function SlideShort(){
   animateElement("#right_team #stage", "fadeOutRight", function () {});
   $("#game_type_mur4sh")/*.css("display", 'none')*/.css("width", '0px');
   animateElement("#top_panel", "zip_x", function () {});
-  $("#right_team .bar").css('opacity','1');
-  $("#left_team .bar").css('opacity','1');
-  $("#left_team #section_sb").css('display','flex').css('flex-direction','row').css('width','auto').css('margin-left','21px').css('left','21px');
+  /*$("#right_team .bar").css('opacity','1');
+  $("#left_team .bar").css('opacity','1');*/
+  $("#left_team #section_sb").css('display','flex').css('flex-direction','row').css('width','auto').css('margin-left','21px').css('left','65px');
   $("#right_team #section_sb").css('display','flex').css('flex-direction','row').css('width','auto').css('margin-right','0px');
   $("#left_team #section_sb").removeClass('fadeInLeft')
   $("#right_team #section_sb").removeClass('fadeInRight')
-  animateElement("#left_team #section_sb", "fadeInLeft", function () {});
-  animateElement("#right_team #section_sb", "fadeInRight", function () {});
+  animateElement("#left_team #section_sb", "fadeInRight", function () {});
+  animateElement("#right_team #section_sb", "fadeInLeft", function () {});
   $("#right_team  #team_logo").css('object-fit','contain');
   $("#left_team  #team_logo").css('object-fit','contain');
-  animateElement("#left_team #team_logo", "scaleDownLogoLeft", function () {});
-  animateElement("#right_team #team_logo", "scaleDownLogoRight", function () {});
-  $('#timers').css('top','126px').css('left','727px').css('width','456px');
+  //animateElement("#left_team #team_logo", "scaleDownLogoLeft", function () {});
+  //animateElement("#right_team #team_logo", "scaleDownLogoRight", function () {});
+  $('#timers').css('left','727px').css('width','456px');
 
-  $("#left_team #alert").css('top','20px').css('left','-180px');
-  $("#left_team #score").css('width','42px').css("color", 'white').css('padding-top','0px').css('left','20px');
-  $("#right_team #alert").css('top','20px').css('left','170px');
-  $("#right_team #score").css('width','42px').css("color", 'white').css('padding-top','0px').css('margin-left','27px').css('right','18px');
+  $("#left_team #alert").css('top','-29px').css('left','0px');
+  $("#left_team #score").css('width','42px').css("color", 'white').css('left','20px').css('top','-9px');
+  $("#right_team #alert").css('top','-29px').css('left','0px');
+  $("#right_team #score").css('width','42px').css("color", 'white').css('margin-left','27px').css('right','18px').css('top','-9px');
   $("#left_team").css('width','200px');
   $("#right_team").css('width','200px');
-  $("#round_timer_text").css('font-size','36px').css('margin-bottom','10px');;
-  $("#round_number").css('font-size','20px');
-  animateElement("#right_team #section_sb", "fadeIn", function () {});
-  $("#left_team #best_of").css('display','flex').css('flex-direction','column').css('height','auto').css('padding-top','3px').css('width','auto').css('padding-left','0px').css('left','-53px');
-  $("#right_team #best_of").css('display','flex').css('flex-direction','column').css('height','auto').css('padding-top','3px').css('width','auto').css('padding-left','0px').css('left','5px');
+  $("#round_timer_text").css('margin-bottom','10px');
+  $("#left_team #best_of").css('display','flex').css('flex-direction','column').css('height','auto').css('padding-top','3px').css('width','auto').css('padding-left','0px').css('left','-53px').css('top','0px');
+  $("#right_team #best_of").css('display','flex').css('flex-direction','column').css('height','auto').css('padding-top','3px').css('width','auto').css('padding-left','0px').css('left','5px').css('top','0px');
 
   $('.block1').css('top','5px').css('left','0px').css('margin-top','1px')
   $('.block2').css('top','-2px').css('left','0px').css('margin-top','1px')
@@ -414,23 +414,24 @@ function SlideShort(){
   $('.block4').css('top','-4px').css('left','0px').css('margin-top','1px')
   $('.block5').css('top','-9px').css('left','0px').css('margin-top','1px')
   let text = $("#round_number").text();
-  $("#round_number").text(text.replace(/Раунд /,''));
+  $("#round_number").text(text.replace(/Раунд /,'')).css('top','-10px');
 }
 
 function SlideLong(){
   full_top= true;
   let text = $("#round_number").text();
   if(!text.match(/Раунд /)){
-    $("#round_number").text('Раунд '+text.match(/\d+\/\d+/g)[0]);
+    $("#round_number").text(text.replace(/Раунд /,''));
+    //$("#round_number").text('Раунд '+text.match(/\d+\/\d+/g)[0]);
   }
-  $("#right_team #score")
+  /*$("#right_team #score")
   .css("background-color", "rgba(0,0,0,0.5)");
   $("#right_team #best_of")
   .css("background-color", "rgba(0,0,0,0.5)");
   $("#left_team #score")
   .css("background-color", "rgba(0,0,0,0.5)");
   $("#left_team #best_of")
-  .css("background-color", "rgba(0,0,0,0.5)");
+  .css("background-color", "rgba(0,0,0,0.5)");*/
   $("#top_panel").removeClass('zip_x')
   $("#left_team #main").removeClass('fadeOutText')
   $("#right_team #main").removeClass('fadeOutText')
@@ -438,16 +439,17 @@ function SlideLong(){
   //$("#right_team #stage").removeClass('fadeOutRight')
   $("#right_team #team_logo").removeClass('scaleDownLogoRight')
   $("#left_team #team_logo").removeClass('scaleDownLogoLeft')
-  $("#left_team #section_sb").removeClass('fadeInLeft')
-  $("#right_team #section_sb").removeClass('fadeInRight')
+  $("#left_team #section_sb").removeClass('fadeInRight')
+  $("#right_team #section_sb").removeClass('fadeInLeft')
   $("#left_team #main").css("display", 'block').css("width", '727px');
   $("#right_team #main").css("display", 'block').css("width", '727px');
-  $("#teams_powers").removeClass('zip_xy').css("top", '117px')//.css("height", '25px');
+  $("#teams_powers").removeClass('zip_xy')//.css("height", '25px');
   $("#teams_powers #right_tp_text").removeClass('fadeOutLeft')
   $("#teams_powers #left_tp_text").removeClass('fadeOutRight')
   animateElement("#teams_powers #right_tp_text", "fadeInLeft", function () {});
   animateElement("#teams_powers #left_tp_text", "fadeInRight", function () {});
   animateElement("#teams_powers", "long_xy", function () {});
+  animateElement("#timers", "long_xy", function () {});
   animateElement("#left_team #main", "fadeInText", function () {});
   animateElement("#right_team #main", "fadeInText", function () {});
   //$("#left_team #stage").css("display", 'flex')
@@ -458,34 +460,41 @@ function SlideLong(){
   animateElement("#right_team #stage", "fadeInRight", function () {});
   $("#game_type_mur4sh")/*.css("display", 'block')*/.css("width", '145px');
   animateElement("#top_panel", "long_x", function () {});
-  $("#right_team .bar").css('opacity','0');
-  $("#left_team .bar").css('opacity','0');
+  /*$("#right_team .bar").css('opacity','0');
+  $("#left_team .bar").css('opacity','0');*/
   $("#left_team #section_sb").css('display','flex').css('flex-direction','column').css('width','96px').css('margin-left','368px').css('left','0px');
   $("#right_team #section_sb").css('display','flex').css('flex-direction','column').css('width','96px').css('margin-right','368px');
   animateElement("#left_team #section_sb", "fadeInLeft", function () {});
   animateElement("#right_team #section_sb", "fadeInRight", function () {});
 
-  animateElement("#left_team #team_logo", "scaleUpLogoLeft", function () {});
-  animateElement("#right_team #team_logo", "scaleUpLogoRight", function () {});
-  $('#timers').css('top','151px').css('left','422px').css('width','1073px');
+  //animateElement("#left_team #team_logo", "scaleUpLogoLeft", function () {});
+  //animateElement("#right_team #team_logo", "scaleUpLogoRight", function () {});
+  //$('#timers').css('left','422px').css('width','1073px');
 
   $("#left_team #alert").css('top','17px').css('left','0px');
-  $("#left_team #score").css('width','96px').css('padding-top','20px').css('left','0px');
+  $("#left_team #score").css('width','96px').css('left','36px').css('top','-9px');
   $("#right_team #alert").css('top','17px').css('left','0px');
-  $("#right_team #score").css('width','96px').css('padding-top','20px').css('margin-left','0px').css('right','0px');
+  $("#right_team #score").css('width','96px').css('margin-left','0px').css('right','36px').css('top','-9px');;
   $("#left_team").css('width','auto');
   $("#right_team").css('width','auto');
-  $("#round_timer_text").css('font-size','48px').css('margin-bottom','0px');
-  $("#round_number").css('font-size','26px');
+  $("#round_timer_text").css('margin-bottom','0px');
+  $("#round_number").css('top','0px');
   animateElement("#right_team #section_sb", "fadeIn", function () {});
-  $("#left_team #best_of").css('display','none').css('flex-direction','row').css('height','17px').css('padding-top','5px').css('width','83px').css('padding-left','13px').css('left','0px');
-  $("#right_team #best_of").css('display','none').css('flex-direction','row').css('height','17px').css('padding-top','5px').css('width','83px').css('padding-left','13px').css('left','0px');
+  $("#left_team #best_of").css('display','flex').css('flex-direction','column').css('height','auto').css('padding-top','3px').css('width','auto').css('padding-left','0px').css('left','30px').css('top','-95px');
+  $("#right_team #best_of").css('display','flex').css('flex-direction','column').css('height','auto').css('padding-top','3px').css('width','auto').css('padding-left','0px').css('left','58px').css('top','-95px');
+  /*("#left_team #best_of").css('display','none').css('flex-direction','row').css('height','17px').css('padding-top','5px').css('width','83px').css('padding-left','13px').css('left','0px');
+  $("#right_team #best_of").css('display','none').css('flex-direction','row').css('height','17px').css('padding-top','5px').css('width','83px').css('padding-left','13px').css('left','0px');*/
 
-  $('.block1').css('top','0px').css('left','-1px').css('margin-top','0px')
+  /*$('.block1').css('top','0px').css('left','-1px').css('margin-top','0px')
   $('.block2').css('top','0px').css('left','4px').css('margin-top','0px')
   $('.block3').css('top','0px').css('left','10px').css('margin-top','0px')
   $('.block4').css('top','0px').css('left','16px').css('margin-top','0px')
-  $('.block5').css('top','0px').css('left','21px').css('margin-top','0px')
+  $('.block5').css('top','0px').css('left','21px').css('margin-top','0px')*/
+  $('.block1').css('top','5px').css('left','0px').css('margin-top','1px')
+  $('.block2').css('top','-2px').css('left','0px').css('margin-top','1px')
+  $('.block3').css('top','-2px').css('left','0px').css('margin-top','1px')
+  $('.block4').css('top','-4px').css('left','0px').css('margin-top','1px')
+  $('.block5').css('top','-9px').css('left','0px').css('margin-top','1px')
 }
 
 function updateStateFreezetime(phase, previously) {
@@ -736,7 +745,7 @@ function updateStateDefuse(phase, bomb, players) {
           // 13 characters for name
           let name;
           defuser.name.length>15?name=defuser.name.substr(0,15)+"...":name=defuser.name;
-          showAlertSlide(defusing_side, COLOR_NEW_CT, name + " is defusing the bomb");
+          showAlertSlide(defusing_side, COLOR_NEW_CT,/*name+*/ "defusing the bomb");
         }
       }
     }
@@ -789,7 +798,7 @@ function updateStateLive(phase, bomb, players, previously) {
         // 13 characters for name
         let name;
         planter.name.length>15?name=planter.name.substr(0,15)+"...":name=planter.name;
-        showAlertSlide(side, COLOR_T, name + " is planting the bomb");
+        showAlertSlide(side, COLOR_T,/* name + */"planting the bomb");
       }
     }
   }
@@ -1098,7 +1107,7 @@ function fillPlayer(player, nr, side, observed, phase, previously) {
   let dead = stats.health == 0;
   let health_color = stats.health <= 20 ? COLOR_RED : team == "ct" ? COLOR_NEW_CT : COLOR_T;
   let alt_health_color = stats.health <= 20 ? COLOR_RED : team == "ct" ? COLOR_CT : COLOR_T;
-  let side_color = team == "ct" ? COLOR_NEW_CT : COLOR_T;
+  let side_color = team == "ct" ? COLOR_CT : COLOR_T;
 
   let $player = $("#" + side).find("#player" + (nr + 1));
 
@@ -1112,14 +1121,14 @@ function fillPlayer(player, nr, side, observed, phase, previously) {
 
   $player.find("#player_image").removeClass("dead");
   if (disp_player_avatars) {
-    if (player.hasOwnProperty("avatar")) {
+    /*if (player.hasOwnProperty("avatar")) {
       // Custom Set Avatar
       if (player.avatar)
         $player
         .find("#player_image")
         .attr("src", "/storage/" + player.avatar)
         .addClass(dead ? "dead" : "");
-    } else {
+    } else {*/
       // Just Use Team Logo
       if (team == "ct") {
         if (teams.left.side == "ct") {
@@ -1138,7 +1147,7 @@ function fillPlayer(player, nr, side, observed, phase, previously) {
         .find("#player_image")
         .attr("src", "/storage/" + _img)
         .addClass(dead ? "dead" : "");
-    }
+    //}
   } else {
     loadAvatar(steamid, function () {
       $player
@@ -1267,7 +1276,7 @@ function fillPlayer(player, nr, side, observed, phase, previously) {
     $bottom.find("#player_bomb_kit_image").addClass("player_kit");
   }
 
-  $bottom.find("#player_current_money_text").css("color", dead ? COLOR_WHITE_HALF : "#a7d32e");
+  $bottom.find("#player_current_money_text").css("color", dead ? COLOR_WHITE_HALF : "#00d700");
   $bottom.find("#player_current_money_text").text("$" + stats.money);
   if (!start_money[steamid]) {
     start_money[steamid] = stats.money;

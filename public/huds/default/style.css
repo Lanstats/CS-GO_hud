@@ -35,11 +35,11 @@ body {
 
 #top_panel {
   width: 1073px;
-  height: 95px;
+  height: 58px;
   display: flex;
   flex-direction: row;
   position: fixed;
-  top: 22px;
+  top: 9px;
   left: 423px;
   background-color: rgba(0,0,0,0.5);
 }
@@ -52,7 +52,7 @@ body {
   height: 24px; 
   position: fixed;
   left: 33px;
-  top: 18px;
+  top: 9px;
   background-color: rgba(0,0,0,0.4);
   color: rgba(255,255,255,0.5);
   padding-top: 5px;
@@ -108,11 +108,11 @@ body {
 #main {
   text-overflow: ellipsis;
   position: absolute;
-  top: 22px;
+  top: 6px;
   width: 272px;
   font-family: "Proxima";
   text-align: center;
-  font-size: 48px;
+  font-size: 37px;
   font-weight: normal;
   overflow: hidden;
   white-space: nowrap;
@@ -131,8 +131,8 @@ body {
 
 #logo {
   position: relative;
-  width: 96px;
-  height: 95px;
+  width: 58px;
+  height: 58px;
 }
 
 #left_team #logo {
@@ -145,16 +145,19 @@ body {
 
 #team_logo {
   position: relative;
-  width: 96px;
-  height: 95px;
+  width: 58px;
+  height: 58px;
+  object-fit: contain;
 }
 
 #left_team #team_logo {
   float: left;
+  left:20px;
 }
 
 #right_team #team_logo {
   float: right;
+  right:20px;
 }
 
 #team_flag {
@@ -192,11 +195,12 @@ body {
   width: 83px;
   display: none;
   flex-direction: row;
-  background-color: rgba(0,0,0,0.5);
+  /*background-color: rgba(0,0,0,0.5);*/
 }
 
 
 #score {
+  top:-15px;
   position: relative;
   padding-top:20px;
   width: 96px;
@@ -204,9 +208,9 @@ body {
   font-family: "Proxima";
   text-align: center;
   vertical-align: text-bottom;
-  font-size: 48px;
+  font-size: 27px;
   font-weight: normal;
-  background-color: rgba(0,0,0,0.5);
+  /*background-color: rgba(0,0,0,0.5);*/
 }
 
 #left_team #score {
@@ -221,7 +225,7 @@ body {
 
 .bar {
   position: absolute;
-  width: 5px;
+  width: 4px;
   height: 40px;
   top: 9px;
   background-color: white;
@@ -294,7 +298,7 @@ body {
   font-family: "Proxima";
   text-align: center;
   vertical-align: text-bottom;
-  font-size: 48px;
+  font-size: 25px;
   font-weight: normal;
   color: white;
   animation-duration: 0.25s;
@@ -302,13 +306,14 @@ body {
 }
 
 #round_number {
-  top: 58px;
-  height: 27px;
+  top: 0px;
+  position: relative;
+  /* height: 27px; */
   width: 100%;
   font-family: "Proxima";
   text-align: center;
   vertical-align: text-bottom;
-  font-size: 26px;
+  font-size: 19px;
   font-weight: normal;
 }
 
@@ -384,7 +389,7 @@ body {
 #alert {
   position: relative;
   top: 22px;
-  width: 355px;
+  width: 228px;
   height: 40px;
   background-color: rgba(0,0,0,0.5);
 }
@@ -412,7 +417,7 @@ body {
 
 #alert_text {
   position: relative;
-  width: 355px;
+  width: 100%;
   height: 40px;
   font-family: "Proxima";
   text-align: center;
@@ -514,22 +519,24 @@ body {
 }
 
 #teams_powers {
-  width: 456px;
-  height: 25px;
-  top: 122px;
+  width: 1073px;
+  height: 8px;
+  top: 67px;
   position: absolute;
-  left: 728px;
+  left: 423px;
   display: block;
 }
 
 #left_tp_text{
   left:10px;
+  display: none;
   position: relative;
 }
 
 #right_tp_text{
   float:right;
   left:-10px;
+  display: none;
   position: relative;
 }
 
@@ -549,11 +556,11 @@ body {
 }
 
 #timers {
-  width: 337px;
+  width: 1073px;
   height: 20px;
-  top: 148px;
+  top: 84px;
   position: absolute;
-  left: 790px;
+  left: 423px;
 }
 
 #bomb_bar {
@@ -563,7 +570,6 @@ body {
   position: relative;
   background-color: var(--color-bomb);
   opacity: 0;
-  left: 1;
 }
 
 #defuse_bar {
@@ -573,21 +579,19 @@ body {
   position: relative;
   background-color: var(--color-defuse);
   opacity: 0;
-  left: 1;
 }
 
 #alert_middle_holder {
   position: fixed;
-  width: 338px;
+  width: 228px;
   height: 40px;
-  top: 0px;
-  left: 50%;
-  transform: translateX(-50%);
+  top: -82px;
+  left: 838px;
 }
 
 #alert_middle {
   position: relative;
-  width: 337px;
+  width: 100%;
   top:157px;
   height: 40px;
   background-color: rgba(0,0,0,0.5);
@@ -620,7 +624,7 @@ body {
 #alert_text_middle {
   position: relative;
   float: left;
-  width: 300px;
+  width: 97%;
   height: 40px;
   font-family: "Proxima";
   text-align: center;
@@ -662,7 +666,7 @@ body {
 
 #obs_lane1 {
   width: 218px;
-  top: 15px;
+  top: 12px;
   position: relative;
   display: flex;
   flex-direction: row;
@@ -679,6 +683,7 @@ body {
 }
 
 #obs_team {
+  opacity: 0;
   width: 22px;
   height: 18px;
   position: relative;
@@ -776,8 +781,8 @@ body {
 }
 
 #obs_health_section {
-  margin-left:41px;
-  width: 50px;
+  margin-left:36px;
+  width: 73px;
   position: relative;
   display: flex;
   flex-direction: row;
@@ -839,6 +844,7 @@ body {
 }
 
 #obs_bomb_kit {
+  opacity: 0;
   width: 15px;
   height: 15px;
   position: relative;
@@ -879,19 +885,19 @@ body {
 
 #obs_kills {
   position: relative;
-  left: 8px;
+  left: -2px;
   top: 5px;
 }
 
 #obs_assists {
   position: relative;
-  left: 8px;
+  left: -2px;
   top: 5px;
 }
 
 #obs_deaths {
   position: relative;
-  left: 8px;
+  left: -2px;
   top: 5px;
 }
 
@@ -904,7 +910,7 @@ body {
   top: 10px;
   font-family: "Proxima";
   vertical-align: text-bottom;
-  font-size: 20px;
+  font-size: 17px;
   font-weight: normal;
   color: white;
 }
@@ -920,7 +926,7 @@ body {
   font-family: "Proxima";
   text-align: left;
   vertical-align: text-bottom;
-  font-size: 20px;
+  font-size: 17px;
   font-weight: 500;
   color: white;
 }
@@ -993,7 +999,7 @@ body {
   font-family: "Proxima";
   text-align: right;
   vertical-align: text-bottom;
-  font-size: 20px;
+  font-size: 17px;
   font-weight: normal;
   color: white;
 }
@@ -1006,7 +1012,7 @@ body {
   font-family: "Proxima";
   text-align: left;
   vertical-align: text-bottom;
-  font-size: 20px;
+  font-size: 17px;
   font-weight: normal;
   color: #00acff
 }
@@ -2521,8 +2527,8 @@ body {
 
 .bomb_active {
   background-image: url("/files/img/elements/icon_c4_T.gif");
-  height: 40px;
-  width: 40px;
+  height: 30px;
+  width: 30px;
   margin-right: auto;
   margin-left: auto;
   top: 8px;
@@ -2533,8 +2539,8 @@ body {
 
 .bomb_exploded {
   background-image: url("/files/img/elements/icon_bomb_explosion_T.png");
-  height: 40px;
-  width: 40px;
+  height: 30px;
+  width: 30px;
   margin-right: auto;
   margin-left: auto;
   top: 8px;
@@ -2545,8 +2551,8 @@ body {
 
 .bomb_defused {
   background-image: url("/files/img/elements/icon_defuse_CT.png");
-  height: 40px;
-  width: 40px;
+  height: 30px;
+  width: 30px;
   margin-right: auto;
   margin-left: auto;
   top: 8px;
@@ -2557,8 +2563,8 @@ body {
 
 .pause_active {
   background-image: url("/files/img/elements/icon_pause_default.png");
-  height: 40px;
-  width: 40px;
+  height: 30px;
+  width: 30px;
   margin-right: auto;
   margin-left: auto;
   top: 8px;
@@ -2569,8 +2575,8 @@ body {
 
 .pause_active_T {
   background-image: url("/files/img/elements/icon_pause_T.png");
-  height: 40px;
-  width: 40px;
+  height: 30px;
+  width: 30px;
   margin-right: auto;
   margin-left: auto;
   top: 8px;
@@ -2581,8 +2587,8 @@ body {
 
 .pause_active_CT {
   background-image: url("/files/img/elements/icon_pause_CT.png");
-  height: 40px;
-  width: 40px;
+  height: 30px;
+  width: 30px;
   margin-right: auto;
   margin-left: auto;
   top: 8px;
@@ -2593,8 +2599,8 @@ body {
 
 .players_eliminated_T {
   background-image: url("/files/img/elements/icon_skull_T.png");
-  height: 40px;
-  width: 40px;
+  height: 30px;
+  width: 30px;
   margin-right: auto;
   margin-left: auto;
   top: 8px;
@@ -2605,8 +2611,8 @@ body {
 
 .players_eliminated_CT {
   background-image: url("/files/img/elements/icon_skull_CT.png");
-  height: 40px;
-  width: 40px;
+  height: 30px;
+  width: 30px;
   margin-right: auto;
   margin-left: auto;
   top: 8px;
@@ -2617,8 +2623,8 @@ body {
 
 .round_time_reached {
   background-image: url("/files/img/elements/icon_timer_CT.png");
-  height: 40px;
-  width: 40px;
+  height: 30px;
+  width: 30px;
   margin-right: auto;
   margin-left: auto;
   top: 8px;
@@ -2629,8 +2635,8 @@ body {
 
 .round_warmup {
   background-image: url("/files/img/elements/icon_hourglass_default.png");
-  height: 40px;
-  width: 40px;
+  height: 30px;
+  width: 30px;
   margin-right: auto;
   margin-left: auto;
   top: 8px;
