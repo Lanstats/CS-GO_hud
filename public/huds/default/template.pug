@@ -22,6 +22,13 @@ html
       _map_three = "#{map_three}",
       _map_four = "#{map_four}",
       _map_five = "#{map_five}",
+      _map_one_pick = "#{map_one_pick}",
+      _map_two_pick = "#{map_two_pick}",
+      _map_three_pick = "#{map_three_pick}",
+      _map_four_pick = "#{map_four_pick}",
+      _map_five_pick = "#{map_five_pick}",
+      _allow_deaths_info = "#{allow_deaths_info}",
+      _allow_alive = "#{allow_alive}",
       _money_power = "#{money_power}",
       special_event = "#{special_event}",
       delay = #{delay};
@@ -34,11 +41,14 @@ html
       #plank_mur4sh
         #plank_middle_mur4sh
           #plank_type_mur4sh.planks_mur4sh
-          #plank_map1_mur4sh.planks_mur4sh
-          #plank_map2_mur4sh.planks_mur4sh
-          #plank_map3_mur4sh.planks_mur4sh
-          #plank_map4_mur4sh.planks_mur4sh
-          #plank_map5_mur4sh.planks_mur4sh
+          .pm_map
+            #plank_map1_mur4sh.planks_mur4sh
+            #plank_map2_mur4sh.planks_mur4sh
+            #plank_map3_mur4sh.planks_mur4sh
+            #plank_map4_mur4sh.planks_mur4sh
+            #plank_map5_mur4sh.planks_mur4sh
+          #plank_picked
+      #lanstats_logo
       #alive_mur4sh
         #alive_top Живые игроки
         #alive_bottom
@@ -231,6 +241,9 @@ html
                 .player_health
                   #player_health_text 100
               .player_section_bottom
+                .player_dead_stats 
+                  #player_rating 
+                  #player_different
                 .player_bomb_kit
                   #player_bomb_kit_image
                 .player_current_money
@@ -291,6 +304,9 @@ html
                 .player_health
                   #player_health_text 100
               .player_section_bottom
+                .player_dead_stats 
+                  #player_rating 
+                  #player_different
                 .player_bomb_kit
                   #player_bomb_kit_image
                 .player_current_money
@@ -351,6 +367,9 @@ html
                 .player_health
                   #player_health_text 100
               .player_section_bottom
+                .player_dead_stats 
+                  #player_rating 
+                  #player_different
                 .player_bomb_kit
                   #player_bomb_kit_image
                 .player_current_money
@@ -411,6 +430,9 @@ html
                 .player_health
                   #player_health_text 100
               .player_section_bottom
+                .player_dead_stats 
+                  #player_rating 
+                  #player_different
                 .player_bomb_kit
                   #player_bomb_kit_image
                 .player_current_money
@@ -471,6 +493,9 @@ html
                 .player_health
                   #player_health_text 100
               .player_section_bottom
+                .player_dead_stats 
+                  #player_rating 
+                  #player_different
                 .player_bomb_kit
                   #player_bomb_kit_image
                 .player_current_money
@@ -581,6 +606,9 @@ html
                 .player_health
                   #player_health_text 100
               .player_section_bottom
+                .player_dead_stats 
+                  #player_rating 
+                  #player_different
                 .player_bomb_kit
                   #player_bomb_kit_image
                 .player_current_money
@@ -641,6 +669,9 @@ html
                 .player_health
                   #player_health_text 100
               .player_section_bottom
+                .player_dead_stats 
+                  #player_rating 
+                  #player_different
                 .player_bomb_kit
                   #player_bomb_kit_image
                 .player_current_money
@@ -701,6 +732,9 @@ html
                 .player_health
                   #player_health_text 100
               .player_section_bottom
+                .player_dead_stats 
+                  #player_rating 
+                  #player_different
                 .player_bomb_kit
                   #player_bomb_kit_image
                 .player_current_money
@@ -761,6 +795,9 @@ html
                 .player_health
                   #player_health_text 100
               .player_section_bottom
+                .player_dead_stats 
+                  #player_rating 
+                  #player_different
                 .player_bomb_kit
                   #player_bomb_kit_image
                 .player_current_money
@@ -821,6 +858,9 @@ html
                 .player_health
                   #player_health_text 100
               .player_section_bottom
+                .player_dead_stats 
+                  #player_rating 
+                  #player_different
                 .player_bomb_kit
                   #player_bomb_kit_image
                 .player_current_money

@@ -63,6 +63,7 @@ body {
   color: white;
   position: relative;
   left:-10px;
+  width: 105px;
 }
 
 #plank_middle_mur4sh{
@@ -71,11 +72,42 @@ body {
   margin-left: 10px;
 }
 
+.pm_map{
+  opacity: 1;
+  display: flex;
+  flex-direction: row;
+}
+
+.player_dead_stats{
+  position:absolute;
+  display: flex;
+  flex-direction: column;
+  font-size: 18px;
+  top: 6px;
+}
+
+#players_left .player_dead_stats{
+  left:249px;
+}
+
+#players_right .player_dead_stats{
+  left:25px;
+}
+
 .planks_mur4sh{
   text-overflow: ellipsis;
   display: block;
   /*font-weight: 700;*/
   margin-left: 10px;
+}
+
+#plank_picked{
+  color:white;
+  opacity:0;
+  position: relative;
+  left: -230px;
+  text-align: center;
+  width: 265px;
 }
 
 #section_sb{
@@ -396,7 +428,7 @@ body {
 
 #left_team > #alert {
   float: left;
-  top:17px;
+  top:-20px;
   opacity: 0;
   color: white;
   left: 0px;
@@ -407,7 +439,7 @@ body {
 #right_team > #alert {
   float: right;
   right: 0px;
-  top:17px;
+  top: -20px;
   opacity: 0;
   color: white;
 
@@ -592,7 +624,7 @@ body {
 #alert_middle {
   position: relative;
   width: 100%;
-  top:157px;
+  top:166px;
   height: 40px;
   background-color: rgba(0,0,0,0.5);
   opacity: 0;
@@ -624,7 +656,7 @@ body {
 #alert_text_middle {
   position: relative;
   float: left;
-  width: 97%;
+  width: 95%;
   height: 40px;
   font-family: "Proxima";
   text-align: center;
@@ -1840,13 +1872,22 @@ body {
   
 }
 
+#lanstats_logo{
+  position: absolute;
+  top: 9px;
+  width:347;
+  height:53px;
+  background-image: url("/files/img/elements/jclico.png");
+  right: 37px;
+}
+
 #alive_mur4sh{
+  opacity: 0;
   position: absolute;
   width:200px;
   height:76px;
   right: 38px;
-  top: 22px;
-  display: none;
+  top: 9px;
 }
 
 #alive_left_team, #alive_right_team{
@@ -1869,6 +1910,7 @@ body {
 }
 
 #alive_top{
+  display: none;
   position: relative;
   width: 100%;
   height: 29px;
@@ -2531,7 +2573,7 @@ body {
   width: 30px;
   margin-right: auto;
   margin-left: auto;
-  top: 8px;
+  top: 0px;
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
@@ -2543,7 +2585,7 @@ body {
   width: 30px;
   margin-right: auto;
   margin-left: auto;
-  top: 8px;
+  top: 0px;
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
@@ -2555,7 +2597,7 @@ body {
   width: 30px;
   margin-right: auto;
   margin-left: auto;
-  top: 8px;
+  top: 0px;
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
@@ -2567,7 +2609,7 @@ body {
   width: 30px;
   margin-right: auto;
   margin-left: auto;
-  top: 8px;
+  top: 0px;
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
@@ -2579,7 +2621,7 @@ body {
   width: 30px;
   margin-right: auto;
   margin-left: auto;
-  top: 8px;
+  top: 0px;
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
@@ -2591,7 +2633,7 @@ body {
   width: 30px;
   margin-right: auto;
   margin-left: auto;
-  top: 8px;
+  top: 0px;
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
@@ -2603,7 +2645,7 @@ body {
   width: 30px;
   margin-right: auto;
   margin-left: auto;
-  top: 8px;
+  top: 0px;
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
@@ -2615,7 +2657,7 @@ body {
   width: 30px;
   margin-right: auto;
   margin-left: auto;
-  top: 8px;
+  top: 0px;
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
@@ -2627,7 +2669,7 @@ body {
   width: 30px;
   margin-right: auto;
   margin-left: auto;
-  top: 8px;
+  top: 0px;
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
@@ -2639,7 +2681,7 @@ body {
   width: 30px;
   margin-right: auto;
   margin-left: auto;
-  top: 8px;
+  top: 0px;
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;

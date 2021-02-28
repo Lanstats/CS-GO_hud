@@ -36,6 +36,8 @@ let map_mur="";
 let left_count = 0;
 let right_count = 0;
 let full_top = true;
+let player_global = [];
+let rounds = 0;
 
 function updatePage(data) {
   var matchup = data.getMatchType();
@@ -75,7 +77,7 @@ function updatePage(data) {
   updateTopPanel();
   updateLeague();
   updateRoundNow(round, map);
-  updateRoundState(phase, round, map, previously, bomb, players);
+  if(players) updateRoundState(phase, round, map, previously, bomb, players);
   updateObserved(observed);
   updatePlayers(players, observed, phase, previously);
   updateTeamValues(teams.left, teams.right);
@@ -83,6 +85,7 @@ function updatePage(data) {
   freezetime = round.phase == "freezetime";
   last_round = round_now;
 }
+
 
 function setupBestOf(matchup, match) {
   if (matchup && matchup.toLowerCase() != "none") {
@@ -227,10 +230,13 @@ function updateLeague() {
     $("#plank_map5_mur4sh").css("color","rgba(255,255,255,0.5)");
     if(mp == _map_one.toLowerCase()){
       $("#plank_map1_mur4sh").css("color","white");
+      $("#plank_picked").text('picked by '+_map_one_pick);
     }else if(mp == _map_two.toLowerCase()){
       $("#plank_map2_mur4sh").css("color","white");
+      $("#plank_picked").text('picked by '+_map_two_pick);
     }else if(mp == _map_three.toLowerCase()){
       $("#plank_map3_mur4sh").css("color","white");
+      $("#plank_picked").text('picked by '+_map_three_pick);
     }
   }else if(_game_type == "Bo5"){
     $("#plank_map1_mur4sh").text(_map_one);
@@ -245,13 +251,18 @@ function updateLeague() {
     $("#plank_map5_mur4sh").css("color","rgba(255,255,255,0.5)");
     if(mp == _map_one.toLowerCase()){
       $("#plank_map1_mur4sh").css("color","white");
+      $("#plank_picked").text('picked by '+_map_one_pick);
     }else if(mp == _map_two.toLowerCase()){
+      $("#plank_picked").text('picked by '+_map_two_pick);
       $("#plank_map2_mur4sh").css("color","white");
     }else if(mp == _map_three.toLowerCase()){
+      $("#plank_picked").text('picked by '+_map_three_pick);
       $("#plank_map3_mur4sh").css("color","white");
     }else if(mp == _map_four.toLowerCase()){
+      $("#plank_picked").text('picked by '+_map_four_pick);
       $("#plank_map4_mur4sh").css("color","white");
     }else if(mp == _map_five.toLowerCase()){
+      $("#plank_picked").text('picked by '+_map_five_pick);
       $("#plank_map5_mur4sh").css("color","white");
     }
   }else if(_game_type == "Bo1"){
@@ -259,6 +270,17 @@ function updateLeague() {
     $("#plank_map1_mur4sh").css("color","rgba(255,255,255,0.5)");
     $("#plank_map2_mur4sh").text("");
     $("#plank_map2_mur4sh").css("color","rgba(255,255,255,0.5)");
+    if(mp == _map_one.toLowerCase()){
+      $("#plank_picked").text('picked by '+_map_one_pick);
+    }else if(mp == _map_two.toLowerCase()){
+      $("#plank_picked").text('picked by '+_map_two_pick);
+    }else if(mp == _map_three.toLowerCase()){
+      $("#plank_picked").text('picked by '+_map_three_pick);
+    }else if(mp == _map_four.toLowerCase()){
+      $("#plank_picked").text('picked by '+_map_four_pick);
+    }else if(mp == _map_five.toLowerCase()){
+      $("#plank_picked").text('picked by '+_map_five_pick);
+    }
     $("#plank_map3_mur4sh").text(mp);
     $("#plank_map3_mur4sh").css("color","white");
     $("#plank_map4_mur4sh").text("");
@@ -291,8 +313,12 @@ function updateLeague() {
 function updateRoundNow(round, map) {
   round_now = map.round + (round.phase == "over" || round.phase == "intermission" ? 0 : 1);
   $("#round_number").text(round_now + "/30");
+  rounds = Number(round_now);
   if ((round.phase == "freezetime" && !freezetime) || round_now != last_round) {
     start_money = {};
+    for(let i=0;i<player_global.length;i++){
+      player_global[i].counted = false;
+    }
   }
 }
 
@@ -304,6 +330,7 @@ function updateRoundState(phase, round, map, previously, bomb, players) {
 
   switch (phase.phase) {
     case "warmup":
+      player_global = [];
       updateStateWarmup(phase);
       break;
     case "freezetime":
@@ -313,7 +340,10 @@ function updateRoundState(phase, round, map, previously, bomb, players) {
       updateStateLive(phase, bomb, players, previously);
       break;
     case "over":
-      updateStateOver(phase, round, previously);
+      updateStateOver(phase, round, previously,players);
+      for(let i=0;i<10;i++){
+        count_global(players[i])
+      }
       break;
     case "bomb":
       updateStatePlanted(phase, round, previously);
@@ -340,7 +370,9 @@ function updateStateWarmup(phase) {
       $("#players_left #player_section #player" + x + " .player_stats_holder").css("opacity", 0);
       $("#players_right #player_section #player" + x + " .player_stats_holder").css("opacity", 0);
     }
-    if (!$("#round_timer_text").hasClass("round_warmup")) animateRoundTimer("round_warmup", true);
+    if (!$("#round_timer_text").hasClass("round_warmup")){
+      animateRoundTimer("round_warmup", true);
+    }
   }
 }
 
@@ -558,7 +590,40 @@ function updateStateFreezetime(phase, previously) {
   }
 }
 
-function updateStateOver(phase, round, previously) {
+function show_pick_team(){
+  $(".pm_map").removeClass('fadeInDown');
+  $("#plank_picked").removeClass('fadeOutDown');
+  animateElement(".pm_map", "fadeOutDown", function () {});
+  animateElement("#plank_picked", "fadeInDown", function () {});
+  setTimeout(()=>{
+    $(".pm_map").removeClass('fadeOutDown');
+    $("#plank_picked").removeClass('fadeInDown');
+    animateElement(".pm_map", "fadeInDown", function () {});
+    animateElement("#plank_picked", "fadeOutDown", function () {});
+  },10000)
+  setTimeout(()=>{
+    show_pick_team()
+  },20000)
+}
+
+setTimeout(()=>{
+  show_pick_team()
+}, 10000)
+
+function show_alive_and_logo(){
+  $("#alive_mur4sh").removeClass('fadeOutDown');
+  $("#lanstats_logo").removeClass('fadeInDown');
+  animateElement("#alive_mur4sh", "fadeInDown", function () {});
+  animateElement("#lanstats_logo", "fadeOutDown", function () {});
+  setTimeout(()=>{
+    $("#alive_mur4sh").removeClass('fadeInDown');
+    $("#lanstats_logo").removeClass('fadeOutDown');
+    animateElement("#alive_mur4sh", "fadeOutDown", function () {});
+    animateElement("#lanstats_logo", "fadeInDown", function () {});
+  },5000)
+}
+
+function updateStateOver(phase, round, previously,players) {
   if (phase) {
     $("#round_timer_text").css("color", COLOR_GRAY);
     //#region Which Team Won
@@ -1078,6 +1143,7 @@ function fillPlayers(teams, observed, phase, previously) {
           .find("#player" + (i + 1))
           .css("opacity", "0");
       } else {
+        
         fillPlayer(teams.right.players[i], i, "players_right", observed, phase, previously);
         $("#players_right #player_section")
           .find("#player" + (i + 1))
@@ -1089,6 +1155,11 @@ function fillPlayers(teams, observed, phase, previously) {
 }
 
 function UpdateAlive(teams){
+  if(_allow_alive){
+    $("#alive_mur4sh").css('display','block');
+  }else{
+    $("#alive_mur4sh").css('display','none');
+  }
   $("#alive_left_team")
     .text(left_count)
     .css("color", teams.left.side == "ct" ? COLOR_NEW_CT : COLOR_T);
@@ -1097,7 +1168,145 @@ function UpdateAlive(teams){
     .css("color", teams.right.side == "ct" ? COLOR_NEW_CT : COLOR_T);
 }
 
+function count_rating(player){
+  let rating = 1;
+  var AVERAGE_KPR = 0.679
+  var AVERAGE_SPR = 0.317
+  var AVERAGE_RMK = 1.277
+  for(let i=0;i<player_global.length;i++){
+    if(Number(player_global[i].steamid) == Number(player.steamid)){
+      let killRating = (player_global[i].match_stats.kills/rounds)/AVERAGE_KPR
+      let survival = ((rounds - player_global[i].match_stats.deaths)/rounds)/AVERAGE_SPR
+      let kills_one = player_global[i].match_stats.one_streak?player_global[i].match_stats.one_streak:0;
+      let multi = ((player_global[i].match_stats.five_streak?player_global[i].match_stats.five_streak:0)*25 + (player_global[i].match_stats.four_streak?player_global[i].match_stats.four_streak:0)*16 + (player_global[i].match_stats.three_streak?player_global[i].match_stats.three_streak:0)*9 + (player_global[i].match_stats.two_streak?player_global[i].match_stats.two_streak:0)*4 + kills_one)/rounds
+      multi = multi/AVERAGE_RMK
+      rating = (killRating+0.7*survival+multi) / 2.7  
+      rating = rating.toFixed(2);
+    }
+  }
+  return rating;
+}
+
+function player_hs(player){
+  for(let i=0;i<player_global.length;i++){
+    if(Number(player_global[i].steamid) == Number(player.steamid)){
+      return (((player_global[i].match_stats.heads?player_global[i].match_stats.heads:0)/(player_global[i].match_stats.kills?player_global[i].match_stats.kills:1))*100).toFixed(0);
+    } 
+  }
+  return 0;
+}
+
+function count_adr(player){
+  for(let i=0;i<player_global.length;i++){
+    if(Number(player_global[i].steamid) == Number(player.steamid)){
+      return (player_global[i].match_stats.total_dmg?player_global[i].match_stats.total_dmg:0/(rounds?rounds:1)).toFixed(0);
+    } 
+  }
+  return 0;
+}
+
+function count_kd(player){
+  for(let i=0;i<player_global.length;i++){
+    if(Number(player_global[i].steamid) == Number(player.steamid)){
+      return (player_global[i].match_stats.kills/(player_global[i].match_stats.deaths?player_global[i].match_stats.deaths:1)).toFixed(2);
+    } 
+  }
+  return 0;
+}
+
+function count_global(player){
+  for(let i=0;i<player_global.length;i++){
+    if(Number(player_global[i].steamid) == Number(player.steamid)){
+      if(!player_global[i].counted){
+        break;
+      }else{
+        player_global[i].counted = true;
+      }
+      if(player_global[i].match_stats.heads){
+        player_global[i].match_stats.heads+=player.state.round_killhs
+      }else{
+        player_global[i].match_stats.heads=player.state.round_killhs
+      }
+      if(player_global[i].match_stats.total_dmg){
+        player_global[i].match_stats.total_dmg+=player.state.round_totaldmg
+      }else{
+        player_global[i].match_stats.total_dmg=player.state.round_totaldmg
+      }
+      if(player_global[i].match_stats.flashed){
+        player_global[i].match_stats.flashed+=player.state.flashed
+      }else{
+        player_global[i].match_stats.flashed=player.state.flashed
+      }
+      let rk = Number(player.state.round_kills);
+      switch(rk){
+        case 5:
+          if(player_global[i].match_stats.five_streak){
+            player_global[i].match_stats.five_streak+=rk;
+          }else{
+            player_global[i].match_stats.five_streak=rk
+          }
+          break;
+        case 4:
+          if(player_global[i].match_stats.four_streak){
+            player_global[i].match_stats.four_streak+=rk;
+          }else{
+            player_global[i].match_stats.four_streak=rk
+          }
+          break;
+        case 3:
+          if(player_global[i].match_stats.three_streak){
+            player_global[i].match_stats.three_streak+=rk;
+          }else{
+            player_global[i].match_stats.three_streak=rk
+          }
+          break;
+        case 2:
+          if(player_global[i].match_stats.two_streak){
+            player_global[i].match_stats.two_streak+=rk;
+          }else{
+            player_global[i].match_stats.two_streak=rk
+          }
+          break;
+        case 1:
+          if(player_global[i].match_stats.one_streak){
+            player_global[i].match_stats.one_streak+=rk;
+          }else{
+            player_global[i].match_stats.one_streak=rk
+          }
+          break;
+      }
+    }
+  }
+}
+
+let count_i=1;
+
 function fillPlayer(player, nr, side, observed, phase, previously) {
+  //console.log(phase)
+  if(player_global.length>0){
+    let check = false;
+    for(let i=0;i<player_global.length;i++){
+      if(Number(player_global[i].steamid) == Number(player.steamid)){
+        check = true;
+        player_global[i].match_stats.kills = player.match_stats.kills;
+        player_global[i].match_stats.deaths = player.match_stats.deaths;
+        player_global[i].match_stats.assists = player.match_stats.assists;
+        player_global[i].match_stats.mvps = player.match_stats.mvps;
+        player_global[i].match_stats.score = player.match_stats.score;
+        player_global[i].counted = false;
+      }
+    }
+    if(!check && player_global.length<10){
+      player_global.push(player);
+      player_global[player_global.length-1].counted = false;
+    }
+  }else{
+    if(player_global.length<10){
+      player_global.push(player);
+      player_global[player_global.length-1].counted = false;
+    }
+  }
+
   let slot = player.observer_slot;
   let stats = player.getStats();
   let weapons = player.getWeapons();
@@ -1166,7 +1375,7 @@ function fillPlayer(player, nr, side, observed, phase, previously) {
       $top.find("#player_alias_text").text(player.name);// + " |" + slot);
     }
   }
-
+  let allow = false;
   $kda_money.find("#player_kills_k").css("color", side_color);
   $kda_money.find("#player_kills_text").text(stats.kills);
   $player.find("#player_dead_kills_text").text(stats.kills);
@@ -1181,6 +1390,24 @@ function fillPlayer(player, nr, side, observed, phase, previously) {
     $bottom.find("#player_bomb_kit_image").css("opacity", 0);
     $bottom.find("#player_armor_image").css("opacity", 0);
     $top.find("#player_health_text").css("opacity", 0);
+    if(!$("#round_timer_text").hasClass("round_warmup") && _allow_deaths_info){
+      $bottom.find(".player_dead_stats").css("opacity",1);
+    }
+    $bottom.find("#player_rating").text("Rating: "+ count_rating(player));
+    if(count_i>1600){
+      count_i=0;
+    }
+    let ar = Number(count_i/400);
+    if(0<=ar && ar<1){
+      $bottom.find("#player_different").text("HS: "+player_hs(player) +"%");
+    }else if(1<=ar && ar<2){
+      $bottom.find("#player_different").text("ADR: "+ count_adr(player));
+    }else if(2<=ar && ar<3){
+      $bottom.find("#player_different").text("MVPS: "+ player.match_stats.mvps);
+    }else if(3<=ar && ar<4){
+      $bottom.find("#player_different").text("K/D: "+ count_kd(player));
+    }
+    count_i++;
     //$player.find(".player_dead").css("opacity", 1);
     if (side.substr(8) == "left") {
       left_count--;
@@ -1196,6 +1423,7 @@ function fillPlayer(player, nr, side, observed, phase, previously) {
       $player.find("#player_round_kills_text").css("right", "-35px");*/
     }
   } else {
+    $bottom.find(".player_dead_stats").css("opacity",0);
     $bottom.find("#player_bomb_kit_image").css("opacity", 1);
     $bottom.find("#player_armor_image").css("opacity", 1);
     $top.find("#player_health_text").css("opacity", 1);
@@ -1213,6 +1441,10 @@ function fillPlayer(player, nr, side, observed, phase, previously) {
       $player.find("#player_skull").css("right", "0px");
       $player.find("#player_round_kills_text").css("right", "20px");*/
     }
+  }
+
+  if(dead){
+    count_global(player);
   }
 
   if (stats.burning > 0 && !dead) {

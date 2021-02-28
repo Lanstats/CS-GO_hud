@@ -143,6 +143,7 @@ function updatePlayer(player, userId) {
         contentType: false,
         processData: false,
         success: function () {
+            console.log(userId)
             listPlayers(userId)
         }
     });
