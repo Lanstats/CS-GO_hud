@@ -230,13 +230,13 @@ function updateLeague() {
     $("#plank_map5_mur4sh").css("color","rgba(255,255,255,0.5)");
     if(mp == _map_one.toLowerCase()){
       $("#plank_map1_mur4sh").css("color","white");
-      $("#plank_picked").text('picked by '+_map_one_pick);
+      $("#plank_picked").text(_map_one_pick);
     }else if(mp == _map_two.toLowerCase()){
       $("#plank_map2_mur4sh").css("color","white");
-      $("#plank_picked").text('picked by '+_map_two_pick);
+      $("#plank_picked").text(_map_two_pick);
     }else if(mp == _map_three.toLowerCase()){
       $("#plank_map3_mur4sh").css("color","white");
-      $("#plank_picked").text('picked by '+_map_three_pick);
+      $("#plank_picked").text(_map_three_pick);
     }
   }else if(_game_type == "Bo5"){
     $("#plank_map1_mur4sh").text(_map_one);
@@ -251,18 +251,18 @@ function updateLeague() {
     $("#plank_map5_mur4sh").css("color","rgba(255,255,255,0.5)");
     if(mp == _map_one.toLowerCase()){
       $("#plank_map1_mur4sh").css("color","white");
-      $("#plank_picked").text('picked by '+_map_one_pick);
+      $("#plank_picked").text(_map_one_pick);
     }else if(mp == _map_two.toLowerCase()){
-      $("#plank_picked").text('picked by '+_map_two_pick);
+      $("#plank_picked").text(_map_two_pick);
       $("#plank_map2_mur4sh").css("color","white");
     }else if(mp == _map_three.toLowerCase()){
-      $("#plank_picked").text('picked by '+_map_three_pick);
+      $("#plank_picked").text(_map_three_pick);
       $("#plank_map3_mur4sh").css("color","white");
     }else if(mp == _map_four.toLowerCase()){
-      $("#plank_picked").text('picked by '+_map_four_pick);
+      $("#plank_picked").text(_map_four_pick);
       $("#plank_map4_mur4sh").css("color","white");
     }else if(mp == _map_five.toLowerCase()){
-      $("#plank_picked").text('picked by '+_map_five_pick);
+      $("#plank_picked").text(_map_five_pick);
       $("#plank_map5_mur4sh").css("color","white");
     }
   }else if(_game_type == "Bo1"){
@@ -271,15 +271,15 @@ function updateLeague() {
     $("#plank_map2_mur4sh").text("");
     $("#plank_map2_mur4sh").css("color","rgba(255,255,255,0.5)");
     if(mp == _map_one.toLowerCase()){
-      $("#plank_picked").text('picked by '+_map_one_pick);
+      $("#plank_picked").text(_map_one_pick);
     }else if(mp == _map_two.toLowerCase()){
-      $("#plank_picked").text('picked by '+_map_two_pick);
+      $("#plank_picked").text(_map_two_pick);
     }else if(mp == _map_three.toLowerCase()){
-      $("#plank_picked").text('picked by '+_map_three_pick);
+      $("#plank_picked").text(_map_three_pick);
     }else if(mp == _map_four.toLowerCase()){
-      $("#plank_picked").text('picked by '+_map_four_pick);
+      $("#plank_picked").text(_map_four_pick);
     }else if(mp == _map_five.toLowerCase()){
-      $("#plank_picked").text('picked by '+_map_five_pick);
+      $("#plank_picked").text(_map_five_pick);
     }
     $("#plank_map3_mur4sh").text(mp);
     $("#plank_map3_mur4sh").css("color","white");
