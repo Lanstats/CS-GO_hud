@@ -1411,12 +1411,14 @@ function fillPlayer(player, nr, side, observed, phase, previously) {
     //$player.find(".player_dead").css("opacity", 1);
     if (side.substr(8) == "left") {
       left_count--;
+      show_alive_and_logo()
       /*$player.find("#player_alias_text").css("left", "-35px");
       $player.find("#player_current_money_text").css("left", "-55px");
       $player.find("#player_skull").css("left", "-55px");
       $player.find("#player_round_kills_text").css("left", "-35px");*/
     } else if (side.substr(8) == "right") {
       right_count--;
+      show_alive_and_logo()
       /*$player.find("#player_alias_text").css("right", "-35px");
       $player.find("#player_current_money_text").css("left", "65px");
       $player.find("#player_skull").css("right", "-55px");
