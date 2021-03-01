@@ -38,6 +38,7 @@ let right_count = 0;
 let full_top = true;
 let player_global = [];
 let rounds = 0;
+let allow_alive_block = true;
 
 function updatePage(data) {
   var matchup = data.getMatchType();
@@ -603,14 +604,15 @@ function show_pick_team(){
   },10000)
   setTimeout(()=>{
     show_pick_team()
-  },20000)
+  },60000)
 }
 
 setTimeout(()=>{
   show_pick_team()
-}, 10000)
+},100)
 
 function show_alive_and_logo(){
+  allow_alive_block = false;
   $("#alive_mur4sh").removeClass('fadeOutDown');
   $("#lanstats_logo").removeClass('fadeInDown');
   animateElement("#alive_mur4sh", "fadeInDown", function () {});
@@ -620,6 +622,7 @@ function show_alive_and_logo(){
     $("#lanstats_logo").removeClass('fadeOutDown');
     animateElement("#alive_mur4sh", "fadeOutDown", function () {});
     animateElement("#lanstats_logo", "fadeInDown", function () {});
+    allow_alive_block = true;
   },5000)
 }
 
@@ -1143,13 +1146,18 @@ function fillPlayers(teams, observed, phase, previously) {
           .find("#player" + (i + 1))
           .css("opacity", "0");
       } else {
-        
         fillPlayer(teams.right.players[i], i, "players_right", observed, phase, previously);
         $("#players_right #player_section")
           .find("#player" + (i + 1))
           .css("opacity", "1");
       }
     }
+  }
+  if(allow_alive_block && phase.phase != "warmup" && (was_alive!=(left_count+right_count)) && left_count && right_count){
+    show_alive_and_logo()
+  }
+  if(was_alive!=(left_count+right_count)){
+    was_alive = left_count+right_count
   }
   UpdateAlive(teams);
 }
@@ -1280,6 +1288,7 @@ function count_global(player){
 }
 
 let count_i=1;
+let was_alive = 10;
 
 function fillPlayer(player, nr, side, observed, phase, previously) {
   //console.log(phase)
@@ -1375,7 +1384,6 @@ function fillPlayer(player, nr, side, observed, phase, previously) {
       $top.find("#player_alias_text").text(player.name);// + " |" + slot);
     }
   }
-  let allow = false;
   $kda_money.find("#player_kills_k").css("color", side_color);
   $kda_money.find("#player_kills_text").text(stats.kills);
   $player.find("#player_dead_kills_text").text(stats.kills);
@@ -1411,14 +1419,12 @@ function fillPlayer(player, nr, side, observed, phase, previously) {
     //$player.find(".player_dead").css("opacity", 1);
     if (side.substr(8) == "left") {
       left_count--;
-      show_alive_and_logo()
       /*$player.find("#player_alias_text").css("left", "-35px");
       $player.find("#player_current_money_text").css("left", "-55px");
       $player.find("#player_skull").css("left", "-55px");
       $player.find("#player_round_kills_text").css("left", "-35px");*/
     } else if (side.substr(8) == "right") {
       right_count--;
-      show_alive_and_logo()
       /*$player.find("#player_alias_text").css("right", "-35px");
       $player.find("#player_current_money_text").css("left", "65px");
       $player.find("#player_skull").css("right", "-55px");

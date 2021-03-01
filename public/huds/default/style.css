@@ -84,6 +84,7 @@ body {
   flex-direction: column;
   font-size: 18px;
   top: 6px;
+  color: var(--white-half);
 }
 
 #players_left .player_dead_stats{
@@ -1875,8 +1876,9 @@ body {
 #lanstats_logo{
   position: absolute;
   top: 9px;
-  width:347;
-  height:53px;
+  width:111;
+  height:17px;
+  object-fit: fill;
   background-image: url("/files/img/elements/jclico.png");
   right: 37px;
 }
