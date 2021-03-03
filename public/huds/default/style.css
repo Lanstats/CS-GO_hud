@@ -2230,14 +2230,14 @@ body {
 }
 
 #players_left .player_hindered {
-  right: -80px;
+  right: -90px;
   display: flex;
   justify-content: flex-start;
   flex-direction: row;
 }
 
 #players_right .player_hindered {
-  left: -80px;
+  left: -50px;
   display: flex;
   justify-content: flex-end;
   flex-direction: row;
