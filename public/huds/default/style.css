@@ -1873,23 +1873,28 @@ body {
   
 }
 
-#lanstats_logo{
+#alive_logo_block{
+  width: 200px;
+  height: 60px;
+  background-color: rgba(0,0,0,0.5);
   position: absolute;
-  top: 9px;
-  width:111;
-  height:17px;
-  object-fit: fill;
-  background-image: url("/files/img/elements/jclico.png");
   right: 37px;
+  top: 9px;
+}
+
+#lanstats_logo{
+  width: 200px;
+  height: 60px;
+  object-fit: scale-down;
+  /*background-color: rgba(0,0,0,0.5);*/
 }
 
 #alive_mur4sh{
   opacity: 0;
+  top:0px;
   position: absolute;
   width:200px;
   height:76px;
-  right: 38px;
-  top: 9px;
 }
 
 #alive_left_team, #alive_right_team{
@@ -1930,7 +1935,6 @@ body {
   width:100%;
   /*height: 47px;*/
   font-family: 'Proxima';
-  background-color:rgba(0,0,0,0.5);
   font-size:48px;
 }
 

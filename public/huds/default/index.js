@@ -41,6 +41,7 @@ let rounds = 0;
 let allow_alive_block = true;
 
 function updatePage(data) {
+  $("#lanstats_logo").attr("src","/files/img/elements/jclico.png");
   var matchup = data.getMatchType();
   var match = data.getMatch();
   var team_one = data.getTeamOne();
@@ -613,15 +614,15 @@ setTimeout(()=>{
 
 function show_alive_and_logo(){
   allow_alive_block = false;
-  $("#alive_mur4sh").removeClass('fadeOutDown');
-  $("#lanstats_logo").removeClass('fadeInDown');
+  $("#alive_mur4sh").removeClass('fadeOutUp');
+  $("#lanstats_logo").removeClass('fadeInUp');
   animateElement("#alive_mur4sh", "fadeInDown", function () {});
   animateElement("#lanstats_logo", "fadeOutDown", function () {});
   setTimeout(()=>{
     $("#alive_mur4sh").removeClass('fadeInDown');
     $("#lanstats_logo").removeClass('fadeOutDown');
-    animateElement("#alive_mur4sh", "fadeOutDown", function () {});
-    animateElement("#lanstats_logo", "fadeInDown", function () {});
+    animateElement("#alive_mur4sh", "fadeOutUp", function () {});
+    animateElement("#lanstats_logo", "fadeInUp", function () {});
     allow_alive_block = true;
   },5000)
 }
