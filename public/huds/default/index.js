@@ -615,14 +615,14 @@ setTimeout(()=>{
 function show_alive_and_logo(){
   allow_alive_block = false;
   $("#alive_mur4sh").removeClass('fadeOutUp');
-  $("#lanstats_logo").removeClass('fadeInUp');
+  $("#lanstats_logo").removeClass('fadeInDown');
   animateElement("#alive_mur4sh", "fadeInDown", function () {});
-  animateElement("#lanstats_logo", "fadeOutDown", function () {});
+  animateElement("#lanstats_logo", "fadeOutUp", function () {});
   setTimeout(()=>{
     $("#alive_mur4sh").removeClass('fadeInDown');
-    $("#lanstats_logo").removeClass('fadeOutDown');
+    $("#lanstats_logo").removeClass('fadeOutUp');
     animateElement("#alive_mur4sh", "fadeOutUp", function () {});
-    animateElement("#lanstats_logo", "fadeInUp", function () {});
+    animateElement("#lanstats_logo", "fadeInDown", function () {});
     allow_alive_block = true;
   },5000)
 }
