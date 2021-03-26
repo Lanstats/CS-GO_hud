@@ -56,7 +56,11 @@ function updatePage(data) {
   var previously = data.previously();
   var bomb = data.bomb();
 
-  map_mur=map;
+  if(map_mur != (map.name.match(/[A-Za-z]+[0-9]*$/)[0]).toLowerCase()){
+    player_global=[]
+    map_mur=(map.name.match(/[A-Za-z]+[0-9]*$/)[0]).toLowerCase();
+  }
+  
 
   var test_player = data.getPlayer(1);
   if (test_player) {
@@ -218,7 +222,7 @@ function updateLeague() {
       break;
   }
   $("#plank_type_mur4sh").text(gt);
-  let mp =(map_mur.name.match(/[A-Za-z]+[0-9]*$/)[0]).toLowerCase();
+  let mp =map_mur
   if(_game_type == "Bo3"){
     $("#plank_map1_mur4sh").text(_map_one);
     $("#plank_map1_mur4sh").css("color","rgba(255,255,255,0.5)");
