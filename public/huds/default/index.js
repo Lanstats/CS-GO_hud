@@ -56,8 +56,9 @@ function updatePage(data) {
   var previously = data.previously();
   var bomb = data.bomb();
 
-  if(map_mur != (map.name.match(/[A-Za-z]+[0-9]*$/)[0]).toLowerCase()){
+  if(map_mur != map.name.match(/[A-Za-z]+[0-9]*$/)?(map.name.match(/[A-Za-z]+[0-9]*$/)[0]).toLowerCase():""){
     player_global=[]
+    console.log('update map')
     map_mur=(map.name.match(/[A-Za-z]+[0-9]*$/)[0]).toLowerCase();
   }
   
@@ -325,6 +326,7 @@ function updateRoundNow(round, map) {
     for(let i=0;i<player_global.length;i++){
       player_global[i].counted = false;
     }
+    console.log('ready to update info')
   }
 }
 
@@ -347,7 +349,7 @@ function updateRoundState(phase, round, map, previously, bomb, players) {
       break;
     case "over":
       updateStateOver(phase, round, previously,players);
-      for(let i=0;i<10;i++){
+      for(let i=0;i<players.length;i++){
         count_global(players[i])
       }
       break;
@@ -1230,7 +1232,7 @@ function count_kd(player){
 function count_global(player){
   for(let i=0;i<player_global.length;i++){
     if(Number(player_global[i].steamid) == Number(player.steamid)){
-      if(!player_global[i].counted){
+      if(player_global[i].counted){
         break;
       }else{
         player_global[i].counted = true;
@@ -1589,7 +1591,7 @@ function fillPlayer(player, nr, side, observed, phase, previously) {
       view = weapon.state == "active" ? "player_bomb_selected" : "player_bomb";
       $bottom.find("#player_bomb_kit_image").addClass(view);
     }
-    if (!checkGuns(weapons)) {
+    if (!checkGuns(weapons) && type != "C4") {
       view += side.substr(8) == "right" ? " img-hor" : "";
       $bottom
         .find("#player_weapon_primary_img")
@@ -2157,7 +2159,7 @@ function printPlayerData(players) {
       };
       players_data.push(data);
     });
-    console.log(players_data);
+    //console.log(players_data);
     printed_player_data = true;
   }
 }
