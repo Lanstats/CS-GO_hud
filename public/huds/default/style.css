@@ -276,7 +276,6 @@ body {
   background-color: white;
   opacity: 0;
   position: relative;
-  border: 1px solid red;
 }
 
 .block1 {
@@ -738,7 +737,7 @@ body {
 #obs_alias {
   position: relative;
   left: 0px;
-  top: -146px;
+  top: -154px;
 }
 
 #obs_alias_text {

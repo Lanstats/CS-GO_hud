@@ -223,7 +223,7 @@ function updateLeague() {
       break;
   }
   $("#plank_type_mur4sh").text(gt);
-  let mp =(map_mur.name.match(/[A-Za-z]+[0-9]*$/)[0]).toLowerCase();
+  let mp =(map_mur.match(/[A-Za-z]+[0-9]*$/)[0]).toLowerCase();
   if(_game_type == "Bo3"){
     $("#plank_map1_mur4sh").text(_map_one);
     $("#plank_map1_mur4sh").css("color","rgba(255,255,255,0.5)");
@@ -964,8 +964,12 @@ function fillObserved(obs) {
   $("#obs_lane_under").css("background-color", team_color);
   if (obs.real_name && obs.real_name != obs.name) {
     $("#obs_realname_text").text(obs.real_name);
+    $("#obs_alias_text").css("top","0px")
+    $("#obs_realname_text").css("opacity","1")
   } else {
     $("#obs_realname_text").text("");
+    $("#obs_alias_text").css("top","10px")
+    $("#obs_realname_text").css("opacity","0")
   }
 
   // Logic for Team Image
