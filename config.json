@@ -24,7 +24,7 @@
   "Map5_pick":"Last map",
   "GameType": "Bo3",
   "GSIToken": "120987",
-  "Deaths_info": true,
-  "allow_alive":true,
+  "Deaths_info": false,
+  "allow_alive": true,
   "MoneyPower": true
 }
