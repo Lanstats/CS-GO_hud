@@ -56,12 +56,16 @@ function updatePage(data) {
   var previously = data.previously();
   var bomb = data.bomb();
 
+<<<<<<< Updated upstream
   if(map_mur != map.name.match(/[A-Za-z]+[0-9]*$/)?(map.name.match(/[A-Za-z]+[0-9]*$/)[0]).toLowerCase():""){
     player_global=[]
     console.log('update map')
     map_mur=(map.name.match(/[A-Za-z]+[0-9]*$/)[0]).toLowerCase();
   }
   
+=======
+  map_mur=map;
+>>>>>>> Stashed changes
 
   var test_player = data.getPlayer(1);
   if (test_player) {
@@ -223,7 +227,7 @@ function updateLeague() {
       break;
   }
   $("#plank_type_mur4sh").text(gt);
-  let mp =map_mur
+  let mp =(map_mur.name.match(/[A-Za-z]+[0-9]*$/)[0]).toLowerCase();
   if(_game_type == "Bo3"){
     $("#plank_map1_mur4sh").text(_map_one);
     $("#plank_map1_mur4sh").css("color","rgba(255,255,255,0.5)");
@@ -438,9 +442,9 @@ function SlideShort(){
   //animateElement("#right_team #team_logo", "scaleDownLogoRight", function () {});
   $('#timers').css('left','727px').css('width','456px');
 
-  $("#left_team #alert").css('top','-30px').css('left','0px');
+  $("#left_team #alert").css('top','-29px').css('left','0px');
   $("#left_team #score").css('width','42px').css("color", 'white').css('left','20px').css('top','-9px');
-  $("#right_team #alert").css('top','-30px').css('left','0px');
+  $("#right_team #alert").css('top','-29px').css('left','0px');
   $("#right_team #score").css('width','42px').css("color", 'white').css('margin-left','27px').css('right','18px').css('top','-9px');
   $("#left_team").css('width','200px');
   $("#right_team").css('width','200px');
@@ -511,9 +515,9 @@ function SlideLong(){
   //animateElement("#right_team #team_logo", "scaleUpLogoRight", function () {});
   //$('#timers').css('left','422px').css('width','1073px');
 
-  $("#left_team #alert").css('top','-89px').css('left','0px');
+  $("#left_team #alert").css('top','-87px').css('left','0px');
   $("#left_team #score").css('width','96px').css('left','36px').css('top','-9px');
-  $("#right_team #alert").css('top','-89px').css('left','0px');
+  $("#right_team #alert").css('top','-87px').css('left','0px');
   $("#right_team #score").css('width','96px').css('margin-left','0px').css('right','36px').css('top','-9px');;
   $("#left_team").css('width','auto');
   $("#right_team").css('width','auto');
@@ -621,14 +625,14 @@ setTimeout(()=>{
 function show_alive_and_logo(){
   allow_alive_block = false;
   $("#alive_mur4sh").removeClass('fadeOutUp');
-  $("#lanstats_logo").removeClass('fadeInDown');
+  $("#lanstats_logo").removeClass('fadeInUp');
   animateElement("#alive_mur4sh", "fadeInDown", function () {});
-  animateElement("#lanstats_logo", "fadeOutUp", function () {});
+  animateElement("#lanstats_logo", "fadeOutDown", function () {});
   setTimeout(()=>{
     $("#alive_mur4sh").removeClass('fadeInDown');
-    $("#lanstats_logo").removeClass('fadeOutUp');
+    $("#lanstats_logo").removeClass('fadeOutDown');
     animateElement("#alive_mur4sh", "fadeOutUp", function () {});
-    animateElement("#lanstats_logo", "fadeInDown", function () {});
+    animateElement("#lanstats_logo", "fadeInUp", function () {});
     allow_alive_block = true;
   },5000)
 }
@@ -1023,7 +1027,7 @@ function fillObserved(obs) {
   $("#obs_health_img").removeClass();
   if (stats.health <= 20) {
     $("#obs_health_img").addClass("health_default"); //+ obs.team);
-    $("#obs_health_text").css("color", COLOR_RED);
+    $("#obs_health_text").css("color", COLOR_WHITE);
   } else if (stats.health > 20) {
     $("#obs_health_img").addClass("health_full_default"); //+ obs.team);
     $("#obs_health_text").css("color","white")//, team_color);

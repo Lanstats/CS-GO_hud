@@ -429,7 +429,7 @@ body {
 
 #left_team > #alert {
   float: left;
-  top:-30px;
+  top:-20px;
   opacity: 0;
   color: white;
   left: 0px;
@@ -597,6 +597,7 @@ body {
 }
 
 #bomb_bar {
+  z-index: 100;
   width: 100%;
   height: 4px;
   top: -10px;
@@ -606,9 +607,10 @@ body {
 }
 
 #defuse_bar {
+  z-index: 101;
   width: 100%;
   height: 4px;
-  top: -10px;
+  top: -14px;
   position: relative;
   background-color: var(--color-defuse);
   opacity: 0;
@@ -625,7 +627,7 @@ body {
 #alert_middle {
   position: relative;
   width: 100%;
-  top:160px;
+  top: 157px;
   height: 40px;
   background-color: rgba(0,0,0,0.5);
   opacity: 0;
@@ -690,6 +692,7 @@ body {
 }
 
 #obs_img {
+  opacity: 0;
   display: block;
   object-fit: contain;
   position: relative;
@@ -735,7 +738,7 @@ body {
 #obs_alias {
   position: relative;
   left: 0px;
-  top: -157px;
+  top: -146px;
 }
 
 #obs_alias_text {
@@ -1828,7 +1831,6 @@ body {
   position: relative;
   color: white;
   top: -25px;
-  -webkit-text-stroke: 0.5px black
 }
 
 .player_alias {
@@ -1854,7 +1856,7 @@ body {
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
-  -webkit-text-stroke: 0.5px black
+  color: white
 }
 
 #players_left #player_alias_text {
