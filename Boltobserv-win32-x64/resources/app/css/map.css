@@ -99,8 +99,8 @@ body {
 	background-image: url("../img/bomb-dropped.png");
 	background-repeat:no-repeat;
 	background-size: contain;
-	height: 7%;
-	width: 7%;
+	height: 6%;
+	width: 6%;
 	bottom: -30%;
 	left: -30%;
 	transform: translate(-50%, 50%);
