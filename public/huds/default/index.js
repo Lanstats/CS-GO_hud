@@ -56,16 +56,12 @@ function updatePage(data) {
   var previously = data.previously();
   var bomb = data.bomb();
 
-<<<<<<< Updated upstream
   if(map_mur != map.name.match(/[A-Za-z]+[0-9]*$/)?(map.name.match(/[A-Za-z]+[0-9]*$/)[0]).toLowerCase():""){
     player_global=[]
     console.log('update map')
     map_mur=(map.name.match(/[A-Za-z]+[0-9]*$/)[0]).toLowerCase();
   }
   
-=======
-  map_mur=map;
->>>>>>> Stashed changes
 
   var test_player = data.getPlayer(1);
   if (test_player) {
