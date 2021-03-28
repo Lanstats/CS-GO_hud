@@ -347,10 +347,10 @@ function updateRoundState(phase, round, map, previously, bomb, players) {
       updateStateLive(phase, bomb, players, previously);
       break;
     case "over":
-      updateStateOver(phase, round, previously,players);
       for(let i=0;i<players.length;i++){
         count_global(players[i])
       }
+      updateStateOver(phase, round, previously,players);
       break;
     case "bomb":
       updateStatePlanted(phase, round, previously);
@@ -1233,8 +1233,10 @@ function count_kd(player){
 }
 
 function count_global(player){
+  let check = false;
   for(let i=0;i<player_global.length;i++){
     if(Number(player_global[i].steamid) == Number(player.steamid)){
+      check = true;
       if(player_global[i].counted){
         break;
       }else{
@@ -1295,6 +1297,9 @@ function count_global(player){
       }
     }
   }
+  if(!check){
+    console.log('not found');
+  }
 }
 
 let count_i=1;
@@ -1312,7 +1317,7 @@ function fillPlayer(player, nr, side, observed, phase, previously) {
         player_global[i].match_stats.assists = player.match_stats.assists;
         player_global[i].match_stats.mvps = player.match_stats.mvps;
         player_global[i].match_stats.score = player.match_stats.score;
-        player_global[i].counted = true;
+        //player_global[i].counted = false;
       }
     }
     if(!check && player_global.length<10){
