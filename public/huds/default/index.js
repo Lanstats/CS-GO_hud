@@ -39,6 +39,7 @@ let full_top = true;
 let player_global = [];
 let rounds = 0;
 let allow_alive_block = true;
+let allow_di = _allow_deaths_info
 
 function updatePage(data) {
   $("#lanstats_logo").attr("src","/files/img/elements/jclico.png");
@@ -1413,8 +1414,12 @@ function fillPlayer(player, nr, side, observed, phase, previously) {
     $bottom.find("#player_bomb_kit_image").css("opacity", 0);
     $bottom.find("#player_armor_image").css("opacity", 0);
     $top.find("#player_health_text").css("opacity", 0);
-    if(!$("#round_timer_text").hasClass("round_warmup") && _allow_deaths_info){
+    if(!$("#round_timer_text").hasClass("round_warmup") && allow_di){
       $bottom.find(".player_dead_stats").css("opacity",1);
+      /*if(!String(player_global[0].match_stats.heads) && rounds>2){
+        allow_di = false
+        $bottom.find(".player_dead_stats").css("opacity",0);
+      }*/
     }
     $bottom.find("#player_rating").text("Rating: "+ count_rating(player));
     if(count_i>1600){

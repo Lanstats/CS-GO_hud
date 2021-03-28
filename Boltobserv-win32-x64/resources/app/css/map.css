@@ -30,21 +30,23 @@ body {
 }
 
 #smokes > div {
-	margin-bottom: -22px;
-    margin-left: -18px;
-	display: block;
-	position: absolute;
-	opacity: .8;
-	height: 32px;
-	width: 35px;
-	background-image: url("../img/cloud.png");
-	/*background: #9F9D9D;*/
-	object-fit: scale-down;
-	box-sizing: border-box;
-	transform-origin: center;
-	/*border: #D7D7D7 solid .6vmin;*/
-	/*transform: translate(-50%, 50%);*/
-	transition: opacity .3s;
+    margin-bottom: -5%;
+    margin-left: -5%;
+    display: block;
+    position: absolute;
+    opacity: .8;
+    height: 10%;
+    width: 10%;
+    background-image: url(../img/cloud.png);
+    /* background: #9F9D9D; */
+    /* object-fit: scale-down; */
+    background-repeat: no-repeat;
+    background-size: contain;
+    box-sizing: border-box;
+    transform-origin: center;
+    /* border: #D7D7D7 solid .6vmin; */
+    /* transform: translate(-50%, 50%); */
+    transition: opacity .3s;
 }
 
 #smokes > div.hide {
@@ -97,8 +99,8 @@ body {
 	background-image: url("../img/bomb-dropped.png");
 	background-repeat:no-repeat;
 	background-size: contain;
-	height: 10%;
-	width: 10%;
+	height: 5%;
+	width: 5%;
 	bottom: -30%;
 	left: -30%;
 	transform: translate(-50%, 50%);
