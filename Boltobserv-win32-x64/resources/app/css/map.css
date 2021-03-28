@@ -34,7 +34,7 @@ body {
     margin-left: -5%;
     display: block;
     position: absolute;
-    opacity: .8;
+    opacity: .5;
     height: 10%;
     width: 10%;
     background-image: url(../img/cloud.png);
