@@ -61,7 +61,6 @@ function updatePage(data) {
     console.log('update map')
     map_mur=(map.name.match(/[A-Za-z]+[0-9]*$/)[0]).toLowerCase();
   }
-  
 
   var test_player = data.getPlayer(1);
   if (test_player) {
@@ -1313,7 +1312,7 @@ function fillPlayer(player, nr, side, observed, phase, previously) {
         player_global[i].match_stats.assists = player.match_stats.assists;
         player_global[i].match_stats.mvps = player.match_stats.mvps;
         player_global[i].match_stats.score = player.match_stats.score;
-        player_global[i].counted = false;
+        player_global[i].counted = true;
       }
     }
     if(!check && player_global.length<10){
