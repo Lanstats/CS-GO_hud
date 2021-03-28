@@ -154,11 +154,11 @@ div.dot, div.label {
 }
 
 div.dot.CT {
-	background: #5ab8f4;
+	background: #3695ce;
 }
 
 div.dot.T {
-	background: #f0c941;
+	background: #FF9900;
 }
 
 div.dot.bomb {
@@ -172,7 +172,7 @@ div.dot.active {
 }
 
 div.dot.dead {
-	opacity: .4;
+	opacity: .8;
 	color: transparent;
 	text-shadow: none;
 	border-radius: 0;
