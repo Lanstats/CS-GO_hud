@@ -436,9 +436,9 @@ function SlideShort(){
   //animateElement("#right_team #team_logo", "scaleDownLogoRight", function () {});
   $('#timers').css('left','727px').css('width','456px');
 
-  $("#left_team #alert").css('top','-29px').css('left','0px');
+  $("#left_team #alert").css('top','-30px').css('left','0px');
   $("#left_team #score").css('width','42px').css("color", 'white').css('left','20px').css('top','-9px');
-  $("#right_team #alert").css('top','-29px').css('left','0px');
+  $("#right_team #alert").css('top','-30px').css('left','0px');
   $("#right_team #score").css('width','42px').css("color", 'white').css('margin-left','27px').css('right','18px').css('top','-9px');
   $("#left_team").css('width','200px');
   $("#right_team").css('width','200px');
@@ -509,9 +509,9 @@ function SlideLong(){
   //animateElement("#right_team #team_logo", "scaleUpLogoRight", function () {});
   //$('#timers').css('left','422px').css('width','1073px');
 
-  $("#left_team #alert").css('top','17px').css('left','0px');
+  $("#left_team #alert").css('top','-89px').css('left','0px');
   $("#left_team #score").css('width','96px').css('left','36px').css('top','-9px');
-  $("#right_team #alert").css('top','17px').css('left','0px');
+  $("#right_team #alert").css('top','-89px').css('left','0px');
   $("#right_team #score").css('width','96px').css('margin-left','0px').css('right','36px').css('top','-9px');;
   $("#left_team").css('width','auto');
   $("#right_team").css('width','auto');
