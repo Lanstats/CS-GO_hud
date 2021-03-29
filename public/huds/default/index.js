@@ -1333,6 +1333,7 @@ function fillPlayer(player, nr, side, observed, phase, previously) {
 
   let slot = player.observer_slot;
   let stats = player.getStats();
+  let state = player.getState();
   let weapons = player.getWeapons();
   let steamid = player.steamid;
   let team = player.team.toLowerCase();
@@ -1408,10 +1409,19 @@ function fillPlayer(player, nr, side, observed, phase, previously) {
   $kda_money.find("#player_deaths_d").css("color", side_color);
   $kda_money.find("#player_deaths_text").text(stats.deaths);
   $player.find("#player_dead_deaths_text").text(stats.deaths);
+  /*
+  if(dead){
+    $bottom.find("#player_deaths_d").css("opacity", 1);
+    $player.find("#player_dead_kills_text").text(state.round_kills);
+  }else{
+    $bottom.find("#player_deaths_d").css("opacity", 0);
+    $player.find("#player_dead_kills_text").text(stats.kills);
+  }*/
 
   if (dead) {
     $bottom.find("#player_bomb_kit_image").css("opacity", 0);
     $bottom.find("#player_armor_image").css("opacity", 0);
+    
     $top.find("#player_health_text").css("opacity", 0);
     if(!$("#round_timer_text").hasClass("round_warmup") && (_allow_deaths_info == 'true')){
       $bottom.find(".player_dead_stats").css("opacity",1);
