@@ -610,7 +610,7 @@ function show_pick_team(){
   },10000)
   setTimeout(()=>{
     show_pick_team()
-  },60000)
+  },15000) //Сколько по факту длится
 }
 
 setTimeout(()=>{
