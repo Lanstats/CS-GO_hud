@@ -1882,9 +1882,11 @@ body {
   position: absolute;
   right: 37px;
   top: 9px;
+  opacity: 0;
 }
 
 #lanstats_logo{
+  opacity: 0;
   width: 200px;
   height: 60px;
   object-fit: scale-down;

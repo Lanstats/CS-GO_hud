@@ -632,6 +632,11 @@ function show_alive_and_logo(){
   },5000)
 }
 
+function show_alive(){  
+  $("#alive_mur4sh").css("opacity","1");
+  $("#alive_logo_block").css("opacity","1");
+}
+
 function updateStateOver(phase, round, previously,players) {
   if (phase) {
     $("#round_timer_text").css("color", COLOR_GRAY);
@@ -1163,8 +1168,12 @@ function fillPlayers(teams, observed, phase, previously) {
       }
     }
   }
+  /*
   if(allow_alive_block && phase.phase != "warmup" && (was_alive!=(left_count+right_count)) && left_count && right_count){
     show_alive_and_logo()
+  }*/
+  if(phase.phase != "warmup"){
+    show_alive()
   }
   if(was_alive!=(left_count+right_count)){
     was_alive = left_count+right_count
