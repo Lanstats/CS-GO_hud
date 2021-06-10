@@ -1168,13 +1168,14 @@ function fillPlayers(teams, observed, phase, previously) {
       }
     }
   }
-  /*
+  
   if(allow_alive_block && phase.phase != "warmup" && (was_alive!=(left_count+right_count)) && left_count && right_count){
     show_alive_and_logo()
-  }*/
-  if(phase.phase != "warmup"){
-    show_alive()
   }
+  /*Если лого надо убрать, то раскоменчиваем это, коментим иф выше, и в css у alive_logo_block и lanstats_logo ставим опасити 0*/
+  /*if(phase.phase != "warmup"){
+    show_alive()
+  }*/
   if(was_alive!=(left_count+right_count)){
     was_alive = left_count+right_count
   }
