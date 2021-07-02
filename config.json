@@ -26,5 +26,6 @@
   "GSIToken": "120987",
   "Deaths_info": false,
   "allow_alive": true,
+  "no_logo": false, 
   "MoneyPower": true
 }

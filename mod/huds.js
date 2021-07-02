@@ -176,6 +176,7 @@ module.exports = {
         map_five_pick: config.Map5_pick,
         allow_deaths_info: config.Deaths_info,
         allow_alive: config.allow_alive,
+        no_logo: config.no_logo,
         money_power: config.MoneyPower,
         hud: hud_dir,
         css: css_dir,

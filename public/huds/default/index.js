@@ -1141,6 +1141,7 @@ function fillPlayers(teams, observed, phase, previously) {
   left_count = 5;
   right_count = 5;
   if (teams.left.players) {
+    left_count = teams.left.players.length;
     for (var i = 0; i < 5; i++) {
       if (i >= teams.left.players.length) {
         $("#players_left #player_section")
@@ -1155,6 +1156,7 @@ function fillPlayers(teams, observed, phase, previously) {
     }
   }
   if (teams.right.players) {
+    right_count = teams.right.players.length;
     for (var i = 0; i < 5; i++) {
       if (i >= teams.right.players.length) {
         $("#players_right #player_section")
@@ -1169,13 +1171,19 @@ function fillPlayers(teams, observed, phase, previously) {
     }
   }
   
-  if(allow_alive_block && phase.phase != "warmup" && (was_alive!=(left_count+right_count)) && left_count && right_count){
-    show_alive_and_logo()
+  if(_no_logo){
+    $("#alive_logo_block").css("opacity","0");
+    $("#lanstats_logo").css("opacity","0");
+    if(phase.phase != "warmup"){
+      show_alive()
+    }
+  }else{
+    $("#alive_logo_block").css("opacity","1");
+    $("#lanstats_logo").css("opacity","1");
+    if(allow_alive_block && phase.phase != "warmup" && (was_alive!=(left_count+right_count)) && left_count && right_count){
+      show_alive_and_logo()
+    }
   }
-  /*Если лого надо убрать, то раскоменчиваем это, коментим иф выше, и в css у alive_logo_block и lanstats_logo ставим опасити 0*/
-  /*if(phase.phase != "warmup"){
-    show_alive()
-  }*/
   if(was_alive!=(left_count+right_count)){
     was_alive = left_count+right_count
   }
