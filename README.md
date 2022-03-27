@@ -91,12 +91,4 @@ You can enable/disable each HUD to make it accessible or not. There is also HUD 
 It might be useful for bigger streaming workspaces, like for setups with different PC dedicated to replays - one server app will manage every HUD on local network, because all HUDs are available all the time, if they are not disabled.
 ![Ex4](https://i.imgur.com/dKFmxbT.png)
 
-## Credits
 
-[osztenkurden](https://github.com/osztenkurden) - Original Repo Creator
-
-## License
-
-This project is Licensed under GPL-3. Any changesd to this project need to be made open source (among other things). Distribution is allowed, but must be open (not closed or behind paywall).
-
-The section above is not legal advice and is not legally binding. See the LICENSE file in the repository for the full license.
